@@ -1,0 +1,90 @@
+PODS:
+  - AHKActionSheet (0.5.4)
+  - Alamofire (3.3.1)
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - CryptoSwift (0.3.1)
+  - DateTools (1.7.0)
+  - Fabric (1.6.7)
+  - FBSDKCoreKit (4.11.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.11.0):
+    - FBSDKCoreKit
+  - FDTake (0.3.2)
+  - Kingfisher (2.3.1)
+  - MBCircularProgressBar (0.3.4)
+  - ObjectMapper (1.2.0)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - ParseFacebookUtilsV4 (1.11.1):
+    - Bolts/Tasks (>= 1.6)
+    - FBSDKCoreKit (~> 4.10)
+    - FBSDKLoginKit (~> 4.10)
+    - FBSDKTVOSKit (~> 4.10)
+    - Parse (~> 1.12)
+  - RadioButton (1.0)
+  - RxAlamofire (2.2):
+    - RxAlamofire/Core (= 2.2)
+  - RxAlamofire/Core (2.2):
+    - Alamofire (~> 3.1)
+    - RxSwift (~> 2.1)
+  - RxCocoa (2.4):
+    - RxSwift (~> 2.4)
+  - RxDataSources (0.7):
+    - RxCocoa (~> 2.2)
+    - RxSwift (~> 2.2)
+  - RxSwift (2.4)
+  - SWRevealViewController (2.3.0)
+
+DEPENDENCIES:
+  - AHKActionSheet
+  - Alamofire
+  - Crashlytics
+  - CryptoSwift
+  - DateTools
+  - Fabric
+  - FBSDKLoginKit
+  - FDTake
+  - Kingfisher (~> 2.0)
+  - MBCircularProgressBar
+  - ObjectMapper
+  - ParseFacebookUtilsV4
+  - RadioButton
+  - RxAlamofire
+  - RxCocoa
+  - RxDataSources
+  - RxSwift
+  - SWRevealViewController
+
+SPEC CHECKSUMS:
+  AHKActionSheet: f0b312b5c689f72924d231c39dae140ecd5c1d46
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  CryptoSwift: baf01e3fb3226c0155cd54c266be882b13d45d5e
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
+  FBSDKLoginKit: bade9fc78277764149ccc5bfaadbf13c83175c6a
+  FDTake: 122aaf465673b05648cd1b40200a19c85b1aa9e0
+  Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
+  MBCircularProgressBar: ff3b8e2f441214d9ee122a24ba0d4d00cc7de881
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
+  RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
+  RxAlamofire: 250b7846cedbd189d6190e4f83caa01ee1f1eceb
+  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
+  RxDataSources: 99a8527f4de066d3f10522c1977e571efec034c3
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+
+PODFILE CHECKSUM: 17478f5d1100c5be42db4e03e4d6ba50520ac422
+
+COCOAPODS: 1.0.1
