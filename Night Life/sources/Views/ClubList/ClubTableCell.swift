@@ -134,7 +134,7 @@ class ClubTableCell : UITableViewCell {
                 })
             .addDisposableTo(disposeBag)
         
-        ///fake locationdf
+        ///fake locationdffsdf
         LocationManager.instance.fakeLocation.asDriver()
             .driveNext { [unowned self] maybeLocation in
                 guard let location = maybeLocation where
