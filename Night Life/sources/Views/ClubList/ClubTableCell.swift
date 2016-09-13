@@ -158,7 +158,7 @@ class ClubTableCell : UITableViewCell {
         .addDisposableTo(disposeBag)
         
 #if ADHOC || DEBUG
-        travelButton.hidden = true//false
+        travelButton.hidden = false
 #else
         travelButton.hidden = true
 #endif

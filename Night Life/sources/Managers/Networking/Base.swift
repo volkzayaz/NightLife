@@ -11,16 +11,10 @@ import RxSwift
 
 struct GatewayConfiguration {
 
-#if DEBUG
-    static let hostName = ""
-#elseif ADHOC
-    static let hostName = ""
-#else
-    static let hostName = ""
-#endif
+    static let hostName = "http://nightlife.gotests.com"
     
-    static let clientId = ""
-    static let clientSecret = ""
+    static let clientId = "LZBcV40CXsWKedPwUEfYae81TIMKGZcPEzLUmfc4"
+    static let clientSecret = "EqE4JoEnRBiO4Yslze9vrElueXvGURa9XqONMeObb2lh1COxgCWC5Q4X5J92ZyXHIFCgQJbzq3yWOVMCRrLj9nb6OJlS6eePyVsPW8ZaQTnBZ2BaEL7rGSyI1iMjxEJN"
 }
 
 protocol AuthorizedRouter : URLRequestConvertible {
