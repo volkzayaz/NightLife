@@ -18,9 +18,24 @@ class CityContext {
     
 }
 
+//
+//class CommentsContext {
+//
+//
+//  static let comments : Variable<[Comment]> = Variable([])
+//
+//  static func refreshComments() -> Disposable {
+//
+// 
+//    
+//    
+//    }
+//}
+
 class MessagesContext {
     
-    static let messages: Variable<[Message]> = Variable([])
+    static let messages: Variable<[Message]> = Variable([])    
+  
     
     static func refreshMessages() -> Disposable {
         
@@ -45,3 +60,7 @@ class MessagesContext {
     }
     
 }
+
+
+
+

@@ -331,6 +331,11 @@
 		84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */; };
 		84EDEFCF1CCA25FA00AC4BDE /* TodayDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */; };
 		946483791265AD06B33CA6A6 /* Pods_GlobBar_AdHoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */; };
+		C539C8D21D89518C00862E0D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D11D89518C00862E0D /* Comment.swift */; };
+		C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D31D895D6000862E0D /* ComentsManager.swift */; };
+		C539C8D71D896DC100862E0D /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D61D896DC100862E0D /* CommentViewModel.swift */; };
+		C539C8D91D89810400862E0D /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D81D89810400862E0D /* CommentListViewModel.swift */; };
+		C5F3CD301D89B3A60037EBF4 /* CommentedMessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -503,6 +508,11 @@
 		84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDayManager.swift; sourceTree = "<group>"; };
 		A1251E0C988A18BFB10572D9 /* Pods-GlobBar_AdHoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar_AdHoc.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar_AdHoc/Pods-GlobBar_AdHoc.release.xcconfig"; sourceTree = "<group>"; };
+		C539C8D11D89518C00862E0D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		C539C8D31D895D6000862E0D /* ComentsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsManager.swift; sourceTree = "<group>"; };
+		C539C8D61D896DC100862E0D /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		C539C8D81D89810400862E0D /* CommentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
+		C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessagesListViewController.swift; sourceTree = "<group>"; };
 		DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar_AdHoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7F314B533FD4411C86AC22 /* Pods-GlobBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar/Pods-GlobBar.release.xcconfig"; sourceTree = "<group>"; };
@@ -586,6 +596,7 @@
 				738F8AAC1C986A0B0062E916 /* CityContext.swift */,
 				73EF21FE1C9C4A06005A6D6D /* ClubsManager.swift */,
 				7362A9E11CB510AE00428350 /* InMemmoryStore.swift */,
+				C539C8D31D895D6000862E0D /* ComentsManager.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -774,6 +785,7 @@
 		7332FE511C80860E001FE7D5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5F3CD2E1D89B3800037EBF4 /* Comments */,
 				84E2C5F71CEB4778000D38E8 /* SignIn */,
 				73F9E2C21CAD4466005758D1 /* Reusable */,
 				84535EC01CE49FEC009CC66E /* Signup */,
@@ -869,6 +881,7 @@
 		73523FEB1C6B844200A5FE23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C539C8D01D89517800862E0D /* Comment */,
 				843907491CB69B9E00C05D8B /* Message */,
 				842D30C81C98252A001B3AE2 /* Points */,
 				733E8CE01C96E62100F24620 /* City */,
@@ -1061,6 +1074,7 @@
 		73EF22041C9C594F005A6D6D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C539C8D51D896D9500862E0D /* Comments */,
 				84E2C5FA1CEB47B2000D38E8 /* SignIn */,
 				842449091CEA31AC0098DBE7 /* SignUp */,
 				73A6A0391CC3B075008594F2 /* Invitation */,
@@ -1304,6 +1318,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C539C8D01D89517800862E0D /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				C539C8D11D89518C00862E0D /* Comment.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		C539C8D51D896D9500862E0D /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				C539C8D61D896DC100862E0D /* CommentViewModel.swift */,
+				C539C8D81D89810400862E0D /* CommentListViewModel.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		C5F3CD2E1D89B3800037EBF4 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1363,7 +1402,7 @@
 				TargetAttributes = {
 					7325A3A31C63AB01009FF07E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = T7UCT8CA8K;
+						DevelopmentTeam = 2WB486963M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1374,7 +1413,7 @@
 						};
 					};
 					73A69F951CC3ACE3008594F2 = {
-						DevelopmentTeam = T7UCT8CA8K;
+						DevelopmentTeam = 2WB486963M;
 					};
 				};
 			};
@@ -1689,6 +1728,7 @@
 				84B2022D1CCE4FFD00029EB6 /* String+AES.swift in Sources */,
 				84E2C5F91CEB4778000D38E8 /* SignInViewController.swift in Sources */,
 				73C04D951CA0093C0072C00A /* UserListViewController.swift in Sources */,
+				C5F3CD301D89B3A60037EBF4 /* CommentedMessagesListViewController.swift in Sources */,
 				7357A2511C8AF3E400B5B883 /* ReportDetailsTableCell.swift in Sources */,
 				738AA0251C73346B00379C75 /* InstagramLoginViewController.swift in Sources */,
 				73F70D031CA18A73005C6CB1 /* RelationRouter.swift in Sources */,
@@ -1734,6 +1774,7 @@
 				7332FE101C7F4D9E001FE7D5 /* Report.swift in Sources */,
 				73B3368D1C9AFCD80009A146 /* LikedClubsListViewController.swift in Sources */,
 				73EF22241C9C594F005A6D6D /* LikedClubsListViewModel.swift in Sources */,
+				C539C8D71D896DC100862E0D /* CommentViewModel.swift in Sources */,
 				73EF22261C9C594F005A6D6D /* PaginatingViewModel.swift in Sources */,
 				8439074F1CB69FE000C05D8B /* Message.swift in Sources */,
 				738AA0231C73346B00379C75 /* InstagramAuthenticator.swift in Sources */,
@@ -1762,13 +1803,16 @@
 				733E368B1C74A9F80099BA9A /* DiscreteStepper.swift in Sources */,
 				842D30C41C9824F7001B3AE2 /* MyPointsViewController.swift in Sources */,
 				73069CD11CB7CCDD0040D599 /* MediaPlayerViewController.swift in Sources */,
+				C539C8D21D89518C00862E0D /* Comment.swift in Sources */,
 				73069CD81CB7FE020040D599 /* ThumbnailGenerator.swift in Sources */,
 				734FEF731C9840EE000B894A /* CityClubListViewController.swift in Sources */,
 				73523FEE1C6B844200A5FE23 /* User.swift in Sources */,
 				7323E47E1C8851F000F397BC /* CheckinViewController.swift in Sources */,
+				C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */,
 				84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */,
 				7323E44B1C85E78B00F397BC /* ImageRetreiver.swift in Sources */,
 				73069CDA1CB807F80040D599 /* UIImage+orientation.swift in Sources */,
+				C539C8D91D89810400862E0D /* CommentListViewModel.swift in Sources */,
 				84EDEFCF1CCA25FA00AC4BDE /* TodayDayManager.swift in Sources */,
 				73B13BD71CC6811C00309ED2 /* FacebookInvitationRouter.swift in Sources */,
 				7332FE4F1C807AC8001FE7D5 /* ClubTableCell.swift in Sources */,
@@ -2031,8 +2075,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2043,7 +2087,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.partyzhere.NightLife;
 				PRODUCT_NAME = GlobBar;
-				PROVISIONING_PROFILE = "dcc41613-6acb-42c5-83ce-9b1a4a79467d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Night Life/support_files/Night Life-Bridging-Header.h";
 			};
 			name = Release;
@@ -2066,7 +2110,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADHOC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.partyzhere.NightLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anna.NightLife;
 				PRODUCT_NAME = GlobBar;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Night Life/support_files/Night Life-Bridging-Header.h";
@@ -2080,8 +2124,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2095,7 +2139,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADHOC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.partyzhere.NightLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anna.NightLife;
 				PRODUCT_NAME = GlobBar;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Night Life/support_files/Night Life-Bridging-Header.h";

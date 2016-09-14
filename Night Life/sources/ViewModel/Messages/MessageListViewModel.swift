@@ -41,15 +41,21 @@ extension MessageListViewModel {
     
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         let message = MessagesContext.messages.value[ip.row]
+        let comment = Comment.entityByIdentifier(message.id)
+     
         
-        detailMessageViewModel.value = MessageViewModel(message: message)
+        detailMessageViewModel.value = MessageViewModel(message: message, comment : comment!)
     }
     
     func deleteMessage(row: Int) {
         
         let message = MessagesContext.messages.value[row]
+        let comment = Comment.entityByIdentifier(message.id)
         
         message.removeFromStorage()
+        comment!.removeFromStorage()
+        
+        
         MessagesContext.messages.value.removeAtIndex(row)
         
         Alamofire.request(MessagesRouter.Delete(message: message)).rx_responseJSON()

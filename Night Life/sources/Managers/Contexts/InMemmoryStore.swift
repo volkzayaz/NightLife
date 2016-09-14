@@ -60,6 +60,13 @@ extension Storable {
     
 }
 
+
+
+
+extension Comment {
+    static var storage: [Int : Variable<Comment>] = [ : ]
+}
+
 extension User {
     static var storage: [Int : Variable<User>] = [ : ]
 }

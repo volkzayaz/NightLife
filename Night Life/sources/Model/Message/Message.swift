@@ -22,6 +22,8 @@ struct Message : Mappable, Storable {
     
     var isRead: Bool = false
     
+      
+    
     init?(_ map: Map) {
         mapping(map)
     }
