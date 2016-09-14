@@ -22,6 +22,8 @@ class MessageTableCell : UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
     
+    //Hi it's test!
+    
     private var disposeBag = DisposeBag()
     
     func setMessage(message: Message) {
