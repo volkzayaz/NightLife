@@ -12,7 +12,7 @@ import Alamofire
 import RxAlamofire
 
 struct MessageViewModel {
-    
+    //test
     var message : Message
     
     private let bag = DisposeBag()
