@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 typealias ReportData = (iconName: String, title: String, description: String)
 
@@ -16,6 +17,10 @@ struct ReportDetailsViewModel {
     let report: Report
     
     let dataSource : [ReportData]
+    
+    /*var likeObservable : Variable<Bool> {
+        return Variable(LikeManager.arrayOfLikes.value.contains(report.id))
+    }*/
     
     init(club:Club, report: Report) {
         self.club = club

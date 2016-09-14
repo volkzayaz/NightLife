@@ -29,6 +29,7 @@ class ReportDetailsViewController: UIViewController {
     @IBOutlet weak var clubLogoImageView: UIImageView!
     @IBOutlet weak var clubNameLabel: UILabel!
     @IBOutlet weak var clubAdressLabel: UILabel!
+    @IBOutlet weak var likeDislike: UISwitch!
     
     private var tableViewGradientLayer = UIConfiguration.gradientLayer(UIColor(fromHex:0x303030), to: UIColor(fromHex:0x0f0f0f))
     
@@ -81,6 +82,19 @@ class ReportDetailsViewController: UIViewController {
         
         dateLabel.text = UIConfiguration.stringFromDate((viewModel.report.createdDate)!)
         
+        LikeManager.arrayOfLikes.asObservable()
+            .subscribeNext{[weak self](ids : [Int]) in
+                
+                self?.likeDislike.setOn(ids.contains(self!.viewModel.report.id), animated: false)
+                
+            }.addDisposableTo(disposeBag)
+        
+        self.likeDislike.rx_value.asObservable()
+            .subscribeNext{[weak self](value : Bool) in
+                
+                LikeManager.appendLikeDislike(self!.viewModel.report.id, valueOfSwitch: value)
+
+            }.addDisposableTo(disposeBag)
     }
 
     override func viewDidLayoutSubviews() {
@@ -107,13 +121,11 @@ extension ReportDetailsViewController {
     
     func setUpUI() {
         self.title = "Review Detail"
-        
-        ///tableView
+
         let gradientContentView = UIView()
         gradientContentView.layer.addSublayer(tableViewGradientLayer)
         reportTableView.backgroundView = gradientContentView
         
-        ///gradient container
         let layer = UIConfiguration.gradientLayer(UIColor(white: 0, alpha: 0), to: UIColor(white: 0, alpha: 1))
         layer.cornerRadius = 0
         clubDescriptionGradintLayer = layer
