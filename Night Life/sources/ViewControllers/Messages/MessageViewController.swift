@@ -13,18 +13,15 @@ import RxCocoa
 class MessageViewController: UIViewController {
 
     var viewModel: MessageViewModel!
-    
     var viewModelComment : CommentViewModel?
-    
     private let bag = DisposeBag()
     
     @IBOutlet weak var commentEnteredText: UITextView!
     @IBOutlet weak var saveComment: UIButton!
-
     @IBOutlet weak var commentLabel: UILabel!
-    
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var createdLabel: UILabel!
        override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,21 +32,18 @@ class MessageViewController: UIViewController {
         if viewModelComment!.comment == nil {
             commentLabel.text = "No comments"
             
-        } else{
+        } else {
         
         commentLabel.text = viewModelComment!.comment!.body
-        
         
         }
             
         saveComment.rx_tap.asObservable()
             
-           .subscribe(onNext : {
+           .subscribe(onNext : { [unowned self] in
         
            self.viewModelComment!.createComment(self.viewModel.message, body: self.commentEnteredText.text )
-                   
            self.commentLabel.text = self.viewModelComment!.comment!.body
-            
            self.commentEnteredText.text = "enter comment"
         
         }).addDisposableTo(bag)

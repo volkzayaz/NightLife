@@ -13,26 +13,18 @@ import RxDataSources
 struct ViewModelCell {
     
     private(set) var message : Message
-    //private(set) var user : User? = nil
-    
-   // private let apiServiceGet = ApiServiceGet()
+
     var bag = DisposeBag()
     
-    var commentObservable: Observable<Comment> {
+   // var commentObservable: Observable<Comment> {
         
-        return Comment.storage[message.id]!.asObservable()
-    }
-    
- //   func saveComment (comment : Comment) {
-     //
-     //   Comment.saveEntity(comment)
-    //}
-    
+      //  return Comment.storage[message.id]!.asObservable()
+   // }
+ 
     
     init(message : Message) {
     
-    
-    self.message = message
+        self.message = message
     
     }
     

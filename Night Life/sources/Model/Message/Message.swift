@@ -14,16 +14,11 @@ struct Message : Mappable, Storable {
     
     private(set) var id : Int = 0
     var identifier: Int { return id }
-    
     var title : String = ""
-    var body : String = ""
-    
+    var body : String = ""    
     var created: NSDate?
-    
     var isRead: Bool = false
-    
-      
-    
+          
     init?(_ map: Map) {
         mapping(map)
     }
@@ -31,12 +26,9 @@ struct Message : Mappable, Storable {
     mutating func mapping(map: Map) {
         
         id <- map["pk"]
-        
         title <- map["title"]
         body <- map["body"]
-        
         created <- (map["created"], ISO8601DateTransform())
-        
         isRead <- map["is_readed"]
     }
 }

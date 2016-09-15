@@ -13,7 +13,6 @@ import Alamofire
 import RxAlamofire
 import ObjectMapper
 
-
 struct CommentedMessagesListViewModel {
     
     var displayData: Variable<[CommentedMessageSection]> = Variable([])
@@ -29,34 +28,28 @@ struct CommentedMessagesListViewModel {
         let commentedMessages = MessagesContext.messages
                 .asObservable()
                 .flatMapLatest { messages -> Observable<[Message]> in
-                    messages /// all messages
-                        .flatMap { ///filtering out messages that are not commented
-                            $0.observableEntity()?.asObservable() /// getting observable message from storage
+                    messages
+                        .flatMap {
+                            $0.observableEntity()?.asObservable()
                         }
-                        .combineLatest { commentedMessages in ///mapping true messages to unread counter
-                            let a = commentedMessages.filter { Comment.storage[$0.id] != nil }
-
-                            return a
-                            
+                        .combineLatest { commentedMessages in
+                            let commentedMessages : [Message] = commentedMessages.filter { Comment.storage[$0.id] != nil }
+                            return commentedMessages
                         }
-                    
             }
 
         
         commentedMessages.map { (messages : [Message]) -> [ViewModelCell] in
 
-                    let b : [ViewModelCell] = messages.map { (message : Message) -> ViewModelCell in
+                    let viewModelCell : [ViewModelCell] = messages.map { (message : Message) -> ViewModelCell in
                         return ViewModelCell(message: message)
                     }
     
-                    return b
+                    return viewModelCell
                 }.map { (cells : [ViewModelCell]) -> [CommentedMessageSection] in
-    
-                    return [CommentedMessageSection (header : "Commented messages", items : cells)]
-    
+                    return [CommentedMessageSection (header : "Commented messages", items : cells)]    
                 }
                 .subscribeNext { (sections: [CommentedMessageSection]) in
-    
                     self.displayData.value = sections
                 }
                 .addDisposableTo(bag)
@@ -66,11 +59,6 @@ struct CommentedMessagesListViewModel {
         
     }
     
-        
-
-        
-
-
 
 
 extension CommentedMessagesListViewModel {
@@ -79,7 +67,13 @@ extension CommentedMessagesListViewModel {
         let message = MessagesContext.messages.value[ip.row]
         let comment = Comment.entityByIdentifier(message.id)
         
-        detailMessageViewModel.value = MessageViewModel(message: message, comment : comment!)
+        guard let a = comment else {
+            
+            return detailMessageViewModel.value = MessageViewModel(message: message)
+        }
+        detailMessageViewModel.value = MessageViewModel(message: message, comment : a)
+      
+        
     }
     
     func deleteMessage(row: Int) {

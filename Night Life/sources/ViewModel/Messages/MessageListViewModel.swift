@@ -45,7 +45,7 @@ extension MessageListViewModel {
         let comment = Comment.entityByIdentifier(message.id)
      
         guard let a = comment else {
-        return detailMessageViewModel.value = MessageViewModel(message: message)
+            return detailMessageViewModel.value = MessageViewModel(message: message)
         }
         detailMessageViewModel.value = MessageViewModel(message: message, comment : a)
     }
