@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WLu-hQ-Zw0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WLu-hQ-Zw0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -91,7 +91,7 @@
                                             <constraint firstItem="wxX-M7-l71" firstAttribute="centerY" secondItem="7H2-il-ExO" secondAttribute="centerY" id="hTF-4S-9dR"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91Y-y4-bUM" userLabel="PhotoView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91Y-y4-bUM" userLabel="PhotoView">
                                         <rect key="frame" x="108" y="0.0" width="105" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-zl-Ae4" userLabel="PhotoBtn">
@@ -111,7 +111,7 @@
                                             <constraint firstItem="qlZ-zl-Ae4" firstAttribute="centerY" secondItem="91Y-y4-bUM" secondAttribute="centerY" id="f6n-3W-Euu"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nh-mD-Jpi" userLabel="divider2InvisView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nh-mD-Jpi" userLabel="divider2InvisView">
                                         <rect key="frame" x="213" y="0.0" width="3" height="42"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRT-Cm-56H" userLabel="divider2">
@@ -131,10 +131,10 @@
                                             <constraint firstAttribute="width" constant="3" id="8lt-Ub-qAZ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF9-O5-beZ" userLabel="VideoView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sF9-O5-beZ" userLabel="VideoView">
                                         <rect key="frame" x="216" y="0.0" width="104" height="42"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bde-ST-9u8" userLabel="VideoBtn">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bde-ST-9u8" userLabel="VideoBtn">
                                                 <rect key="frame" x="16" y="10" width="72" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="72" id="9cw-yO-UiD"/>
@@ -442,7 +442,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="report cell" id="tdL-xZ-PhX" customClass="ReviewReportCollectionCell" customModule="GlobBar" customModuleProvider="target">
-                                <rect key="frame" x="68.5" y="45" width="183" height="170"/>
+                                <rect key="frame" x="69" y="45" width="183" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="183" height="170"/>
@@ -456,7 +456,7 @@
                                 </view>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="media cell" id="MEz-sw-IQh" userLabel="media cell" customClass="ReviewMediaCollectionCell" customModule="GlobBar" customModuleProvider="target">
-                                <rect key="frame" x="68.5" y="225" width="183" height="170"/>
+                                <rect key="frame" x="69" y="225" width="183" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="183" height="170"/>
@@ -643,7 +643,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="672" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJL-9L-SQI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="672" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJL-9L-SQI">
                                 <rect key="frame" x="45" y="164" width="15" height="11"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="9"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -798,19 +798,19 @@
                                                 <color key="textColor" red="1" green="0.83529411764705885" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-QO-oNt">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-QO-oNt">
                                                 <rect key="frame" x="259" y="39" width="45" height="12"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="10"/>
                                                 <color key="textColor" red="1" green="0.54117647058823526" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-Xy-8DN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-Xy-8DN">
                                                 <rect key="frame" x="291" y="13" width="13" height="26"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="22"/>
                                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-pS-VBH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-pS-VBH">
                                                 <rect key="frame" x="259" y="14" width="12" height="26"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="22"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -880,7 +880,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the cover charge?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-rm-4id">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What is the cover charge?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-rm-4id">
                                                         <rect key="frame" x="16" y="226" width="226" height="20"/>
                                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -906,10 +906,10 @@
                                                             <color key="titleColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-1Q-QiN" userLabel="cover charge container">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-1Q-QiN" userLabel="cover charge container">
                                                         <rect key="frame" x="8" y="252" width="234" height="99"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5r-8d-Vcd" userLabel="queue container">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5r-8d-Vcd" userLabel="queue container">
                                                         <rect key="frame" x="8" y="118" width="234" height="100"/>
                                                     </view>
                                                 </subviews>
@@ -954,7 +954,7 @@
                                                             <constraint firstAttribute="width" constant="1" id="hzc-s8-s17"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teb-Ue-QDP">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Teb-Ue-QDP">
                                                         <rect key="frame" x="35" y="158" width="1" height="94"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.37647058820000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
@@ -976,7 +976,7 @@
                                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bys-jS-BA2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bys-jS-BA2">
                                                         <rect key="frame" x="15" y="252" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="arB-IG-Ohg"/>
@@ -1016,7 +1016,7 @@
                                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ku9-u1-ado">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ku9-u1-ado">
                                                         <rect key="frame" x="35" y="292" width="1" height="171"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.37647058820000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>

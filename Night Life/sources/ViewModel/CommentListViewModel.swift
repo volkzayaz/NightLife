@@ -16,55 +16,175 @@ import ObjectMapper
 
 struct CommentedMessagesListViewModel {
     
-    let displayData: Driver<[MessageSection]>
+    var displayData: Variable<[CommentedMessageSection]> = Variable([])
     let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
     
     private let bag = DisposeBag()
 
-    //var sections : Variable<[SectionOfData]> = Variable([])
+//}.combineLatest { (arrayOfLikes : [(Int, Bool)]) -> [Int] in
+//    
+//    
+//    let array =  arrayOfLikes.filter { tuple in tuple.1 }
+//        .map { tuple in tuple.0 }
+//    
+//    guard !array.isEmpty else {
+//        
+//        self.sections.value = [MySection(header : "Favorite Albums", items : [])]
+//        return array
+//        
+//    }
+//    
+//    return array
+//    
+//    }
+//    .flatMap { (albumIdsToDisplay: [Int]) -> Observable<[Album]> in
+//        
+//        return InstaPhotoApiService().getAlboms()
+//            .map { (allAlbums: [Album]) -> [Album] in
+//                
+//                return allAlbums.filter { (album) -> Bool in
+//                    return albumIdsToDisplay.contains(album.id!)
+//                }
+//                
+//        }
+//        
+//}
 
-   
     init() {
         
-        Comment.storage
-            .map { (tuple : (Int, Variable<Comment>)) -> Observable<Comment>  in
-                return tuple.1.asObservable()
-            }
-            .combineLatest { $0 }
-            .flatMap { _ in
+        let arrayComMessId = Comment.storage
+            .map { (tuple : (Int, Variable<Comment>)) -> Observable <Int>  in
+                    return Observable.just(tuple.0)
+        }.combineLatest { $0 }
+        
+        
+        let arrayMessage = MessagesContext.messages.asObservable()
+        
+        
+        //let result = zip(arrayComMessId, arrayMessage)
+            
+        arrayComMessId.flatMap { _ in
+            
+            return arrayMessage
+            
+            }.map { (messages : [Message]) -> [ViewModelCell] in
                 
-                return Message.storage
-            }
-            .map { (messages : [Message]) -> [MessageSection] in
-                
-                let a : [Message] = messages.filter{ (message : Message) -> Comment in
+                let a : [Message] = messages.filter{ (message : Message) -> Bool in
                     
-                    return (Comment.storage[message.id].value)
+                    return true
                 }
                 
-                let b : [MessageSection] = a.map { (message : Message) -> ViewModelCell in
+                let b : [ViewModelCell] = a.map { (message : Message) -> ViewModelCell in
                     
-                    return ViewModelCell(album: album)
+                    return ViewModelCell(message: message)
                 }
                 
                 return b
-            }
-            
-            .map{ (cells : [MessageSection]) -> [SectionOfData] in
+            }.map { (cells : [ViewModelCell]) -> [CommentedMessageSection] in
                 
-                return [SectionOfData (header : "Commented messages", items : cells)]
+                return [CommentedMessageSection (header : "Favourite Albums", items : cells)]
                 
             }
-            .subscribeNext { (sections: [SectionOfData]) in
+            .subscribeNext { (sections: [CommentedMessageSection]) in
                 
-                self.sections.value = sections
+                self.displayData.value = sections
             }
             .addDisposableTo(bag)
         
-    }
-    
-}
+        
+        
+        
+        
+//            Comment.storage
+//                .map { (tuple : (Int, Variable<Comment>)) -> Observable<Comment>  in
+//                    return tuple.1.asObservable()
+//                }
+//                .combineLatest { $0 }
+//                .flatMap { _ in
+//                    
+//                     return Message.storage
+//                        .map { (tuple : (Int, Variable<Message>)) -> Observable <Message>  in
+//                            return tuple.1.asObservable()
+//                        }
+//                        .combineLatest { $0 }
+//                }
+//                .map { (messages : [Message]) -> [ViewModelCell] in
+//                    
+//                    let a : [Message] = messages.filter{ (message : Message) -> Bool in
+//                        
+//                        return (Comment.storage[message.id] == message.id)
+//                    }
+//                    
+//                    let b : [ViewModelCell] = a.map { (message : Message) -> ViewModelCell in
+//                        
+//                        return ViewModelCell(message: message)
+//                    }
+//                    
+//                    return b
+//                }
+//                
+//                .map{ (cells : [ViewModelCell]) -> [CommentedMessageSection] in
+//                    
+//                    return [CommentedMessageSection (header : "Favourite Albums", items : cells)]
+//                    
+//                }
+//                .subscribeNext { (sections: [CommentedMessageSection]) in
+//                    
+//                    self.displayData.value = sections
+//                }
+//                .addDisposableTo(bag)
+//            
+        
+        
+//        Comment.storage
+//            .map { (tuple : (Int, Variable<Comment>)) -> Observable<Comment>  in
+//                return tuple.1.asObservable()
+//            }
+//            .combineLatest { $0 }
+//            
+//            .flatMap { (comments : [Comment]) -> Observable<[Message]> in
+//                
+//                //return  MessagesContext.messages.asObservable()
+//                
+//                
+//            }
+//
+//          Message.storage
+//            .map { (tuple : (Int, Variable<Message>)) -> Observable<Message>  in
+//                    return tuple.1.asObservable()
+//            }
+//           //.combineLatest { $0 }
+//           .map { (messages : [Message]) -> [ViewModelCell] in
+//                
+//                let a : [Message] = messages.filter{ (message : Message) -> Bool in
+//                    
+//                    return (Comment.storage[message.id] == message.id)
+//                }
+//                
+//                let b : [ViewModelCell] = a.map { (message : Message) -> ViewModelCell in
+//                    
+//                    return ViewModelCell(message: message)
+//                }
+//                
+//                return b
+//            }
+//            
+//            .map { (cells : [ViewModelCell]) -> [CommentedMessageSection] in
+//                
+//                return [CommentedMessageSection (header : "Commented messages", items : cells)]
+//                
+//            }
+//            .subscribeNext { (sections: [CommentedMessageSection]) in
+//                
+//                self.displayData.value = sections
+//            }
+//            .addDisposableTo(bag)
+//        
+//    }
+//    
 
+}
+}
 
 extension CommentedMessagesListViewModel {
     
@@ -96,4 +216,3 @@ extension CommentedMessagesListViewModel {
     
 }
 
-    

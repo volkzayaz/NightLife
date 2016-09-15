@@ -156,15 +156,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="enter comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-xJ-JDF">
-                                <rect key="frame" x="20" y="341" width="280" height="99"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="ZKs-8U-ohi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="body" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="58H-Hc-0K5">
                                 <rect key="frame" x="20" y="74" width="280" height="239"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,15 +165,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mX2-fD-wOi">
-                                <rect key="frame" x="264" y="448" width="36" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="EAw-KH-Lfv"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="On">
-                                    <color key="titleColor" red="1" green="0.42614873180000001" blue="0.044590305779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mX-hb-KBC">
+                                <rect key="frame" x="20" y="486" width="280" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOz-ZZ-xw6">
+                                <rect key="frame" x="254" y="448" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="enter comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-xJ-JDF">
+                                <rect key="frame" x="20" y="341" width="280" height="99"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="ZKs-8U-ohi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -190,15 +191,14 @@
                             <constraint firstItem="58H-Hc-0K5" firstAttribute="leading" secondItem="IB4-xJ-JDF" secondAttribute="leading" id="7G3-cb-gJ9"/>
                             <constraint firstItem="58H-Hc-0K5" firstAttribute="centerX" secondItem="OgO-Aw-2FW" secondAttribute="centerX" id="9md-4F-29Q"/>
                             <constraint firstItem="IB4-xJ-JDF" firstAttribute="top" secondItem="58H-Hc-0K5" secondAttribute="bottom" constant="28" id="Edg-fZ-6gc"/>
-                            <constraint firstItem="mX2-fD-wOi" firstAttribute="trailing" secondItem="IB4-xJ-JDF" secondAttribute="trailing" id="QMA-tu-fgO"/>
                             <constraint firstItem="58H-Hc-0K5" firstAttribute="leading" secondItem="OgO-Aw-2FW" secondAttribute="leadingMargin" constant="4" id="jfq-nX-aY9"/>
-                            <constraint firstItem="mX2-fD-wOi" firstAttribute="top" secondItem="IB4-xJ-JDF" secondAttribute="bottom" constant="8" symbolic="YES" id="nFT-0a-NvD"/>
-                            <constraint firstItem="hsO-Bh-Cbd" firstAttribute="top" secondItem="mX2-fD-wOi" secondAttribute="bottom" constant="90" id="ncs-Fu-CIs"/>
                             <constraint firstItem="58H-Hc-0K5" firstAttribute="trailing" secondItem="IB4-xJ-JDF" secondAttribute="trailing" id="vag-YD-BT0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="saveComment" destination="mX2-fD-wOi" id="9bn-fY-xRX"/>
+                        <outlet property="commentEnteredText" destination="IB4-xJ-JDF" id="Cpx-5c-fCD"/>
+                        <outlet property="commentLabel" destination="5mX-hb-KBC" id="2Zo-DL-nBe"/>
+                        <outlet property="saveComment" destination="qOz-ZZ-xw6" id="Ucj-XX-6tQ"/>
                         <outlet property="textView" destination="58H-Hc-0K5" id="ta1-F8-CNS"/>
                     </connections>
                 </viewController>
@@ -208,7 +208,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="On" width="26" height="26"/>
         <image name="background" width="414" height="736"/>
     </resources>
 </document>

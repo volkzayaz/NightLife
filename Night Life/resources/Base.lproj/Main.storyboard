@@ -86,6 +86,14 @@
             </objects>
             <point key="canvasLocation" x="851.5" y="853"/>
         </scene>
+        <!--CommentedMessages-->
+        <scene sceneID="jbi-Tr-fON">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CommentedMessages" id="zVx-5S-r2u" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWp-4G-xtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862.5" y="932"/>
+        </scene>
         <!--Authorization View Controller-->
         <scene sceneID="0NJ-s4-g3Z">
             <objects>
@@ -698,6 +706,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="zVx-5S-r2u" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="lQb-ZY-rTw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

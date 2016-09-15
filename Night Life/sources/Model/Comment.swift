@@ -38,7 +38,7 @@ extension Comment : IdentifiableType, Equatable {
     typealias Identity = Int
     
     var identity: Int {
-        return id
+        return messageId
     }
     
 }

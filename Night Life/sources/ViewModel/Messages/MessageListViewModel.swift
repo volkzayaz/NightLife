@@ -40,12 +40,17 @@ class MessageListViewModel {
 extension MessageListViewModel {
     
     func selectedMessage(atIndexPath ip: NSIndexPath) {
+        
         let message = MessagesContext.messages.value[ip.row]
         let comment = Comment.entityByIdentifier(message.id)
      
-        
-        detailMessageViewModel.value = MessageViewModel(message: message, comment : comment!)
+        guard let a = comment else {
+        return detailMessageViewModel.value = MessageViewModel(message: message)
+        }
+        detailMessageViewModel.value = MessageViewModel(message: message, comment : a)
     }
+    
+    
     
     func deleteMessage(row: Int) {
         

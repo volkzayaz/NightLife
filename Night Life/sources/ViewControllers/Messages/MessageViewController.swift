@@ -14,39 +14,45 @@ class MessageViewController: UIViewController {
 
     var viewModel: MessageViewModel!
     
-    var viewModelComment : CommentViewModel!
+    var viewModelComment : CommentViewModel?
     
     private let bag = DisposeBag()
     
+    @IBOutlet weak var commentEnteredText: UITextView!
+    @IBOutlet weak var saveComment: UIButton!
+
+    @IBOutlet weak var commentLabel: UILabel!
+    
     @IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var saveComment: UIButton!
-    
-    @IBOutlet weak var commentTextField: UITextField!
-    
-    override func viewDidLoad() {
+       override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = viewModel.message.title
-        
+        viewModelComment = CommentViewModel(message: viewModel.message)
         textView.text = viewModel.message.body
         
-        guard viewModel.comment.body != "" else { return commentTextField.text = "No comments"}
+        if viewModelComment!.comment == nil {
+            commentLabel.text = "No comments"
+            
+        } else{
         
-        commentTextField.text = viewModel.comment.body
+        commentLabel.text = viewModelComment!.comment!.body
         
+        
+        }
+            
         saveComment.rx_tap.asObservable()
             
            .subscribe(onNext : {
         
-           self.commentTextField.resignFirstResponder()
+           self.viewModelComment!.createComment(self.viewModel.message, body: self.commentEnteredText.text )
             
-           guard self.commentTextField.text != "No comments" else {return}
+          // self.viewModelComment!.saveComment(self.viewModelComment!.comment!, message: self.viewModel.message)
             
-           self.viewModelComment.comment.body = self.commentTextField.text!
-                
-           self.viewModelComment.saveComment(self.viewModelComment.comment, message: self.viewModel.message)
- 
+           self.commentLabel.text = self.viewModelComment!.comment!.body
+            
+           self.commentEnteredText.text = "enter comment"
         
         }).addDisposableTo(bag)
         
@@ -64,6 +70,8 @@ class MessageViewController: UIViewController {
 //        self.navigationItem.rightBarButtonItem = b
 
     }
+    
+
     
     func mock() {}
 }

@@ -18,9 +18,10 @@ import RxDataSources
 class CommentedMessagesListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let viewModel = CommentedMessagesListViewModel()
     
-    private let dataSource = RxTableViewSectionedAnimatedDataSource<MessageSection>()
+    private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentedMessageSection>()
     
     private let bag = DisposeBag()
     
@@ -28,13 +29,13 @@ class CommentedMessagesListViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.displayData
-            .drive(tableView.rx_itemsWithDataSource(dataSource))
+            .asObservable().bindTo(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
         
         dataSource.configureCell = { (_, tv, ip, item) in
             
             let cell = tv.dequeueReusableCellWithIdentifier("message cell", forIndexPath: ip) as! MessageTableCell
-            cell.setMessage(item)
+            cell.setMessage(item.message)
             return cell
         }
         
@@ -69,28 +70,31 @@ class CommentedMessagesListViewController: UIViewController {
     }
 }
 
-struct MessageSection : AnimatableSectionModelType  {
+
+
+struct CommentedMessageSection {
     
-    typealias Item = Message
+    var header: String
+    var items: [Item]
+    
+    
+}
+
+
+extension CommentedMessageSection : AnimatableSectionModelType  {
+    
+    typealias Item = ViewModelCell
     typealias Identity = String
     
-    var items: [Item] {
-        return messageItems
-    }
     
     var identity : String {
         return ""
     }
     
-    init(original: MessageSection, items: [Item]) {
+    init(original: CommentedMessageSection, items: [Item]) {
         self = original
-        self.messageItems = items
+        self.items = items
     }
     
-    var messageItems: [Message]
-    
-    init(items: [Message]) {
-        self.messageItems = items
-    }
     
 }

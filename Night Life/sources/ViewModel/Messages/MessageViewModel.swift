@@ -14,7 +14,7 @@ import RxAlamofire
 struct MessageViewModel {
    
     var message : Message
-    var comment : Comment
+    var comment : Comment?
     
     private let bag = DisposeBag()
     
@@ -32,4 +32,20 @@ struct MessageViewModel {
                 .addDisposableTo(bag)
         }
     }
+    
+    init(message: Message) {
+        self.message = message
+        self.comment = nil
+        
+        if !message.isRead {
+            Alamofire.request(MessagesRouter.MarkRead(message: message))
+                .rx_responseJSON()
+                .subscribeNext { _ in
+                    self.message.isRead = true
+                    self.message.saveEntity()
+                }
+                .addDisposableTo(bag)
+        }
+    }
+
 }

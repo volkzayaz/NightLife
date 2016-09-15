@@ -331,6 +331,8 @@
 		84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */; };
 		84EDEFCF1CCA25FA00AC4BDE /* TodayDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */; };
 		946483791265AD06B33CA6A6 /* Pods_GlobBar_AdHoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */; };
+		C537BBC41D8A85360051EDBF /* ViewModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537BBC31D8A85360051EDBF /* ViewModelCell.swift */; };
+		C537BBC61D8AB3520051EDBF /* CommentedMessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */; };
 		C539C8D21D89518C00862E0D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D11D89518C00862E0D /* Comment.swift */; };
 		C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D31D895D6000862E0D /* ComentsManager.swift */; };
 		C539C8D71D896DC100862E0D /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D61D896DC100862E0D /* CommentViewModel.swift */; };
@@ -508,6 +510,8 @@
 		84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDayManager.swift; sourceTree = "<group>"; };
 		A1251E0C988A18BFB10572D9 /* Pods-GlobBar_AdHoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar_AdHoc.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar_AdHoc/Pods-GlobBar_AdHoc.release.xcconfig"; sourceTree = "<group>"; };
+		C537BBC31D8A85360051EDBF /* ViewModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelCell.swift; sourceTree = "<group>"; };
+		C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommentedMessages.storyboard; sourceTree = "<group>"; };
 		C539C8D11D89518C00862E0D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C539C8D31D895D6000862E0D /* ComentsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsManager.swift; sourceTree = "<group>"; };
 		C539C8D61D896DC100862E0D /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
@@ -719,6 +723,7 @@
 				842D30BC1C982450001B3AE2 /* MyPoints.storyboard */,
 				73F9E2C01CAD4227005758D1 /* Reusable.storyboard */,
 				843907471CB6979700C05D8B /* Messages.storyboard */,
+				C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -1331,6 +1336,7 @@
 			children = (
 				C539C8D61D896DC100862E0D /* CommentViewModel.swift */,
 				C539C8D81D89810400862E0D /* CommentListViewModel.swift */,
+				C537BBC31D8A85360051EDBF /* ViewModelCell.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1441,6 +1447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C537BBC61D8AB3520051EDBF /* CommentedMessages.storyboard in Resources */,
 				73FD52C11D885594008CB4BE /* OFL.txt in Resources */,
 				73FD52E11D885594008CB4BE /* Raleway-SemiBold.ttf in Resources */,
 				73FD52D31D885594008CB4BE /* Raleway-Light-Italic.ttf in Resources */,
@@ -1757,6 +1764,7 @@
 				73EF22201C9C594F005A6D6D /* ReportDetailsViewModel.swift in Sources */,
 				733E368E1C74D6520099BA9A /* SurvayScrollView.swift in Sources */,
 				73EF221C1C9C594F005A6D6D /* CreateReportViewModel.swift in Sources */,
+				C537BBC41D8A85360051EDBF /* ViewModelCell.swift in Sources */,
 				73205E651C89C5160057B089 /* MediaDetailsViewController.swift in Sources */,
 				73EF22231C9C594F005A6D6D /* ClubListViewModel.swift in Sources */,
 				738F8AAB1C9866E40062E916 /* MainAppController.swift in Sources */,

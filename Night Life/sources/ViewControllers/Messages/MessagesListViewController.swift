@@ -55,7 +55,7 @@ class MessagesListViewController: UIViewController {
         
         tableView.rx_itemSelected
             .subscribeNext{[unowned self] ip in
-              self.viewModel.selectedMessage(atIndexPath: ip)
+            self.viewModel.selectedMessage(atIndexPath: ip)
         }
         .addDisposableTo(bag)
     }
