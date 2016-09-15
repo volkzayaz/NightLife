@@ -47,9 +47,7 @@ class MessageViewController: UIViewController {
            .subscribe(onNext : {
         
            self.viewModelComment!.createComment(self.viewModel.message, body: self.commentEnteredText.text )
-            
-          // self.viewModelComment!.saveComment(self.viewModelComment!.comment!, message: self.viewModel.message)
-            
+                   
            self.commentLabel.text = self.viewModelComment!.comment!.body
             
            self.commentEnteredText.text = "enter comment"
