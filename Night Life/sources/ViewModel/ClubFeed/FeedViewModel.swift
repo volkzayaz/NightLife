@@ -44,6 +44,8 @@ class FeedViewModel {
         let trigger = pageTrigger.asObservable().filter { $0 != nil }.map { $0! }
         let dp = dataProvider.asObservable().filter { $0 != nil }.map { $0! }
         
+        
+        
         Observable.combineLatest(trigger, dp) { ($0, $1) }
             .flatMapLatest{ [unowned self] (trigger, dp) -> Observable<[FeedDataItem]> in
         

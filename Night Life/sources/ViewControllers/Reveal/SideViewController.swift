@@ -174,18 +174,26 @@ class SideViewController : UITableViewController {
             
         case "following segue":
             let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! UserListViewController
-            
+
             controller.viewModel = UsersListViewModel(mode: .Following)
             
         case "followers segue":
             let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! UserListViewController
-            
+
             controller.viewModel = UsersListViewModel(mode: .Follower)
         
         case "current user profile":
             let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! UserProfileViewController
-            
+
             controller.viewModel = UserProfileViewModel(userDescriptor: User.currentUser()!)
+            
+        case "favorite report":
+            
+            let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! CityFeedViewController
+            
+            controller.viewModel.feedViewModel = controller.viewModel.likeFeedViewModel
+            
+            print("Hi!!!!!!!!!!!!!!!!")
             
         default: break
 

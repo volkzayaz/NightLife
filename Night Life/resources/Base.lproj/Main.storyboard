@@ -704,7 +704,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.086274509803921567" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="30R-vn-P26" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Hab-Ga-9BF"/>
+                                            <segue destination="30R-vn-P26" kind="custom" identifier="favorite report" customClass="SWRevealViewControllerSeguePushController" id="Hab-Ga-9BF"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -785,7 +785,7 @@
         <image name="thumb_up" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hab-Ga-9BF"/>
         <segue reference="kWw-ZK-Tw5"/>
+        <segue reference="Hab-Ga-9BF"/>
     </inferredMetricsTieBreakers>
 </document>

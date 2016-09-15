@@ -437,7 +437,7 @@
 		73EF22131C9C594F005A6D6D /* ClubListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListViewModel.swift; sourceTree = "<group>"; };
 		73EF22141C9C594F005A6D6D /* LikedClubsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedClubsListViewModel.swift; sourceTree = "<group>"; };
 		73EF22161C9C594F005A6D6D /* MyPointsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointsViewModel.swift; sourceTree = "<group>"; };
-		73EF22171C9C594F005A6D6D /* PaginatingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatingViewModel.swift; sourceTree = "<group>"; };
+		73EF22171C9C594F005A6D6D /* PaginatingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatingViewModel.swift; path = ../ViewModel/PaginatingViewModel.swift; sourceTree = "<group>"; };
 		73EF22191C9C594F005A6D6D /* SideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewModel.swift; sourceTree = "<group>"; };
 		73EF22281C9C5A72005A6D6D /* CityFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityFeedDataProvider.swift; sourceTree = "<group>"; };
 		73F70D021CA18A73005C6CB1 /* RelationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationRouter.swift; sourceTree = "<group>"; };
@@ -895,6 +895,7 @@
 			isa = PBXGroup;
 			children = (
 				84B2022C1CCE4FFD00029EB6 /* String+AES.swift */,
+				73EF22171C9C594F005A6D6D /* PaginatingViewModel.swift */,
 				73069CD61CB7FDFA0040D599 /* ThumbnailGenerator */,
 				734942321CAA8CC100CAD19A /* NotificationManager */,
 				731A02961C92E2A600540333 /* Contexts */,
@@ -1073,7 +1074,6 @@
 				73EF22071C9C594F005A6D6D /* ClubFeed */,
 				73EF22111C9C594F005A6D6D /* ClubList */,
 				73EF22151C9C594F005A6D6D /* my points */,
-				73EF22171C9C594F005A6D6D /* PaginatingViewModel.swift */,
 				73EF22181C9C594F005A6D6D /* Reveal */,
 			);
 			path = ViewModel;

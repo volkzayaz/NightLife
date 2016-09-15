@@ -54,6 +54,7 @@ extension CityFeedDataProvider : FeedDataProvider {
                     }
                 }
                 
+                
                 return clubsJSON.map { FeedDataItem(feedItemJSON: $0)! }
         }
         

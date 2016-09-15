@@ -58,12 +58,13 @@ enum FeedDataItem {
         
         switch type {
         case 0:
+
             let mapper = Mapper<Report>()
             guard let report = mapper.map(feedItemJSON) else {
                 assert(false, "Error parsing report object")
                 return nil
             }
-            
+
             if let user = postOwner { report.postOwnerId = user.id }
             
             self = .ReportType(report: report)

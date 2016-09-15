@@ -12,7 +12,9 @@ import RxCocoa
 
 class CityFeedViewModel {
     
-    let feedViewModel: FeedViewModel = FeedViewModel()
+    var feedViewModel: FeedViewModel = FeedViewModel()
+    
+    var likeFeedViewModel : FeedViewModel = FeedViewModel()
     
     let disposeBag = DisposeBag()
     

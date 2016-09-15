@@ -11,7 +11,6 @@ import RxSwift
 
 class LikeManager {
     
-    
     static var arrayOfLikes : Variable<[Int]> = Variable([])
     
     static func appendLikeDislike(reportId : Int, valueOfSwitch : Bool){
@@ -26,6 +25,9 @@ class LikeManager {
             return
         }
         
-        arrayOfLikes.value.append(reportId)
+        guard arrayOfLikes.value.contains(reportId) else {
+            arrayOfLikes.value.append(reportId)
+            return
+        }
     }
 }
