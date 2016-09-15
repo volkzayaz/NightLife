@@ -76,8 +76,7 @@ struct CommentedMessageSection {
     
     var header: String
     var items: [Item]
-    
-    
+        
 }
 
 
