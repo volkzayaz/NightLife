@@ -84,7 +84,7 @@
                 <viewControllerPlaceholder storyboardName="ClubFeed" referencedIdentifier="city venues segue" id="30R-vn-P26" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYS-Nn-5Nq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851.5" y="880"/>
+            <point key="canvasLocation" x="851.5" y="856"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="0NJ-s4-g3Z">
@@ -703,9 +703,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.086274509803921567" alpha="0.0" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="30R-vn-P26" kind="custom" identifier="favorite report" customClass="SWRevealViewControllerSeguePushController" id="Hab-Ga-9BF"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -727,7 +724,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g14-Um-52r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="702"/>
+            <point key="canvasLocation" x="413" y="692"/>
         </scene>
         <!--MyPoints-->
         <scene sceneID="XPJ-i6-i6y">
@@ -786,6 +783,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kWw-ZK-Tw5"/>
-        <segue reference="Hab-Ga-9BF"/>
     </inferredMetricsTieBreakers>
 </document>

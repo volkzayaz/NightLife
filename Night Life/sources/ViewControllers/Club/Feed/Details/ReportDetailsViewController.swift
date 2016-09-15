@@ -31,6 +31,12 @@ class ReportDetailsViewController: UIViewController {
     @IBOutlet weak var clubAdressLabel: UILabel!
     @IBOutlet weak var likeDislike: UISwitch!
     
+    @IBAction func setValueOfSwitch(sender: UISwitch) {
+        
+        viewModel.changeValueOfSwitch(sender.on)
+        
+    }
+    
     private var tableViewGradientLayer = UIConfiguration.gradientLayer(UIColor(fromHex:0x303030), to: UIColor(fromHex:0x0f0f0f))
     
     override func loadView() {
@@ -82,19 +88,11 @@ class ReportDetailsViewController: UIViewController {
         
         dateLabel.text = UIConfiguration.stringFromDate((viewModel.report.createdDate)!)
         
-        LikeManager.arrayOfLikes.asObservable()
-            .subscribeNext{[weak self](ids : [Int]) in
-                
-                self?.likeDislike.setOn(ids.contains(self!.viewModel.report.id), animated: false)
-                
-            }.addDisposableTo(disposeBag)
-        
-        self.likeDislike.rx_value.asObservable()
-            .subscribeNext{[weak self](value : Bool) in
-                
-                LikeManager.appendLikeDislike(self!.viewModel.report.id, valueOfSwitch: value)
+        self.viewModel.likeObservable
+            .subscribeNext { [weak self](value) in
+                self?.likeDislike.setOn(value, animated: false)
+        }.addDisposableTo(disposeBag)
 
-            }.addDisposableTo(disposeBag)
     }
 
     override func viewDidLayoutSubviews() {

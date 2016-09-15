@@ -399,6 +399,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-jg-U4E">
                                 <rect key="frame" x="53" y="527" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setValueOfSwitch:" destination="phh-Gf-pIT" eventType="valueChanged" id="Up8-jI-Kfd"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -189,9 +189,9 @@ class SideViewController : UITableViewController {
             
         case "favorite report":
             
-            let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! CityFeedViewController
+            let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! FeedCollectionViewController
             
-            controller.viewModel.feedViewModel = controller.viewModel.likeFeedViewModel
+            //controller.viewModel.feedViewModel = controller.viewModel.likeFeedViewModel
             
             print("Hi!!!!!!!!!!!!!!!!")
             

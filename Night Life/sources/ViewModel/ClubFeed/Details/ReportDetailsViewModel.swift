@@ -16,11 +16,12 @@ struct ReportDetailsViewModel {
     let club: Club
     let report: Report
     
-    let dataSource : [ReportData]
+    var likeObservable : Observable<Bool> {
+
+        return Observable.just(LikeManager.containsReport(report))
+    }
     
-    /*var likeObservable : Variable<Bool> {
-        return Variable(LikeManager.arrayOfLikes.value.contains(report.id))
-    }*/
+    let dataSource : [ReportData]
     
     init(club:Club, report: Report) {
         self.club = club
@@ -41,6 +42,12 @@ struct ReportDetailsViewModel {
         return namedItems
             .filter { $0.1 != nil }
             .map{ ( $0.1!.iconName(), $0.0, $0.1!.description) }
+        
+    }
+    
+    func changeValueOfSwitch(value : Bool) {
+        
+        LikeManager.appendLikeDislike(report, valueOfSwitch: value)
         
     }
 }
