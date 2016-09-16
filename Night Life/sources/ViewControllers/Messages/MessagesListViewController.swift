@@ -65,6 +65,7 @@ class MessagesListViewController: UIViewController {
             let controller = segue.destinationViewController as! MessageViewController
             
             controller.viewModel = viewModel.detailMessageViewModel.value
+            //controller.commentViewModel =
         }
     }
 }

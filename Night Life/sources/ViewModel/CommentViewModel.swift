@@ -6,42 +6,60 @@
 //  Copyright © 2016 com.NightLife. All rights reserved.
 //
 import RxSwift
-
+import RxCocoa
 import Alamofire
 import RxAlamofire
 
 struct CommentViewModel {
     
-    
-    var comment : Comment?
+    var displayData: Driver<[CommentSection]>?
+    var comments : Variable<[Comment]>?
     var message : Message
+    //var comment : Comment
+   
     private let bag = DisposeBag()
     
     init (message : Message) {
     
         self.message = message
-        self.comment = Comment.entityByIdentifier(message.id)
         
+//        InMemoryStorageArray.recieveCommentsByMessage(message.id).asObservable()
+//            .subscribeNext { (comments : [Comment]) in
+//                
+//            self.comments!.value = comments
+//                
+//        }.addDisposableTo(bag)
+//
+//        guard self.comments != nil else {
+//            displayData = nil
+//            return }
+        print("CommentViewModel init")
+        displayData = InMemoryStorageArray.recieveCommentsByMessage(message.id).asDriver()
+            .map {[CommentSection(items: $0 ) ]}
+     
     }
 
     
-    mutating func createComment(message : Message, body : String) -> Comment {
-        if body.characters.count > 1 {
-        var comment = Comment(messageId: message.id)
-        comment.body = body
-        self.comment = comment
-        comment.saveEntity()    
+    func createComment(body : String) {
+        
+        InMemoryStorageArray.saveComment(message.id, body : body)
+        
+    }
+    
+
+
+        
+        
+    func deleteComment(row: Int) {
+        
+        
+//            let message = MessagesContext.messages.value[row]
+//            InMemoryStorageArray.storage[message.id]?.value[]
+        
         }
-        return comment!
-    }
-    
-    func saveComment (comment : Comment, message : Message) {
         
-         comment.saveEntity()
-    }
-    
-
 }
+
     
     
 

@@ -18,19 +18,7 @@ class CityContext {
     
 }
 
-//
-//class CommentsContext {
-//
-//
-//  static let comments : Variable<[Comment]> = Variable([])
-//
-//  static func refreshComments() -> Disposable {
-//
-// 
-//    
-//    
-//    }
-//}
+
 
 class MessagesContext {
     

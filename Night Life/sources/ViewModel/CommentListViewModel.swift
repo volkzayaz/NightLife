@@ -33,7 +33,7 @@ struct CommentedMessagesListViewModel {
                             $0.observableEntity()?.asObservable()
                         }
                         .combineLatest { commentedMessages in
-                            let commentedMessages : [Message] = commentedMessages.filter { Comment.storage[$0.id] != nil }
+                            let commentedMessages : [Message] = commentedMessages.filter { InMemoryStorageArray.storage[$0.id] != nil }
                             return commentedMessages
                         }
             }
@@ -65,13 +65,13 @@ extension CommentedMessagesListViewModel {
     
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         let message = MessagesContext.messages.value[ip.row]
-        let comment = Comment.entityByIdentifier(message.id)
+        let comments : [Comment]? = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
         
-        guard let a = comment else {
+        guard let a = comments else {
             
             return detailMessageViewModel.value = MessageViewModel(message: message)
         }
-        detailMessageViewModel.value = MessageViewModel(message: message, comment : a)
+        detailMessageViewModel.value = MessageViewModel(message: message, comments : a)
       
         
     }
@@ -79,10 +79,10 @@ extension CommentedMessagesListViewModel {
     func deleteMessage(row: Int) {
         
         let message = MessagesContext.messages.value[row]
-        let comment = Comment.entityByIdentifier(message.id)
         
         message.removeFromStorage()
-        comment!.removeFromStorage()
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)
+        
         
         
         MessagesContext.messages.value.removeAtIndex(row)

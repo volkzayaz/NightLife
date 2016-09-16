@@ -23,6 +23,7 @@ class MessageListViewModel {
     
     let displayData: Driver<[MessageSection]>
     let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
+   
     
     private let bag = DisposeBag()
     
@@ -42,12 +43,12 @@ extension MessageListViewModel {
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         
         let message = MessagesContext.messages.value[ip.row]
-        let comment = Comment.entityByIdentifier(message.id)
+        let comments : [Comment]? = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
      
-        guard let a = comment else {
+        guard let a = comments else {
             return detailMessageViewModel.value = MessageViewModel(message: message)
         }
-        detailMessageViewModel.value = MessageViewModel(message: message, comment : a)
+        detailMessageViewModel.value = MessageViewModel(message: message, comments : a)
     }
     
     
@@ -55,11 +56,9 @@ extension MessageListViewModel {
     func deleteMessage(row: Int) {
         
         let message = MessagesContext.messages.value[row]
-        let comment = Comment.entityByIdentifier(message.id)
         
         message.removeFromStorage()
-        comment!.removeFromStorage()
-        
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)        
         
         MessagesContext.messages.value.removeAtIndex(row)
         

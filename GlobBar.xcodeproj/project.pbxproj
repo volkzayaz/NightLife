@@ -337,6 +337,8 @@
 		C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D31D895D6000862E0D /* ComentsManager.swift */; };
 		C539C8D71D896DC100862E0D /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D61D896DC100862E0D /* CommentViewModel.swift */; };
 		C539C8D91D89810400862E0D /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D81D89810400862E0D /* CommentListViewModel.swift */; };
+		C558A82B1D8BD4D10013C5CE /* InMemoryStorageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */; };
+		C558A82E1D8BED780013C5CE /* CommentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558A82D1D8BED780013C5CE /* CommentTableCell.swift */; };
 		C5F3CD301D89B3A60037EBF4 /* CommentedMessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -516,6 +518,8 @@
 		C539C8D31D895D6000862E0D /* ComentsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsManager.swift; sourceTree = "<group>"; };
 		C539C8D61D896DC100862E0D /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		C539C8D81D89810400862E0D /* CommentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
+		C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryStorageArray.swift; sourceTree = "<group>"; };
+		C558A82D1D8BED780013C5CE /* CommentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableCell.swift; sourceTree = "<group>"; };
 		C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessagesListViewController.swift; sourceTree = "<group>"; };
 		DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar_AdHoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -601,6 +605,7 @@
 				73EF21FE1C9C4A06005A6D6D /* ClubsManager.swift */,
 				7362A9E11CB510AE00428350 /* InMemmoryStore.swift */,
 				C539C8D31D895D6000862E0D /* ComentsManager.swift */,
+				C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -825,6 +830,7 @@
 		733E367D1C74880E0099BA9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C558A82C1D8BED600013C5CE /* Comments */,
 				8492A9F01CB6CDF600D8C70A /* Message */,
 				73B6AE891CA1660000411EB1 /* User */,
 				736E30161C919CE400F51896 /* GeoWarning */,
@@ -1341,6 +1347,14 @@
 			name = Comments;
 			sourceTree = "<group>";
 		};
+		C558A82C1D8BED600013C5CE /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				C558A82D1D8BED780013C5CE /* CommentTableCell.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 		C5F3CD2E1D89B3800037EBF4 /* Comments */ = {
 			isa = PBXGroup;
 			children = (
@@ -1786,12 +1800,14 @@
 				73EF22261C9C594F005A6D6D /* PaginatingViewModel.swift in Sources */,
 				8439074F1CB69FE000C05D8B /* Message.swift in Sources */,
 				738AA0231C73346B00379C75 /* InstagramAuthenticator.swift in Sources */,
+				C558A82E1D8BED780013C5CE /* CommentTableCell.swift in Sources */,
 				73EF22211C9C594F005A6D6D /* FeedViewModel.swift in Sources */,
 				734FEF711C9840D7000B894A /* ClubsListViewController.swift in Sources */,
 				73633E631CD3A6DC009673B2 /* TermsAndConditionsController.swift in Sources */,
 				735240421C7226BA00A5FE23 /* Club.swift in Sources */,
 				7323E4681C873F3800F397BC /* ClubFeedDataProvider.swift in Sources */,
 				73C3F6D81C971BF1005365E3 /* CheckinContext.swift in Sources */,
+				C558A82B1D8BD4D10013C5CE /* InMemoryStorageArray.swift in Sources */,
 				7323E4891C886F1700F397BC /* GradientBar.swift in Sources */,
 				730FF0461C7B561D00403C57 /* UIColor+hex.swift in Sources */,
 				73B12E5D1CC8DF8B00F6F6F6 /* UserProfileFollowingViewModel.swift in Sources */,

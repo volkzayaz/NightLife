@@ -9,44 +9,46 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class MessageViewController: UIViewController {
 
     var viewModel: MessageViewModel!
-    var viewModelComment : CommentViewModel?
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var commentViewModel : CommentViewModel?
+
     private let bag = DisposeBag()
+    private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentSection>()
     
     @IBOutlet weak var commentEnteredText: UITextView!
     @IBOutlet weak var saveComment: UIButton!
-    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
-    
-    @IBOutlet weak var createdLabel: UILabel!
+ 
        override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.delegate = nil
+        self.tableView.dataSource = nil
+               
         self.title = viewModel.message.title
-        viewModelComment = CommentViewModel(message: viewModel.message)
+        commentViewModel = CommentViewModel(message: viewModel.message)
         textView.text = viewModel.message.body
-        
-        if viewModelComment!.comment == nil {
-            commentLabel.text = "No comments"
-            
-        } else {
-        
-        commentLabel.text = viewModelComment!.comment!.body
-        
-        }
-            
+                
         saveComment.rx_tap.asObservable()
             
-           .subscribe(onNext : { [unowned self] in
+            .subscribe(onNext : { [unowned self] in
+                
+                self.commentViewModel!.createComment(self.commentEnteredText.text )
+                
+                self.commentEnteredText.text = "enter comment"
+                
+                self.tableView.reloadData()
+                self.loadDataSource ()
+                
+                }).addDisposableTo(bag)
         
-           self.viewModelComment!.createComment(self.viewModel.message, body: self.commentEnteredText.text )
-           self.commentLabel.text = self.viewModelComment!.comment!.body
-           self.commentEnteredText.text = "enter comment"
-        
-        }).addDisposableTo(bag)
         
         
         //= viewModelComment.comment.body
@@ -63,7 +65,78 @@ class MessageViewController: UIViewController {
 
     }
     
+    
+    func loadDataSource () {
+    
+    
+        guard commentViewModel!.displayData != nil else { return }
+        
+        commentViewModel!.displayData!
+            .drive(tableView.rx_itemsWithDataSource(dataSource))
+            .addDisposableTo(bag)
+        
+        dataSource.configureCell = { (_, tv, ip, item) in
+            
+            let cell = tv.dequeueReusableCellWithIdentifier("comment cell", forIndexPath: ip) as! CommentTableCell
+            cell.setComment(item)
+            return cell
+        }
+        
+        dataSource.canEditRowAtIndexPath = { _ in true }
+        
+        tableView.rx_itemDeleted
+            .subscribeNext{[unowned self] value in
+                self.commentViewModel!.deleteComment(value.row)
+            }
+            .addDisposableTo(bag)
+        
+        
+
+    
+    
+    }
 
     
     func mock() {}
 }
+
+
+
+struct CommentSection {
+    
+    //var header: String
+    var commentItems: [Comment]
+    
+    
+}
+
+
+extension CommentSection : AnimatableSectionModelType  {
+    
+    typealias Item = Comment
+    typealias Identity = String
+    
+    var items: [Item] {
+        return commentItems
+    }
+   
+    var identity : String {
+        return ""
+    }
+    
+    init(original: CommentSection, items: [Item]) {
+        self = original
+        self.commentItems = items
+    }
+    
+    
+    init(items: [Comment]) {
+        self.commentItems = items
+    }
+    
+}
+
+
+
+
+

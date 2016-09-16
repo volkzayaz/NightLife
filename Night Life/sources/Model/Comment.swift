@@ -10,26 +10,29 @@ import Foundation
 import ObjectMapper
 import RxDataSources
 
-struct Comment : Storable {
+struct Comment  {
     
     private(set) var id : Int = 0
     
+    var key: Int { return messageId }
+
     var messageId : Int = 0
     
-    var identifier: Int { return messageId }
+    var identifier: Int { return id }
     
     //var title : String = ""
     var body : String = ""
     
     //var created: NSDate? //ISO8601DateTransform())
     
- 
-    init( messageId : Int )  {
+    var created: String?
+    
+    init(messageId : Int, body : String, created : String )  {
     
         self.messageId = messageId
-        
-    
-    
+        self.body = body
+        self.created = created
+        self.id = Int(arc4random_uniform(200)) //TODO Int.max
     }
   
 }
@@ -38,7 +41,7 @@ extension Comment : IdentifiableType, Equatable {
     typealias Identity = Int
     
     var identity: Int {
-        return messageId
+        return id
     }
     
 }

@@ -14,13 +14,13 @@ import RxAlamofire
 struct MessageViewModel {
    
     var message : Message
-    var comment : Comment?
+    var comments : [Comment]?
     
     private let bag = DisposeBag()
     
-    init(message: Message, comment : Comment) {
+    init(message: Message, comments : [Comment]) {
         self.message = message
-        self.comment = comment
+        self.comments = comments
         
         if !message.isRead {
             Alamofire.request(MessagesRouter.MarkRead(message: message))
@@ -35,7 +35,7 @@ struct MessageViewModel {
     
     init(message: Message) {
         self.message = message
-        self.comment = nil
+        self.comments = nil
         
         if !message.isRead {
             Alamofire.request(MessagesRouter.MarkRead(message: message))

@@ -175,11 +175,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pch-3Q-hAK">
-                                <rect key="frame" x="20" y="486" width="280" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="uci-BJ-pE7"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pch-3Q-hAK">
+                                <rect key="frame" x="20" y="486" width="214" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -191,21 +188,23 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="On"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAo-fh-bLV">
+                                <rect key="frame" x="258" y="486" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vsc-6f-SeR" firstAttribute="top" secondItem="ShC-O5-iHn" secondAttribute="bottom" constant="10" id="5Wi-oO-BHj"/>
                             <constraint firstItem="vsc-6f-SeR" firstAttribute="leading" secondItem="QLH-Kz-rjc" secondAttribute="leadingMargin" constant="4" id="9xn-Ui-gbl"/>
                             <constraint firstItem="NM2-l5-qR5" firstAttribute="top" secondItem="E8s-0x-j7P" secondAttribute="bottom" constant="9" id="BqZ-hv-2Nn"/>
-                            <constraint firstItem="E8s-0x-j7P" firstAttribute="leading" secondItem="pch-3Q-hAK" secondAttribute="leading" id="GBI-kG-Un4"/>
                             <constraint firstItem="E8s-0x-j7P" firstAttribute="trailing" secondItem="NM2-l5-qR5" secondAttribute="trailing" id="c2q-q3-8AB"/>
                             <constraint firstItem="E8s-0x-j7P" firstAttribute="top" secondItem="vsc-6f-SeR" secondAttribute="bottom" constant="60" id="e2G-4d-z0h"/>
                             <constraint firstItem="E8s-0x-j7P" firstAttribute="trailing" secondItem="vsc-6f-SeR" secondAttribute="trailing" id="fOq-Ze-h8a"/>
                             <constraint firstItem="E8s-0x-j7P" firstAttribute="leading" secondItem="vsc-6f-SeR" secondAttribute="leading" id="ioj-Sd-hIu"/>
                             <constraint firstItem="vsc-6f-SeR" firstAttribute="centerX" secondItem="QLH-Kz-rjc" secondAttribute="centerX" id="miB-QL-iWv"/>
-                            <constraint firstItem="pch-3Q-hAK" firstAttribute="top" secondItem="NM2-l5-qR5" secondAttribute="bottom" constant="11" id="tA5-Q1-519"/>
-                            <constraint firstItem="pch-3Q-hAK" firstAttribute="trailing" secondItem="NM2-l5-qR5" secondAttribute="trailing" id="uUZ-ce-M1W"/>
-                            <constraint firstItem="xZw-uK-b1f" firstAttribute="top" secondItem="pch-3Q-hAK" secondAttribute="bottom" constant="35" id="znF-Ly-hnE"/>
                         </constraints>
                     </view>
                     <connections>
