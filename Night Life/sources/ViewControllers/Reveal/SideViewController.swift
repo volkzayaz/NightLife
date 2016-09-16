@@ -192,10 +192,8 @@ class SideViewController : UITableViewController {
             let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! FeedCollectionViewController
             
             controller.viewModel = FeedViewModel()
-            
-            controller.viewModel.dataProvider.value = LikeProvider()
 
-            print(identifier)
+            controller.viewModel.dataProvider.value = LikeProvider()
             
         default: break
 

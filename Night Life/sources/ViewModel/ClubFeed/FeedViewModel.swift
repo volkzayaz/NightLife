@@ -53,7 +53,7 @@ class FeedViewModel {
                 ///retreiving observable from paginatingViewModel
                 let paginatedFeed = PaginatingViewModel(dataProvider: FeedDataProviderTrampoline(dp))
                     .load(nextPageTrigger: trigger)
-
+                
                 ///on dataSource changing we must clear stored addedFeedDataItem
                 ///not the best solution to do this manually though
                 self.addedFeedDataItem.value = nil
