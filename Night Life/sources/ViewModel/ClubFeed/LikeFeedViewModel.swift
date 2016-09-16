@@ -10,10 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol LikeFeedDataProvider {
-    func loadBatch(batch: Batch) -> Observable<[FeedDataItem]>
-}
-
 class LikeFeedViewModel {
     
     ///describes next screen transition
@@ -27,21 +23,7 @@ class LikeFeedViewModel {
         return displayData.asDriver()
     }
     
-    ///these are inputs for LikeFeedViewModel
-    ///changing of any of them causes reload for displayData
-    ///make sure to set some values or feed will remain empty
-    let pageTrigger: Variable<Observable<Void>?> = Variable(nil)
-    let dataProvider: Variable<LikeFeedDataProvider?> = Variable(nil)
-    
-    ///items that are to be inserted to the head of items sequence
-    ///can be altered with insertFeedItemAtBegining: method
-    private let addedFeedDataItem : Variable<FeedDataItem?> = Variable(nil)
-    
-    private let removedFeedDataItem : Variable<FeedDataItem?> = Variable(nil)
-    
     init() {
-        
-        
         
         LikeManager.arrayOfLikes.asObservable()
             .map{ (reports : [Report]) -> [FeedDataItem] in

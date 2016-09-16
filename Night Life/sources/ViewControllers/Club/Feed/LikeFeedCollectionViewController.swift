@@ -54,25 +54,11 @@ class LikeFeedCollectionViewController : UICollectionViewController {
         collectionView?.delegate = nil
         collectionView?.dataSource = nil
         
-        ///pagination trigger
-        viewModel.pageTrigger.value = collectionView!
-            .rx_contentOffset
-            .map{ [weak c = self.collectionView] offset -> (CGFloat, UICollectionView?) in
-                return (offset.y, c)
-            }
-            .flatMapLatest { args -> Observable<Void> in
-                
-                guard let collectionView = args.1 else { return Observable.empty() }
-                
-                let offset = args.0
-                let shouldTriger = offset + collectionView.frame.size.height + 70 > collectionView.collectionViewLayout.collectionViewContentSize().height
-                return shouldTriger ? Observable.just() : Observable.empty()
-        }
-        
         ///cell factory
         dataSource.cellFactory = { (_, cv, ip, item) in
             
             switch item {
+                
             case .MediaType(let mediaContext):
                 let cell = cv.dequeueReusableCellWithReuseIdentifier("media cell", forIndexPath: ip) as! ReviewMediaCollectionCell
                 
