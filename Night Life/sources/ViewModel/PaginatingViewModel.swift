@@ -46,7 +46,11 @@ extension PaginatingViewModel {
         dataProvider: S,
         nextPageTrigger: Observable<Void>) -> Observable<[S.DataType]> {
         
-        return dataProvider.loadBatch(Batch(offset: loadedSoFar.count, limit: 10))
+        return Observable.just(0)
+            .subscribeOn(OperationQueueScheduler(operationQueue: NSOperationQueue()))
+            .flatMap { _ in
+                dataProvider.loadBatch(Batch(offset: loadedSoFar.count, limit: 10))
+            }
             .flatMap { loadedNew -> Observable<[S.DataType]> in
                 
                 guard loadedNew.count > 0 else {
