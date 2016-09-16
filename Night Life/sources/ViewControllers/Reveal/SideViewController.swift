@@ -193,12 +193,8 @@ class SideViewController : UITableViewController {
             
             controller.viewModel = FeedViewModel()
             
-            LikeManager.arrayOfLikes.asObservable()
-                .subscribeNext { (reports : [Report]) in
-                    controller.viewModel.displayData.value = LikeManager.changer()
-                }.addDisposableTo(bag)
+            controller.viewModel.dataProvider = LikeProvider()
 
-            
             print(identifier)
             
         default: break

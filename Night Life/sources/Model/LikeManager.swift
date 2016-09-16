@@ -11,36 +11,44 @@ import RxSwift
 
 class LikeManager {
     
-    static var arrayOfLikes : Variable<[Report]> = Variable([])
+    static var arrayOfLikes : [Report] = []
     
     static func appendLikeDislike(report : Report, valueOfSwitch : Bool){
         
         guard valueOfSwitch else {
             
-            arrayOfLikes.value = arrayOfLikes.value
+            arrayOfLikes = arrayOfLikes
                 .filter{ (value) -> Bool in
                 value.id != report.id
             }
             
-            print(arrayOfLikes.value)
+            print(arrayOfLikes)
             
             return
         }
 
-        arrayOfLikes.value.append(report)
-        print(arrayOfLikes.value)
+        arrayOfLikes.append(report)
+        print(arrayOfLikes)
 
     }
     
     static func containsReport (report : Report) -> Bool {
-        return arrayOfLikes.value.contains({ $0.id == report.id })
+        return arrayOfLikes.contains({ $0.id == report.id })
     }
     
     static func changer() -> [FeedDataItem] {
-        return arrayOfLikes.value.map({ (report) -> FeedDataItem in
-            print(FeedDataItem.ReportType(report: report))
+        return arrayOfLikes.map({ (report) -> FeedDataItem in
             return .ReportType(report: report)
         })
+    }
+    
+}
+
+struct LikeProvider :  FeedDataProvider {
+    
+    func loadBatch(batch: Batch) -> Observable<[FeedDataItem]>{
+        print("Hi!!!")
+        return Observable.just(LikeManager.changer())
     }
     
 }

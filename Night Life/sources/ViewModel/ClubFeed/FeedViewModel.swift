@@ -22,7 +22,7 @@ class FeedViewModel {
     private let disposeBag = DisposeBag()
     
     ///data that is to be displayed (output)
-    private (set) var displayData : Variable<[FeedDataItem]> = Variable([])
+    private var displayData : Variable<[FeedDataItem]> = Variable([])
     var displayDataDriver : Driver<[FeedDataItem]> {
         return displayData.asDriver()
     }
@@ -142,6 +142,4 @@ extension FeedViewModel {
             return dataProvider.loadBatch(batch)
         }
     }
-    
-    
 }

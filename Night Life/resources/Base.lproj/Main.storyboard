@@ -793,7 +793,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kzN-XV-nfh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.76330818965517244" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cuV-ny-Ofm">
                             <size key="itemSize" width="183" height="170"/>
                             <size key="headerReferenceSize" width="50" height="45"/>
@@ -901,7 +901,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVM-lB-iWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="1132"/>
+            <point key="canvasLocation" x="1389" y="1132"/>
         </scene>
         <!--ReportDetailsViewController-->
         <scene sceneID="WDo-rq-gXh">
