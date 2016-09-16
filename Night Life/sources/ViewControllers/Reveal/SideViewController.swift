@@ -187,13 +187,19 @@ class SideViewController : UITableViewController {
 
             controller.viewModel = UserProfileViewModel(userDescriptor: User.currentUser()!)
             
-        case "favorite report":
+        case "favorite reports":
             
             let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! FeedCollectionViewController
             
-            //controller.viewModel.feedViewModel = controller.viewModel.likeFeedViewModel
+            controller.viewModel = FeedViewModel()
             
-            print("Hi!!!!!!!!!!!!!!!!")
+            LikeManager.arrayOfLikes.asObservable()
+                .subscribeNext { (reports : [Report]) in
+                    controller.viewModel.displayData.value = LikeManager.changer()
+                }.addDisposableTo(bag)
+
+            
+            print(identifier)
             
         default: break
 

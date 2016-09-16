@@ -22,7 +22,7 @@ class FeedViewModel {
     private let disposeBag = DisposeBag()
     
     ///data that is to be displayed (output)
-    private var displayData : Variable<[FeedDataItem]> = Variable([])
+    private (set) var displayData : Variable<[FeedDataItem]> = Variable([])
     var displayDataDriver : Driver<[FeedDataItem]> {
         return displayData.asDriver()
     }
@@ -43,7 +43,6 @@ class FeedViewModel {
         
         let trigger = pageTrigger.asObservable().filter { $0 != nil }.map { $0! }
         let dp = dataProvider.asObservable().filter { $0 != nil }.map { $0! }
-        
         
         
         Observable.combineLatest(trigger, dp) { ($0, $1) }
