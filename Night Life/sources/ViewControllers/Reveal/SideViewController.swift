@@ -193,7 +193,7 @@ class SideViewController : UITableViewController {
             
             controller.viewModel = FeedViewModel()
             
-            controller.viewModel.dataProvider = LikeProvider()
+            controller.viewModel.dataProvider.value = LikeProvider()
 
             print(identifier)
             
