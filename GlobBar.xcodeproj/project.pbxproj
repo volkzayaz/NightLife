@@ -331,6 +331,8 @@
 		84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */; };
 		84EDEFCF1CCA25FA00AC4BDE /* TodayDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */; };
 		946483791265AD06B33CA6A6 /* Pods_GlobBar_AdHoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */; };
+		B01F46CE1D8C295200AECD06 /* LikeFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F46CD1D8C295200AECD06 /* LikeFeedCollectionViewController.swift */; };
+		B01F46D01D8C33A300AECD06 /* LikeFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F46CF1D8C33A300AECD06 /* LikeFeedViewModel.swift */; };
 		B07272ED1D895A72000CE33B /* LikeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07272EC1D895A72000CE33B /* LikeManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -435,7 +437,7 @@
 		73EF22101C9C594F005A6D6D /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		73EF22121C9C594F005A6D6D /* CityClubListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityClubListViewModel.swift; sourceTree = "<group>"; };
 		73EF22131C9C594F005A6D6D /* ClubListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListViewModel.swift; sourceTree = "<group>"; };
-		73EF22141C9C594F005A6D6D /* LikedClubsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedClubsListViewModel.swift; sourceTree = "<group>"; };
+		73EF22141C9C594F005A6D6D /* LikedClubsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikedClubsListViewModel.swift; path = ../ClubList/LikedClubsListViewModel.swift; sourceTree = "<group>"; };
 		73EF22161C9C594F005A6D6D /* MyPointsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointsViewModel.swift; sourceTree = "<group>"; };
 		73EF22171C9C594F005A6D6D /* PaginatingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatingViewModel.swift; path = ../ViewModel/PaginatingViewModel.swift; sourceTree = "<group>"; };
 		73EF22191C9C594F005A6D6D /* SideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewModel.swift; sourceTree = "<group>"; };
@@ -504,6 +506,8 @@
 		84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDayManager.swift; sourceTree = "<group>"; };
 		A1251E0C988A18BFB10572D9 /* Pods-GlobBar_AdHoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar_AdHoc.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar_AdHoc/Pods-GlobBar_AdHoc.release.xcconfig"; sourceTree = "<group>"; };
+		B01F46CD1D8C295200AECD06 /* LikeFeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeFeedCollectionViewController.swift; sourceTree = "<group>"; };
+		B01F46CF1D8C33A300AECD06 /* LikeFeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeFeedViewModel.swift; sourceTree = "<group>"; };
 		B07272EC1D895A72000CE33B /* LikeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeManager.swift; sourceTree = "<group>"; };
 		DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar_AdHoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -636,6 +640,7 @@
 				7323E47B1C8851F000F397BC /* ClubFeedViewController.swift */,
 				7308F7351C9B0B0300EBFE82 /* FeedCollectionViewController.swift */,
 				73EF22001C9C5743005A6D6D /* CityFeedViewController.swift */,
+				B01F46CD1D8C295200AECD06 /* LikeFeedCollectionViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -1095,6 +1100,8 @@
 				73EF220B1C9C594F005A6D6D /* CityFeedViewModel.swift */,
 				73EF220C1C9C594F005A6D6D /* ClubFeedViewModel.swift */,
 				73EF22101C9C594F005A6D6D /* FeedViewModel.swift */,
+				73EF22141C9C594F005A6D6D /* LikedClubsListViewModel.swift */,
+				B01F46CF1D8C33A300AECD06 /* LikeFeedViewModel.swift */,
 			);
 			path = ClubFeed;
 			sourceTree = "<group>";
@@ -1122,7 +1129,6 @@
 			children = (
 				73EF22121C9C594F005A6D6D /* CityClubListViewModel.swift */,
 				73EF22131C9C594F005A6D6D /* ClubListViewModel.swift */,
-				73EF22141C9C594F005A6D6D /* LikedClubsListViewModel.swift */,
 			);
 			path = ClubList;
 			sourceTree = "<group>";
@@ -1732,6 +1738,7 @@
 				73EF22231C9C594F005A6D6D /* ClubListViewModel.swift in Sources */,
 				738F8AAB1C9866E40062E916 /* MainAppController.swift in Sources */,
 				73205E691C89CACF0057B089 /* CircularIconsGroupView.swift in Sources */,
+				B01F46CE1D8C295200AECD06 /* LikeFeedCollectionViewController.swift in Sources */,
 				7332FE471C80656F001FE7D5 /* ViewController+ErrorMessage.swift in Sources */,
 				738F8AAD1C986A0B0062E916 /* CityContext.swift in Sources */,
 				843907581CB6AA9900C05D8B /* MessageRouter.swift in Sources */,
@@ -1762,6 +1769,7 @@
 				73F9E2C41CAD4471005758D1 /* TextBoxController.swift in Sources */,
 				7332FE621C80860E001FE7D5 /* AuthorizationViewController.swift in Sources */,
 				840748E21CB2B44C00F1CB41 /* PointsRouter.swift in Sources */,
+				B01F46D01D8C33A300AECD06 /* LikeFeedViewModel.swift in Sources */,
 				7323E46B1C87474900F397BC /* UICollectionView+NextPageTrigger.swift in Sources */,
 				7329BC661C7745AA00D7512F /* ReviewMediaCollectionCell.swift in Sources */,
 				73EF221E1C9C594F005A6D6D /* ClubFeedViewModel.swift in Sources */,

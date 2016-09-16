@@ -54,6 +54,7 @@ struct LikeProvider :  FeedDataProvider {
                     return .ReportType(report: report)
                 }
         }.filter{ (array) -> Bool in
+
             return array.count > batch.offset
         }
     }

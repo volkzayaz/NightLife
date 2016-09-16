@@ -189,12 +189,10 @@ class SideViewController : UITableViewController {
             
         case "favorite reports":
             
-            let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! FeedCollectionViewController
+            let controller = (segue.destinationViewController as! UINavigationController).viewControllers.first! as! LikeFeedCollectionViewController
             
-            controller.viewModel = FeedViewModel()
+            controller.viewModel = LikeFeedViewModel()
 
-            controller.viewModel.dataProvider.value = LikeProvider()
-            
         default: break
 
             
