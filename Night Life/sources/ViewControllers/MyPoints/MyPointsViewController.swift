@@ -12,7 +12,7 @@ import RxCocoa
 import SWRevealViewController
 import QuartzCore
 
-class MyPointsViewController: UIViewController, UITextFieldDelegate {
+class MyPointsViewController: UIViewController, UITextFieldDelegate, ErrorHandler{
     
   private let kScrollUP:Int = 170
     
@@ -39,19 +39,20 @@ class MyPointsViewController: UIViewController, UITextFieldDelegate {
     self.viewModel.removePoints()
   }
   
-
-  private let viewModel = MyPointsViewModel()
-  
+private let viewModel = MyPointsViewModel()
+    
+    
+    
   private let bag = DisposeBag()
     
-  override func viewDidLoad() {
+    override func viewDidLoad() {
     super.viewDidLoad()
     
     self.showInfoMessage(withTitle: "alert", "PLEASE REDEEM THE POINTS AT A PARTNER VENUE") {
         
         
     }
-    
+        
     viewModel.amountOfPointsToSubstract.asObservable()
         .map{ "\($0)" }
         .bindTo(pointsBottomLbl.rx_text)
@@ -72,11 +73,30 @@ class MyPointsViewController: UIViewController, UITextFieldDelegate {
       .addDisposableTo(bag)
     
     ///error presenting
-    viewModel.errorMessage.asDriver()
+    self.showErrorMessage(viewModel, controller: self)
+    /*viewModel.errorMessage.asDriver()
         .filter { $0 != nil }.map { $0! }
         .driveNext { [unowned self] message in
             self.showInfoMessage(withTitle: "Error", message)
         }
-        .addDisposableTo(bag)
+        .addDisposableTo(bag)*/
   }
 }
+
+
+
+protocol ErrorHandler {
+
+}
+
+extension ErrorHandler {
+    
+    func showErrorMessage(viewModel : ErrorViewModelProtocol, controller : UIViewController) {
+        viewModel.errorMessage.asDriver()
+            .filter { $0 != nil }.map { $0! }
+            .driveNext { message in
+                controller.showInfoMessage(withTitle: "Error", message)
+        }
+     }
+}
+

@@ -19,12 +19,12 @@ enum ClubListError : ErrorType {
     
 }
 
-class ClubListViewModel {
+class ClubListViewModel : ErrorViewModelProtocol{
     
     let clubs : Variable<[Club]> = Variable([])
     let clubsRouter: Variable<ClubListRouter?> = Variable(nil)
     
-    let errorMessage: Variable<String?> = Variable(nil)
+    var errorMessage: Variable<String?> = Variable(nil)
     
     private let bag = DisposeBag()
 

@@ -14,11 +14,11 @@ import RxAlamofire
 
 import ObjectMapper
 
-class CreateReportViewModel {
+class CreateReportViewModel : ErrorViewModelProtocol{
     
     let composedReport = Variable<Report?>(nil)
     let questionStatusNumber = Variable<Int>(3)
-    let errorMessage = Variable<String?>(nil)
+    var errorMessage = Variable<String?>(nil)
     
     var clubName : String { return club.name }
     var clubAdress : String { return club.adress }

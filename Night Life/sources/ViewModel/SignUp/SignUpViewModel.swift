@@ -11,14 +11,14 @@ import RxSwift
 import Alamofire
 import RxAlamofire
 
-class SignUpViewModel {
+class SignUpViewModel : ErrorViewModelProtocol{
     
     private let bag = DisposeBag()
     let indicator = ViewIndicator()
     
     let userLoggedInSignal: Variable<Int?> = Variable(nil)
     
-    let errorMessage: Variable<String?> = Variable(nil)
+    var errorMessage: Variable<String?> = Variable(nil)
     
     let backSignal: Variable<Int?> = Variable(nil)
     

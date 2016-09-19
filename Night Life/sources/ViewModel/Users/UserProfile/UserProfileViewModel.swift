@@ -29,14 +29,14 @@ enum UserProfileEditingError : ErrorType {
     
 }
 
-class UserProfileViewModel {
+class UserProfileViewModel : ErrorViewModelProtocol{
     
     private var userVariable: Variable<User>
     
     var userDriver: Driver<User> {
         return userVariable.asDriver()
     }
-    let errorMessage: Variable<String?> = Variable(nil)
+    var errorMessage: Variable<String?> = Variable(nil)
     
     var editingState: Variable<UserProfileEditingState> = Variable(.NoEditing)
     

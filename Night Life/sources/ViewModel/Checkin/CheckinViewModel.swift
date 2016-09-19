@@ -22,7 +22,7 @@ enum PostCheckinAction {
     
 }
 
-struct CheckinViewModel {
+struct CheckinViewModel : ErrorViewModelProtocol{
     
     let club : Club
     let predefinedPostAction: PostCheckinAction?
@@ -31,7 +31,7 @@ struct CheckinViewModel {
         self.predefinedPostAction = predefinedPostAction
     }
     
-    let errorMessage: Variable<String?> = Variable(nil)
+    var errorMessage: Variable<String?> = Variable(nil)
     
     let checkinControlsShown = Variable(true)
     let loadingIndicator = ViewIndicator()
