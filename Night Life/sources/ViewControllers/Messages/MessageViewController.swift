@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class MessageViewController: UIViewController {
+class MessageViewController: UIViewController, UITableViewDelegate {
 
     var viewModel: MessageViewModel!
 
@@ -31,9 +31,17 @@ class MessageViewController: UIViewController {
         
         self.tableView.delegate = nil
         self.tableView.dataSource = nil
-               
+        
+        self.tableView
+            .rx_setDelegate(self)
+            .addDisposableTo(bag)
+
         self.title = viewModel.message.title
+        
+      
         commentViewModel = CommentViewModel(message: viewModel.message)
+        
+        self.loadDataSource()
         textView.text = viewModel.message.body
                 
         saveComment.rx_tap.asObservable()
@@ -43,14 +51,12 @@ class MessageViewController: UIViewController {
                 self.commentViewModel!.createComment(self.commentEnteredText.text )
                 
                 self.commentEnteredText.text = "enter comment"
-                
                 self.tableView.reloadData()
-                self.loadDataSource ()
                 
                 }).addDisposableTo(bag)
         
         
-        
+       
         //= viewModelComment.comment.body
 //        let b = UIBarButtonItem(image: UIImage(named: "messageScreenDeleteBtn"), style: .Plain, target: self, action: #selector(mock))
 //        
@@ -67,20 +73,19 @@ class MessageViewController: UIViewController {
     
     
     func loadDataSource () {
-    
-    
-        guard commentViewModel!.displayData != nil else { return }
         
         commentViewModel!.displayData!
             .drive(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
         
-        dataSource.configureCell = { (_, tv, ip, item) in
+        
+        self.dataSource.configureCell = { (_, tv, ip, item) in
             
             let cell = tv.dequeueReusableCellWithIdentifier("comment cell", forIndexPath: ip) as! CommentTableCell
             cell.setComment(item)
             return cell
         }
+
         
         dataSource.canEditRowAtIndexPath = { _ in true }
         
@@ -90,10 +95,7 @@ class MessageViewController: UIViewController {
             }
             .addDisposableTo(bag)
         
-        
-
-    
-    
+       
     }
 
     
@@ -104,7 +106,6 @@ class MessageViewController: UIViewController {
 
 struct CommentSection {
     
-    //var header: String
     var commentItems: [Comment]
     
     

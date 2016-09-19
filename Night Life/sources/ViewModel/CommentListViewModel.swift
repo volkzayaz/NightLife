@@ -81,8 +81,7 @@ extension CommentedMessagesListViewModel {
         let message = MessagesContext.messages.value[row]
         
         message.removeFromStorage()
-        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)
-        
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)        
         
         
         MessagesContext.messages.value.removeAtIndex(row)
