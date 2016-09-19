@@ -16,7 +16,7 @@ import ObjectMapper
 struct CommentedMessagesListViewModel {
     
     var displayData: Variable<[CommentedMessageSection]> = Variable([])
-    let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
+    var detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
     
     private let bag = DisposeBag()
 
@@ -69,7 +69,7 @@ extension CommentedMessagesListViewModel {
         
         guard let a = comments else {
             
-            return detailMessageViewModel.value = MessageViewModel(message: message)
+            return detailMessageViewModel.value = MessageViewModel(message: message, comments: nil)
         }
         detailMessageViewModel.value = MessageViewModel(message: message, comments : a)
       

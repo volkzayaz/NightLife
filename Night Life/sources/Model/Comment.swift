@@ -15,24 +15,21 @@ struct Comment  {
     private(set) var id : Int = 0
     
     var key: Int { return messageId }
-
     var messageId : Int = 0
-    
     var identifier: Int { return id }
-
     var body : String = ""
+    var createdDate : String = ""
     
-    //var created: NSDate? //ISO8601DateTransform())
+    var created: String = ""
     
-    var created: String?
-    
-    init(messageId : Int, body : String, created : String )  {
-    
+    init(messageId : Int, body : String, created : String, createdDate : String)  {
+       
         self.messageId = messageId
         self.body = body
-        self.created = created
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
-        
+        self.createdDate = createdDate
+        self.created = created
+      
     }
   
 }

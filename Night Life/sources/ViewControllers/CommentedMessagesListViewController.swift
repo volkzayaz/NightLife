@@ -27,7 +27,6 @@ class CommentedMessagesListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
                  
         viewModel.displayData
             .asObservable().bindTo(tableView.rx_itemsWithDataSource(dataSource))
@@ -70,6 +69,7 @@ class CommentedMessagesListViewController: UIViewController {
         }
     }
 }
+
 
 
 

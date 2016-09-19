@@ -12,12 +12,11 @@ import RxCocoa
 
 struct InMemoryStorageArray {
 
-    static var storage: [Int : Variable<[Comment]>] = [ : ]
-    
+    static var storage: [Int : Variable<[Comment]>] = [ : ]    
  
     static func recieveCommentsByMessage (key : Int) -> Variable<[Comment]> {
         
-        guard let comments = storage[key] else { fatalError("Dear Anna, there’s a mistake in your logic and comments is nil. Please debug it" ) }
+        guard let comments = storage[key] else { fatalError("Comments cannot be nil, at least one element is necessary" ) }
         return comments    
     }
     
@@ -25,22 +24,17 @@ struct InMemoryStorageArray {
     static func saveComment(key : Int, body : String) {
         
         if self.storage[key] == nil {
-        self.storage[key] = Variable([])
+            self.storage[key] = Variable([])
         }
-        
         guard body.characters.count > 1  else { return }
-        self.storage[key]!.value.append(Comment(messageId: key, body : body, created: TodayDayManager.dayOfWeekText()))
+        self.storage[key]!.value.append(Comment(messageId: key, body : body, created : TodayDayManager.dayOfWeekText(), createdDate : NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle) ))
        
-        
     }
-    
-    
     
     static func removeCommentFromStorage(key: Int, row: Int) {        
         self.storage[key]?.value.removeAtIndex(row)
    
-    }
-    
+    }    
     
     static func removeAllCommentsFromStorageByMessage(key : Int) {
         storage.removeValueForKey(key)

@@ -14,11 +14,10 @@ import RxDataSources
 class MessageViewController: UIViewController, UITableViewDelegate {
 
     var viewModel: MessageViewModel!
-    var commentViewModel : CommentViewModel?
+   
     @IBOutlet weak var tableView: UITableView!
-
-    private let bag = DisposeBag()
     private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentSection>()
+    private let bag = DisposeBag()
     
     @IBOutlet weak var commentEnteredText: UITextView!
     @IBOutlet weak var saveComment: UIButton!
@@ -36,13 +35,10 @@ class MessageViewController: UIViewController, UITableViewDelegate {
 
         self.title = viewModel.message.title
       
-        commentViewModel = CommentViewModel(message: viewModel.message)
-      
         textView.text = viewModel.message.body
         
-        commentViewModel!.commentCountObservable
+        viewModel.commentViewModel!.commentCountObservable
             .subscribeNext { [weak self] (count : Int) in
-               // self!.tableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                 self!.loadDataSource()
             }.addDisposableTo(bag)
 
@@ -50,16 +46,11 @@ class MessageViewController: UIViewController, UITableViewDelegate {
             
             .subscribe(onNext : { [weak self] in
                 
-                self!.commentViewModel!.createComment(self!.commentEnteredText.text )                
+                self!.viewModel.commentViewModel!.createComment(self!.commentEnteredText.text )
                 self!.commentEnteredText.text = "enter comment"
-                //self!.tableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                 
             }).addDisposableTo(bag)
       
-        
-        
-       
-        
         
         //= viewModelComment.comment.body
 //        let b = UIBarButtonItem(image: UIImage(named: "messageScreenDeleteBtn"), style: .Plain, target: self, action: #selector(mock))
@@ -77,10 +68,8 @@ class MessageViewController: UIViewController, UITableViewDelegate {
     
     
     func loadDataSource () {
-        
-        
 
-        commentViewModel!.displayData!
+        viewModel.commentViewModel!.displayData!
             .drive(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
         
@@ -97,7 +86,7 @@ class MessageViewController: UIViewController, UITableViewDelegate {
         
         tableView.rx_itemDeleted
             .subscribeNext{[unowned self] value in
-                self.commentViewModel!.deleteComment(value.row)
+                self.viewModel.commentViewModel!.deleteComment(value.row)
             }
             .addDisposableTo(bag)
         

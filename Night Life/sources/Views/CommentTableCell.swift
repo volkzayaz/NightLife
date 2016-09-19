@@ -18,15 +18,15 @@ class CommentTableCell : UITableViewCell{
     
     @IBOutlet weak var coomentLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
-  
+    @IBOutlet weak var createdDate: UILabel!
 
     func setComment(comment: Comment) {
-        
-        
+                
         coomentLabel.text = comment.body
         createdLabel.text = comment.created
-       
+        createdDate.text = comment.createdDate
         
-        }
+       
+    }
   
 }

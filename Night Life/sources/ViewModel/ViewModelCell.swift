@@ -15,7 +15,7 @@ struct ViewModelCell {
     private(set) var message : Message
 
     var bag = DisposeBag()
-      
+    
     init(message : Message) {
     
         self.message = message
@@ -23,7 +23,7 @@ struct ViewModelCell {
     }
     
     
-    }
+}
 
 
 extension ViewModelCell : Hashable, IdentifiableType, Equatable  {

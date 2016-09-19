@@ -233,7 +233,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="BkW-MJ-Xzd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular">
                                                         <mask key="constraints">
@@ -260,10 +260,22 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-xv-5Ma">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="213" y="18" width="67" height="21"/>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="f7v-xv-5Ma" secondAttribute="bottom" id="7a4-mP-zMT"/>
+                                                <constraint firstItem="f7v-xv-5Ma" firstAttribute="leading" secondItem="E51-Pm-A47" secondAttribute="leading" id="Fne-nG-1Cj"/>
                                                 <constraint firstItem="5mX-hb-KBC" firstAttribute="leading" secondItem="TD4-rm-GES" secondAttribute="leadingMargin" constant="18" id="G9e-Yl-wBv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="E51-Pm-A47" secondAttribute="bottom" constant="10" id="VUc-cU-hPu"/>
+                                                <constraint firstAttribute="trailing" secondItem="f7v-xv-5Ma" secondAttribute="trailing" id="dkq-YT-56W"/>
                                                 <constraint firstItem="5mX-hb-KBC" firstAttribute="bottom" secondItem="TD4-rm-GES" secondAttribute="bottomMargin" id="kUv-Fu-KM1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="E51-Pm-A47" secondAttribute="trailing" constant="32" id="wV7-yD-WZX"/>
                                                 <constraint firstAttribute="trailing" secondItem="E51-Pm-A47" secondAttribute="trailing" id="ycz-al-Lgt"/>
@@ -273,6 +285,7 @@
                                                 <mask key="subviews">
                                                     <exclude reference="E51-Pm-A47"/>
                                                     <exclude reference="5mX-hb-KBC"/>
+                                                    <exclude reference="f7v-xv-5Ma"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="G9e-Yl-wBv"/>
@@ -281,12 +294,16 @@
                                                     <exclude reference="wV7-yD-WZX"/>
                                                     <exclude reference="ycz-al-Lgt"/>
                                                     <exclude reference="zRP-U2-XrE"/>
+                                                    <exclude reference="7a4-mP-zMT"/>
+                                                    <exclude reference="Fne-nG-1Cj"/>
+                                                    <exclude reference="dkq-YT-56W"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular">
                                                 <mask key="subviews">
                                                     <include reference="E51-Pm-A47"/>
                                                     <include reference="5mX-hb-KBC"/>
+                                                    <include reference="f7v-xv-5Ma"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="G9e-Yl-wBv"/>
@@ -295,11 +312,15 @@
                                                     <include reference="wV7-yD-WZX"/>
                                                     <exclude reference="ycz-al-Lgt"/>
                                                     <include reference="zRP-U2-XrE"/>
+                                                    <include reference="7a4-mP-zMT"/>
+                                                    <include reference="Fne-nG-1Cj"/>
+                                                    <include reference="dkq-YT-56W"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="coomentLabel" destination="5mX-hb-KBC" id="DRt-qr-ySZ"/>
+                                            <outlet property="createdDate" destination="f7v-xv-5Ma" id="Wfi-HZ-old"/>
                                             <outlet property="createdLabel" destination="E51-Pm-A47" id="kgZ-4h-WmC"/>
                                         </connections>
                                     </tableViewCell>

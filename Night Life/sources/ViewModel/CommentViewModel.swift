@@ -14,11 +14,11 @@ struct CommentViewModel {
     
     var displayData: Driver<[CommentSection]>?
    
-    var message : Message
+    private var message : Message
     private let bag = DisposeBag()
     
     var commentCountObservable : Observable<Int> {
-        print(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
+       
         return Observable.just(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
     
     }
