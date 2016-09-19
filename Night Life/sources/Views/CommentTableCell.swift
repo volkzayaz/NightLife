@@ -18,19 +18,15 @@ class CommentTableCell : UITableViewCell{
     
     @IBOutlet weak var coomentLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
-    
-    private var disposeBag = DisposeBag()
-    
+  
+
     func setComment(comment: Comment) {
         
-            coomentLabel.text = comment.body
-            createdLabel.text = comment.created
-           
-    }
-     
         
-   
-
+        coomentLabel.text = comment.body
+        createdLabel.text = comment.created
+       
         
-        
+        }
+  
 }

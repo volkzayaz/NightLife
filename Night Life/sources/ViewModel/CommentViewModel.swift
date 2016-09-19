@@ -13,11 +13,21 @@ import RxAlamofire
 struct CommentViewModel {
     
     var displayData: Driver<[CommentSection]>?
-   // var comments : Variable<[Comment]>?
+   
     var message : Message
-   
-   
     private let bag = DisposeBag()
+    
+    var commentCountObservable: Observable<Int> {
+        return Observable.create { observer in
+            
+            observer.onNext(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
+            observer.onCompleted()
+            
+            return NopDisposable.instance
+        }
+    
+    
+    }
     
     init (message : Message) {
     
@@ -25,18 +35,12 @@ struct CommentViewModel {
 
         displayData = InMemoryStorageArray.recieveCommentsByMessage(message.id).asDriver()
             .map {[CommentSection(items: $0 ) ]}
-            
-     
     }
 
     
     func createComment(body : String) -> [Comment] {
         
         InMemoryStorageArray.saveComment(message.id, body : body)
-        
-        print("InMemoryStorageArray.recieveCommentsByMessage(message.id).value")
-        print(InMemoryStorageArray.recieveCommentsByMessage(message.id).value)
-        
         return InMemoryStorageArray.recieveCommentsByMessage(message.id).value
     }
     
@@ -45,11 +49,8 @@ struct CommentViewModel {
         
         
     func deleteComment(row: Int) {
-        
-        
-        InMemoryStorageArray.removeCommentFromStorage(message.id, row: row)
-        
-        }
+        InMemoryStorageArray.removeCommentFromStorage(message.id, row: row)        
+    }
         
 }
 

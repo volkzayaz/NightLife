@@ -19,8 +19,7 @@ struct Comment  {
     var messageId : Int = 0
     
     var identifier: Int { return id }
-    
-    //var title : String = ""
+
     var body : String = ""
     
     //var created: NSDate? //ISO8601DateTransform())
@@ -33,6 +32,7 @@ struct Comment  {
         self.body = body
         self.created = created
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
+        
     }
   
 }

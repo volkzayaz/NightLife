@@ -18,32 +18,27 @@ struct InMemoryStorageArray {
     static func recieveCommentsByMessage (key : Int) -> Variable<[Comment]> {
                
         guard let comments = storage[key] else {return Variable([])}
-        return comments
-    
+        return comments    
     }
     
 
     static func saveComment(key : Int, body : String) {
         
         if self.storage[key] == nil {
-        
             self.storage[key] = Variable([])
         }
         
         guard body.characters.count > 1  else { return }
-        
         self.storage[key]!.value.append(Comment(messageId: key, body : body, created: TodayDayManager.dayOfWeekText()))
-        print(storage[key]!.value.first)
+       
         
     }
     
     
     
-    static func removeCommentFromStorage(key: Int, row: Int) {
-        
+    static func removeCommentFromStorage(key: Int, row: Int) {        
         self.storage[key]?.value.removeAtIndex(row)
-        
-        print("remove \(self.storage[key]?.value) from row : \(row) ")
+   
     }
     
     

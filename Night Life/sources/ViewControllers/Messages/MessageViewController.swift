@@ -14,10 +14,8 @@ import RxDataSources
 class MessageViewController: UIViewController, UITableViewDelegate {
 
     var viewModel: MessageViewModel!
-
-    @IBOutlet weak var tableView: UITableView!
-    
     var commentViewModel : CommentViewModel?
+    @IBOutlet weak var tableView: UITableView!
 
     private let bag = DisposeBag()
     private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentSection>()
@@ -37,26 +35,25 @@ class MessageViewController: UIViewController, UITableViewDelegate {
             .addDisposableTo(bag)
 
         self.title = viewModel.message.title
-        
       
         commentViewModel = CommentViewModel(message: viewModel.message)
-        
-        self.loadDataSource()
+      
         textView.text = viewModel.message.body
-                
+        
         saveComment.rx_tap.asObservable()
             
-            .subscribe(onNext : { [unowned self] in
+            .subscribe(onNext : { [weak self] in
                 
-                self.commentViewModel!.createComment(self.commentEnteredText.text )
+                self!.commentViewModel!.createComment(self!.commentEnteredText.text )                
+                self!.commentEnteredText.text = "enter comment"
                 
-                self.commentEnteredText.text = "enter comment"
-                self.tableView.reloadData()
-                
-                }).addDisposableTo(bag)
+            }).addDisposableTo(bag)
+      
         
-        
+        self.loadDataSource()
        
+        
+        
         //= viewModelComment.comment.body
 //        let b = UIBarButtonItem(image: UIImage(named: "messageScreenDeleteBtn"), style: .Plain, target: self, action: #selector(mock))
 //        
@@ -74,10 +71,17 @@ class MessageViewController: UIViewController, UITableViewDelegate {
     
     func loadDataSource () {
         
+        self.commentViewModel!.commentCountObservable
+            .subscribeNext { [weak self] (count : Int) in
+               
+                self!.tableView.reloadData()
+            }
+            .addDisposableTo(self.bag)
+        
+
         commentViewModel!.displayData!
             .drive(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
-        
         
         self.dataSource.configureCell = { (_, tv, ip, item) in
             
