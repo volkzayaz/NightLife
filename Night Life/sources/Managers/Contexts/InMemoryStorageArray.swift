@@ -16,8 +16,8 @@ struct InMemoryStorageArray {
     
  
     static func recieveCommentsByMessage (key : Int) -> Variable<[Comment]> {
-               
-        guard let comments = storage[key] else {return Variable([])}
+        
+        guard let comments = storage[key] else { fatalError("Dear Anna, there’s a mistake in your logic and comments is nil. Please debug it" ) }
         return comments    
     }
     
@@ -25,7 +25,7 @@ struct InMemoryStorageArray {
     static func saveComment(key : Int, body : String) {
         
         if self.storage[key] == nil {
-            self.storage[key] = Variable([])
+        self.storage[key] = Variable([])
         }
         
         guard body.characters.count > 1  else { return }

@@ -15,13 +15,7 @@ struct ViewModelCell {
     private(set) var message : Message
 
     var bag = DisposeBag()
-    
-   // var commentObservable: Observable<Comment> {
-        
-      //  return Comment.storage[message.id]!.asObservable()
-   // }
- 
-    
+      
     init(message : Message) {
     
         self.message = message

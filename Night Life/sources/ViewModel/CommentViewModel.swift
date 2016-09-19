@@ -17,22 +17,16 @@ struct CommentViewModel {
     var message : Message
     private let bag = DisposeBag()
     
-    var commentCountObservable: Observable<Int> {
-        return Observable.create { observer in
-            
-            observer.onNext(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
-            observer.onCompleted()
-            
-            return NopDisposable.instance
-        }
-    
+    var commentCountObservable : Observable<Int> {
+        print(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
+        return Observable.just(InMemoryStorageArray.recieveCommentsByMessage(self.message.id).value.count)
     
     }
     
     init (message : Message) {
     
         self.message = message
-
+    
         displayData = InMemoryStorageArray.recieveCommentsByMessage(message.id).asDriver()
             .map {[CommentSection(items: $0 ) ]}
     }
@@ -41,7 +35,7 @@ struct CommentViewModel {
     func createComment(body : String) -> [Comment] {
         
         InMemoryStorageArray.saveComment(message.id, body : body)
-        return InMemoryStorageArray.recieveCommentsByMessage(message.id).value
+        return (InMemoryStorageArray.storage[message.id]?.value)!
     }
     
 

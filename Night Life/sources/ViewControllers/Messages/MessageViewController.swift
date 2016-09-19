@@ -40,17 +40,24 @@ class MessageViewController: UIViewController, UITableViewDelegate {
       
         textView.text = viewModel.message.body
         
+        commentViewModel!.commentCountObservable
+            .subscribeNext { [weak self] (count : Int) in
+               // self!.tableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+                self!.loadDataSource()
+            }.addDisposableTo(bag)
+
         saveComment.rx_tap.asObservable()
             
             .subscribe(onNext : { [weak self] in
                 
                 self!.commentViewModel!.createComment(self!.commentEnteredText.text )                
                 self!.commentEnteredText.text = "enter comment"
+                //self!.tableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                 
             }).addDisposableTo(bag)
       
         
-        self.loadDataSource()
+        
        
         
         
@@ -71,12 +78,6 @@ class MessageViewController: UIViewController, UITableViewDelegate {
     
     func loadDataSource () {
         
-        self.commentViewModel!.commentCountObservable
-            .subscribeNext { [weak self] (count : Int) in
-               
-                self!.tableView.reloadData()
-            }
-            .addDisposableTo(self.bag)
         
 
         commentViewModel!.displayData!
@@ -87,6 +88,7 @@ class MessageViewController: UIViewController, UITableViewDelegate {
             
             let cell = tv.dequeueReusableCellWithIdentifier("comment cell", forIndexPath: ip) as! CommentTableCell
             cell.setComment(item)
+            
             return cell
         }
 

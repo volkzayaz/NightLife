@@ -43,6 +43,12 @@ extension MessageListViewModel {
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         
         let message = MessagesContext.messages.value[ip.row]
+        
+        if InMemoryStorageArray.storage[message.id] == nil {
+            InMemoryStorageArray.storage[message.id] = Variable([])
+        }
+
+        InMemoryStorageArray.storage[message.id]!.value.append(Comment(messageId: message.id, body : "", created: ""))
         let comments : [Comment]? = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
      
         guard let a = comments else {
