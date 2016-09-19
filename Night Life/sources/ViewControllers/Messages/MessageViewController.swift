@@ -82,7 +82,12 @@ class MessageViewController: UIViewController, UITableViewDelegate {
         }
 
         
-        dataSource.canEditRowAtIndexPath = { _ in true }
+        dataSource.canEditRowAtIndexPath = { element in            
+   
+            if element.indexPath.row == 0 {
+                return false
+            } else {
+                return true }}
         
         tableView.rx_itemDeleted
             .subscribeNext{[unowned self] value in

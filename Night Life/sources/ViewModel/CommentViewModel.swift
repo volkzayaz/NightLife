@@ -38,10 +38,7 @@ struct CommentViewModel {
         return (InMemoryStorageArray.storage[message.id]?.value)!
     }
     
-
-
-        
-        
+  
     func deleteComment(row: Int) {
         InMemoryStorageArray.removeCommentFromStorage(message.id, row: row)        
     }

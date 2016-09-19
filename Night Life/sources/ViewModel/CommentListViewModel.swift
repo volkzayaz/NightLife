@@ -33,8 +33,11 @@ struct CommentedMessagesListViewModel {
                             $0.observableEntity()?.asObservable()
                         }
                         .combineLatest { commentedMessages in
-                            let commentedMessages : [Message] = commentedMessages.filter { InMemoryStorageArray.storage[$0.id] != nil }
+                            let commentedMessages : [Message] = commentedMessages.filter { InMemoryStorageArray.storage[$0.id]?.value.count > 1
+                              
+                            }
                             return commentedMessages
+
                         }
             }
 
@@ -81,8 +84,7 @@ extension CommentedMessagesListViewModel {
         let message = MessagesContext.messages.value[row]
         
         message.removeFromStorage()
-        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)        
-        
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)
         
         MessagesContext.messages.value.removeAtIndex(row)
         
