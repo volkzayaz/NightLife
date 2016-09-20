@@ -33,7 +33,7 @@ struct CommentedMessagesListViewModel {
                             $0.observableEntity()?.asObservable()
                         }
                         .combineLatest { commentedMessages in
-                            let commentedMessages : [Message] = commentedMessages.filter { InMemoryStorageArray.storage[$0.id]?.value.count > 1
+                            let commentedMessages : [Message] = commentedMessages.filter { InMemoryStorageArray.storage[$0.id]?.value.count > 0
                               
                             }
                             return commentedMessages
@@ -68,7 +68,6 @@ extension CommentedMessagesListViewModel {
   
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         let message = displayData.value.first?.items[ip.row].message
-        //let comments : [Comment] = InMemoryStorageArray.recieveCommentsByMessage(message!.id).value
         detailMessageViewModel.value = MessageViewModel(message: message!)
         
     }

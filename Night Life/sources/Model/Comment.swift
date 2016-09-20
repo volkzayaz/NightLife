@@ -16,7 +16,7 @@ struct Comment  {
     let body : String
     let createdDate : NSDate?
     
-    init(body : String, createdDate : NSDate? = nil)  {
+    init(body : String, createdDate : NSDate)  {
        
         self.body = body
         self.id = Int(arc4random_uniform(200)) //TODO Int.max

@@ -45,8 +45,7 @@ extension MessageListViewModel {
         let message = MessagesContext.messages.value[ip.row]
         
         if InMemoryStorageArray.storage[message.id] == nil {
-            InMemoryStorageArray.storage[message.id] = Variable([])
-            InMemoryStorageArray.storage[message.id]!.value.append(Comment(body : "", createdDate : nil))
+           InMemoryStorageArray.storage[message.id] = Variable([])
         }
         
         detailMessageViewModel.value = MessageViewModel(message: message)

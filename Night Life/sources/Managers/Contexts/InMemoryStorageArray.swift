@@ -24,7 +24,7 @@ struct InMemoryStorageArray {
     static func saveCommentByMessage(message : Message, body : String) {
         
         if self.storage[message.id] == nil {
-            self.storage[message.id] = Variable([])
+           self.storage[message.id] = Variable([])
         }
         guard body.characters.count > 1  else { return }
         self.storage[message.id]!.value.append(Comment(body : body, createdDate : NSDate()))

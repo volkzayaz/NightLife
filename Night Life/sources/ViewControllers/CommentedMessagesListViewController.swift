@@ -39,9 +39,7 @@ class CommentedMessagesListViewController: UIViewController {
             return cell
         }
         
-        dataSource.canEditRowAtIndexPath = { element in
-            return element.indexPath.row != 0
-        }
+        dataSource.canEditRowAtIndexPath = { _ in true }
         
         tableView.rx_itemDeleted
             .subscribeNext{[unowned self] value in

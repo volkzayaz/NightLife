@@ -22,13 +22,7 @@ class CommentTableCell : UITableViewCell{
     
     func setComment(comment: Comment) {
         
-        coomentLabel.text = comment.body        
-        
-        guard comment.createdDate != nil else {
-            createdLabel.text = ""
-            createdDate.text = ""
-            return  }
-        
+        coomentLabel.text = comment.body
         createdDate.text = NSDateFormatter.localizedStringFromDate(comment.createdDate!, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
         createdLabel.text = TodayDayManager.dayOfWeekText()
         
