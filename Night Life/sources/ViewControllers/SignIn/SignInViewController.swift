@@ -26,14 +26,15 @@ class SignInViewController: UIViewController {
     @IBAction func back(sender: AnyObject) {
         
         self.navigationController?.popToRootViewControllerAnimated(true)
-        
+
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
+        super.viewDidLoad()
+    
         if (viewModel == nil) { fatalError("ViewModel must be instantiated prior to using SignupViewController") }
-        
+
         viewModel.indicator.asObservable()
             .bindTo(spinner.rxex_animating)
             .addDisposableTo(bag)

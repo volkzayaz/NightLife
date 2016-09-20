@@ -14,7 +14,16 @@ var AssociatedObjectHandle: UInt8 = 0
 
 extension UIViewController {
     
-    var viewModelTwo:OriginalViewModel {
+    var xo: OriginalViewModel? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedObjectHandle) as? OriginalViewModel
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedObjectHandle, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    var viewModelTwo : OriginalViewModel {
         get {
             return objc_getAssociatedObject(self, &AssociatedObjectHandle) as! OriginalViewModel
         }
@@ -27,7 +36,7 @@ extension UIViewController {
         struct Static {
             static var token: dispatch_once_t = 0
         }
-        
+
         if self !== UIViewController.self {
             return
         }

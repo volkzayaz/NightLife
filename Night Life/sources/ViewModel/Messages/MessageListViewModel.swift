@@ -19,21 +19,21 @@ enum MessageListError : ErrorType {
     case MalformedServerResponse
 }
 
-class MessageListViewModel {
+class MessageListViewModel : OriginalViewModel{
     
     let displayData: Driver<[MessageSection]>
     let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
     
     private let bag = DisposeBag()
     
-    init() {
+    override init() {
         
         displayData = MessagesContext.messages.asDriver()
             .map { [ MessageSection(items: $0 ) ] }
         
         MessagesContext.refreshMessages()
             .addDisposableTo(bag)
-        
+        super.init()
     }
 }
 

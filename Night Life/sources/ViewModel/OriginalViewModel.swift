@@ -10,7 +10,7 @@ import Foundation
 
 import RxSwift
 
-class OriginalViewModel : NSObject{
+class OriginalViewModel : NSObject {
     var errorMessage = Variable<String?>(nil)
 }
 
