@@ -11,11 +11,11 @@ import RxSwift
 import Alamofire
 import ObjectMapper
 
-class MyPointsViewModel : ErrorViewModelProtocol{
+class MyPointsViewModel : OriginalViewModel{
     
     private let bag = DisposeBag()
     
-    var errorMessage = Variable<String?>(nil)
+    //var errorMessage = Variable<String?>(nil)
     let amountOfPointsToSubstract = Variable<Int>(100)
     var generalAmountOfPoints = Variable<Points?>(nil)
 
@@ -25,8 +25,7 @@ class MyPointsViewModel : ErrorViewModelProtocol{
     
     let enableSubmitButtonObservable: Observable<Bool>
     
-    init() {
-
+    override init() {
         
         let minAmountToRedeem = 100
         
@@ -40,7 +39,7 @@ class MyPointsViewModel : ErrorViewModelProtocol{
         
         
         enableSubmitButtonObservable = amountOfPointsToSubstract.asObservable().map{ $0 >= minAmountToRedeem }
-        
+        super.init()
         self.refreshPoints()
     }
     

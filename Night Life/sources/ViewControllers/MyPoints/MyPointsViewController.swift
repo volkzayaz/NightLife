@@ -40,14 +40,12 @@ class MyPointsViewController: UIViewController, UITextFieldDelegate, ErrorHandle
   }
   
 private let viewModel = MyPointsViewModel()
-    
-    
-    
+
   private let bag = DisposeBag()
     
     override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     self.showInfoMessage(withTitle: "alert", "PLEASE REDEEM THE POINTS AT A PARTNER VENUE") {
         
         
@@ -73,13 +71,12 @@ private let viewModel = MyPointsViewModel()
       .addDisposableTo(bag)
     
     ///error presenting
-    self.showErrorMessage(viewModel, controller: self)
-    /*viewModel.errorMessage.asDriver()
+    viewModel.errorMessage.asDriver()
         .filter { $0 != nil }.map { $0! }
         .driveNext { [unowned self] message in
             self.showInfoMessage(withTitle: "Error", message)
         }
-        .addDisposableTo(bag)*/
+        .addDisposableTo(bag)
   }
 }
 

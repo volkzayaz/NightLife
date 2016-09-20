@@ -10,6 +10,10 @@ import Foundation
 
 import RxSwift
 
+class OriginalViewModel : NSObject{
+    var errorMessage = Variable<String?>(nil)
+}
+
 protocol ErrorViewModelProtocol {
     
     var errorMessage: Variable<String?> {get set}
