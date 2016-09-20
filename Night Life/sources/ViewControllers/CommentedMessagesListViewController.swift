@@ -26,8 +26,7 @@ class CommentedMessagesListViewController: UIViewController {
     private let bag = DisposeBag()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
      
         viewModel.displayData
             .asObservable().bindTo(tableView.rx_itemsWithDataSource(dataSource))

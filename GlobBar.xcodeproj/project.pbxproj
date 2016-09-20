@@ -334,7 +334,6 @@
 		C537BBC41D8A85360051EDBF /* ViewModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537BBC31D8A85360051EDBF /* ViewModelCell.swift */; };
 		C537BBC61D8AB3520051EDBF /* CommentedMessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */; };
 		C539C8D21D89518C00862E0D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D11D89518C00862E0D /* Comment.swift */; };
-		C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D31D895D6000862E0D /* ComentsManager.swift */; };
 		C539C8D71D896DC100862E0D /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D61D896DC100862E0D /* CommentViewModel.swift */; };
 		C539C8D91D89810400862E0D /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D81D89810400862E0D /* CommentListViewModel.swift */; };
 		C558A82B1D8BD4D10013C5CE /* InMemoryStorageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */; };
@@ -515,7 +514,6 @@
 		C537BBC31D8A85360051EDBF /* ViewModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelCell.swift; sourceTree = "<group>"; };
 		C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommentedMessages.storyboard; sourceTree = "<group>"; };
 		C539C8D11D89518C00862E0D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		C539C8D31D895D6000862E0D /* ComentsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsManager.swift; sourceTree = "<group>"; };
 		C539C8D61D896DC100862E0D /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		C539C8D81D89810400862E0D /* CommentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
 		C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryStorageArray.swift; sourceTree = "<group>"; };
@@ -604,7 +602,6 @@
 				738F8AAC1C986A0B0062E916 /* CityContext.swift */,
 				73EF21FE1C9C4A06005A6D6D /* ClubsManager.swift */,
 				7362A9E11CB510AE00428350 /* InMemmoryStore.swift */,
-				C539C8D31D895D6000862E0D /* ComentsManager.swift */,
 				C558A82A1D8BD4D10013C5CE /* InMemoryStorageArray.swift */,
 			);
 			path = Contexts;
@@ -1832,7 +1829,6 @@
 				734FEF731C9840EE000B894A /* CityClubListViewController.swift in Sources */,
 				73523FEE1C6B844200A5FE23 /* User.swift in Sources */,
 				7323E47E1C8851F000F397BC /* CheckinViewController.swift in Sources */,
-				C539C8D41D895D6000862E0D /* ComentsManager.swift in Sources */,
 				84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */,
 				7323E44B1C85E78B00F397BC /* ImageRetreiver.swift in Sources */,
 				73069CDA1CB807F80040D599 /* UIImage+orientation.swift in Sources */,
