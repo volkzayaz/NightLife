@@ -14,13 +14,13 @@ import RxAlamofire
 struct MessageViewModel {
     
     var message : Message
-    var comments : [Comment]?
+    var comments : [Comment]
     var commentViewModel : CommentViewModel?
     
     
     private let bag = DisposeBag()
     
-    init(message: Message, comments : [Comment]? = nil) {
+    init(message: Message, comments : [Comment]) {
         self.message = message
         self.comments = comments
         self.commentViewModel = CommentViewModel(message: self.message)

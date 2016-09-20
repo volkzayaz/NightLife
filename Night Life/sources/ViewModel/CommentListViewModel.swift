@@ -65,30 +65,24 @@ struct CommentedMessagesListViewModel {
 
 
 extension CommentedMessagesListViewModel {
-    
+  
     func selectedMessage(atIndexPath ip: NSIndexPath) {
-        let message = MessagesContext.messages.value[ip.row]
-        let comments : [Comment]? = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
-        
-        guard let a = comments else {
-            
-            return detailMessageViewModel.value = MessageViewModel(message: message, comments: nil)
-        }
-        detailMessageViewModel.value = MessageViewModel(message: message, comments : a)
-      
+        let message = displayData.value.first?.items[ip.row].message
+        let comments : [Comment] = InMemoryStorageArray.recieveCommentsByMessage(message!.id).value
+        detailMessageViewModel.value = MessageViewModel(message: message!, comments : comments)
         
     }
     
     func deleteMessage(row: Int) {
         
-        let message = MessagesContext.messages.value[row]
+        let message = displayData.value.first?.items[row].message
         
-        message.removeFromStorage()
-        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)
+        message!.removeFromStorage()
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message!.id)
         
         MessagesContext.messages.value.removeAtIndex(row)
         
-        Alamofire.request(MessagesRouter.Delete(message: message)).rx_responseJSON()
+        Alamofire.request(MessagesRouter.Delete(message: message!)).rx_responseJSON()
             .subscribeError { error in
                 print("delete message from server error: \(error)")
             }

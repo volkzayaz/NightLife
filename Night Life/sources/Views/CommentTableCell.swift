@@ -24,8 +24,7 @@ class CommentTableCell : UITableViewCell{
                 
         coomentLabel.text = comment.body
         createdLabel.text = comment.created
-        createdDate.text = comment.createdDate
-        
+        createdDate.text = comment.createdDate        
        
     }
   

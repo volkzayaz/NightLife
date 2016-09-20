@@ -46,16 +46,13 @@ extension MessageListViewModel {
         
         if InMemoryStorageArray.storage[message.id] == nil {
             InMemoryStorageArray.storage[message.id] = Variable([])
+            InMemoryStorageArray.storage[message.id]!.value.append(Comment(messageId: message.id, body : "", created : "", createdDate : ""))
         }
 
-        InMemoryStorageArray.storage[message.id]!.value.append(Comment(messageId: message.id, body : "", created : "", createdDate : ""))
-        let comments : [Comment]? = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
+        
+        let comments : [Comment] = InMemoryStorageArray.recieveCommentsByMessage(message.id).value
      
-        guard let a = comments else {
-            
-            return detailMessageViewModel.value = MessageViewModel(message: message, comments : nil)
-        }
-        detailMessageViewModel.value = MessageViewModel(message: message, comments : a)
+        detailMessageViewModel.value = MessageViewModel(message: message, comments : comments)
     }
     
     

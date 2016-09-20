@@ -12,7 +12,7 @@ import RxDataSources
 
 struct ViewModelCell {
     
-    private(set) var message : Message
+    var message : Message
 
     var bag = DisposeBag()
     
