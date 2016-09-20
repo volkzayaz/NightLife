@@ -14,7 +14,7 @@ struct Comment  {
     
     let id : Int
     let body : String
-    let createdDate : NSDate?
+    let createdDate : NSDate
     
     init(body : String, createdDate : NSDate)  {
        
