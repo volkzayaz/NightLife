@@ -16,7 +16,7 @@ import ObjectMapper
 struct CommentedMessagesListViewModel {
     
     var displayData: Variable<[CommentedMessageSection]> = Variable([])
-    var detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
+    let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
     
     private let bag = DisposeBag()
 
@@ -68,8 +68,8 @@ extension CommentedMessagesListViewModel {
   
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         let message = displayData.value.first?.items[ip.row].message
-        let comments : [Comment] = InMemoryStorageArray.recieveCommentsByMessage(message!.id).value
-        detailMessageViewModel.value = MessageViewModel(message: message!, comments : comments)
+        //let comments : [Comment] = InMemoryStorageArray.recieveCommentsByMessage(message!.id).value
+        detailMessageViewModel.value = MessageViewModel(message: message!)
         
     }
     

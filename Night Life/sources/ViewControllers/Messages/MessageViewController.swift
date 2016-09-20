@@ -37,16 +37,18 @@ class MessageViewController: UIViewController, UITableViewDelegate {
       
         textView.text = viewModel.message.body
         
-        viewModel.commentViewModel!.commentCountObservable
+        viewModel.commentViewModel.commentCountObservable
             .subscribeNext { [weak self] (count : Int) in
+                
                 self!.loadDataSource()
+                
             }.addDisposableTo(bag)
 
         saveComment.rx_tap.asObservable()
             
             .subscribe(onNext : { [weak self] in
                 
-                self!.viewModel.commentViewModel!.createComment(self!.commentEnteredText.text )
+                self!.viewModel.commentViewModel.createComment(self!.commentEnteredText.text )
                 self!.commentEnteredText.text = "enter comment"
                 
             }).addDisposableTo(bag)
@@ -69,7 +71,7 @@ class MessageViewController: UIViewController, UITableViewDelegate {
     
     func loadDataSource () {
 
-        viewModel.commentViewModel!.displayData!
+        viewModel.commentViewModel.displayData!
             .drive(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
         
@@ -82,16 +84,14 @@ class MessageViewController: UIViewController, UITableViewDelegate {
         }
 
         
-        dataSource.canEditRowAtIndexPath = { element in            
-   
-            if element.indexPath.row == 0 {
-                return false
-            } else {
-                return true }}
+        dataSource.canEditRowAtIndexPath = { element in
+            return element.indexPath.row != 0
+        }
+        
         
         tableView.rx_itemDeleted
             .subscribeNext{[unowned self] value in
-                self.viewModel.commentViewModel!.deleteComment(value.row)
+                self.viewModel.commentViewModel.deleteComment(value.row)
             }
             .addDisposableTo(bag)
         

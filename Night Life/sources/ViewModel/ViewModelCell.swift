@@ -12,17 +12,13 @@ import RxDataSources
 
 struct ViewModelCell {
     
-    var message : Message
-
-    var bag = DisposeBag()
+    let message : Message
+    private let bag = DisposeBag()
     
     init(message : Message) {
     
         self.message = message
-    
     }
-    
-    
 }
 
 
@@ -36,9 +32,7 @@ extension ViewModelCell : Hashable, IdentifiableType, Equatable  {
     }
     
     var identity: String {
-        
         return message.title
-        
     }
     
 }

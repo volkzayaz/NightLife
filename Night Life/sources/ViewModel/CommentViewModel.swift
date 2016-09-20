@@ -12,9 +12,9 @@ import RxAlamofire
 
 struct CommentViewModel {
     
-    var displayData: Driver<[CommentSection]>?
+    let displayData: Driver<[CommentSection]>?
    
-    private var message : Message
+    private let message : Message
     private let bag = DisposeBag()
     
     init (message : Message) {
@@ -34,7 +34,7 @@ struct CommentViewModel {
 
     func createComment(body : String) -> [Comment] {
         
-        InMemoryStorageArray.saveComment(message.id, body : body)
+        InMemoryStorageArray.saveCommentByMessage(message.id, body : body)
         return (InMemoryStorageArray.storage[message.id]!.value)
     }
     

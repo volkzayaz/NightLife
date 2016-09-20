@@ -21,10 +21,12 @@ class CommentTableCell : UITableViewCell{
     @IBOutlet weak var createdDate: UILabel!
 
     func setComment(comment: Comment) {
-                
+       
         coomentLabel.text = comment.body
         createdLabel.text = comment.created
-        createdDate.text = comment.createdDate        
+        
+        guard comment.createdDate != nil else { return createdDate.text = "" }
+        createdDate.text = NSDateFormatter.localizedStringFromDate(comment.createdDate!, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
        
     }
   

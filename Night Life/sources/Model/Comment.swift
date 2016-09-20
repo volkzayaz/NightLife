@@ -12,24 +12,19 @@ import RxDataSources
 
 struct Comment  {
     
-    private(set) var id : Int = 0
+    private(set) var id : Int
+    var messageId : Int
+    var body : String
+    var createdDate : NSDate?
+    var created: String
     
-    var key: Int { return messageId }
-    var messageId : Int = 0
-    var identifier: Int { return id }
-    var body : String = ""
-    var createdDate : String = ""
-    
-    var created: String = ""
-    
-    init(messageId : Int, body : String, created : String, createdDate : String)  {
+    init(messageId : Int, body : String, created : String, createdDate : NSDate? = nil)  {
        
         self.messageId = messageId
         self.body = body
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
         self.createdDate = createdDate
         self.created = created
-      
     }
   
 }
@@ -46,3 +41,4 @@ extension Comment : IdentifiableType, Equatable {
 func ==(lhs: Comment, rhs: Comment) -> Bool {
     return lhs.id == rhs.id
 }
+
