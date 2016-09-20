@@ -34,13 +34,13 @@ struct CommentViewModel {
 
     func createComment(body : String) -> [Comment] {
         
-        InMemoryStorageArray.saveCommentByMessage(message.id, body : body)
+        InMemoryStorageArray.saveCommentByMessage(message, body : body)
         return (InMemoryStorageArray.storage[message.id]!.value)
     }
     
   
     func deleteComment(row: Int) {
-        InMemoryStorageArray.removeCommentFromStorage(message.id, row: row)        
+        InMemoryStorageArray.removeCommentFromStorage(message, row: row)        
     }
         
 }

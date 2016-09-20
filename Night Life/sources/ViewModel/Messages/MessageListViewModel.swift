@@ -46,7 +46,7 @@ extension MessageListViewModel {
         
         if InMemoryStorageArray.storage[message.id] == nil {
             InMemoryStorageArray.storage[message.id] = Variable([])
-            InMemoryStorageArray.storage[message.id]!.value.append(Comment(messageId: message.id, body : "", created : "", createdDate : nil))
+            InMemoryStorageArray.storage[message.id]!.value.append(Comment(body : "", createdDayOfWeek : "", createdDate : nil))
         }
         
         detailMessageViewModel.value = MessageViewModel(message: message)
@@ -59,7 +59,7 @@ extension MessageListViewModel {
         let message = MessagesContext.messages.value[row]
         
         message.removeFromStorage()
-        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message.id)        
+        InMemoryStorageArray.removeAllCommentsFromStorageByMessage(message)        
         
         MessagesContext.messages.value.removeAtIndex(row)
         

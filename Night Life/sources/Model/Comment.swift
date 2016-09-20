@@ -12,19 +12,17 @@ import RxDataSources
 
 struct Comment  {
     
-    private(set) var id : Int
-    var messageId : Int
-    var body : String
-    var createdDate : NSDate?
-    var created: String
+    let id : Int
+    let body : String
+    let createdDate : NSDate?
+    let createdDayOfWeek: String
     
-    init(messageId : Int, body : String, created : String, createdDate : NSDate? = nil)  {
+    init(body : String, createdDayOfWeek : String, createdDate : NSDate? = nil)  {
        
-        self.messageId = messageId
         self.body = body
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
         self.createdDate = createdDate
-        self.created = created
+        self.createdDayOfWeek = createdDayOfWeek
     }
   
 }
