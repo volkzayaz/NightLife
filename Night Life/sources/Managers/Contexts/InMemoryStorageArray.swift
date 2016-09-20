@@ -27,7 +27,7 @@ struct InMemoryStorageArray {
             self.storage[message.id] = Variable([])
         }
         guard body.characters.count > 1  else { return }
-        self.storage[message.id]!.value.append(Comment(body : body, createdDayOfWeek : TodayDayManager.dayOfWeekText(), createdDate : NSDate()))
+        self.storage[message.id]!.value.append(Comment(body : body, createdDate : NSDate()))
        
     }
     

@@ -19,15 +19,19 @@ class CommentTableCell : UITableViewCell{
     @IBOutlet weak var coomentLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
     @IBOutlet weak var createdDate: UILabel!
-
+    
     func setComment(comment: Comment) {
-       
-        coomentLabel.text = comment.body
-        createdLabel.text = comment.createdDayOfWeek
         
-        guard comment.createdDate != nil else { return createdDate.text = "" }
+        coomentLabel.text = comment.body        
+        
+        guard comment.createdDate != nil else {
+            createdLabel.text = ""
+            createdDate.text = ""
+            return  }
+        
         createdDate.text = NSDateFormatter.localizedStringFromDate(comment.createdDate!, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
-       
+        createdLabel.text = TodayDayManager.dayOfWeekText()
+        
     }
-  
+    
 }

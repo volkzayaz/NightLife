@@ -46,7 +46,7 @@ extension MessageListViewModel {
         
         if InMemoryStorageArray.storage[message.id] == nil {
             InMemoryStorageArray.storage[message.id] = Variable([])
-            InMemoryStorageArray.storage[message.id]!.value.append(Comment(body : "", createdDayOfWeek : "", createdDate : nil))
+            InMemoryStorageArray.storage[message.id]!.value.append(Comment(body : "", createdDate : nil))
         }
         
         detailMessageViewModel.value = MessageViewModel(message: message)

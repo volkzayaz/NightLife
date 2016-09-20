@@ -15,14 +15,14 @@ struct Comment  {
     let id : Int
     let body : String
     let createdDate : NSDate?
-    let createdDayOfWeek: String
+   // let createdDayOfWeek: String
     
-    init(body : String, createdDayOfWeek : String, createdDate : NSDate? = nil)  {
+    init(body : String, createdDate : NSDate? = nil)  {
        
         self.body = body
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
         self.createdDate = createdDate
-        self.createdDayOfWeek = createdDayOfWeek
+       // self.createdDayOfWeek = createdDayOfWeek
     }
   
 }
