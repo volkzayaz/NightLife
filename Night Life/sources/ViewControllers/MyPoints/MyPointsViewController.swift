@@ -13,7 +13,7 @@ import SWRevealViewController
 import QuartzCore
 
 
-class MyPointsViewController: UIViewController, UITextFieldDelegate{
+class MyPointsViewController<T : ErrorHandler>: UIViewController, UITextFieldDelegate{
     
   private let kScrollUP:Int = 170
     
@@ -27,69 +27,49 @@ class MyPointsViewController: UIViewController, UITextFieldDelegate{
   @IBOutlet weak var submitBtn: UIButton!
     
   @IBAction func minusBtnClick(sender: AnyObject) {
+
+      viewModel.decreaseAmountOfPointsToSubstract()
     
-    guard let new = viewModelTwo as? MyPointsViewModel else {
-        return
-    }
-      new.decreaseAmountOfPointsToSubstract()
   }
     
   @IBAction func plusBtnClick(sender: AnyObject) {
     
-    guard let new = viewModelTwo as? MyPointsViewModel else {
-        return
-    }
+      viewModel.increaseAmountOfPointsToSubstract()
     
-      new.increaseAmountOfPointsToSubstract()
   }
   @IBAction func submitBtnClick(sender: AnyObject) {
-    
-    guard let new = viewModelTwo as? MyPointsViewModel else {
-        return
-    }
-    
-    new.removePoints()
+
+    viewModel.removePoints()
   }
   
-private let viewModel = MyPointsViewModel()
+    var viewModel = MyPointsViewModel()
 
   private let bag = DisposeBag()
-    
-    
-    override func loadView(){
-        viewModelTwo = MyPointsViewModel()
-        super.loadView()
-    }
+
     
     override func viewDidLoad() {
-        //print(viewModelTwo)
+
     super.viewDidLoad()
 
     self.showInfoMessage(withTitle: "alert", "PLEASE REDEEM THE POINTS AT A PARTNER VENUE") {
         
         
     }
-    
-
         
-    guard let new = viewModelTwo as? MyPointsViewModel else {
-        return
-    }
-
-    new.amountOfPointsToSubstract.asObservable()
+    viewModel.amountOfPointsToSubstract.asObservable()
         .map{ "\($0)" }
         .bindTo(pointsBottomLbl.rx_text)
         .addDisposableTo(bag)
     
-    new.enableMinusButtonObservable
+    viewModel.enableMinusButtonObservable
         .bindTo(pointsMinusBtn.rx_enabled)
         .addDisposableTo(bag)
     
-    new.enableSubmitButtonObservable
+    viewModel.enableSubmitButtonObservable
         .bindTo(submitBtn.rx_enabled)
         .addDisposableTo(bag)
     
-    new.generalAmountOfPoints.asObservable()
+    viewModel.generalAmountOfPoints.asObservable()
       .filter{ $0 != nil }
       .map{"\($0!.points)"}
       .bindTo(pointsTopLbl.rx_text)
@@ -100,17 +80,9 @@ private let viewModel = MyPointsViewModel()
 
 
 protocol ErrorHandler {
-
-}
-
-extension ErrorHandler {
     
-    func showErrorMessage(viewModel : ErrorViewModelProtocol, controller : UIViewController) {
-        viewModel.errorMessage.asDriver()
-            .filter { $0 != nil }.map { $0! }
-            .driveNext { message in
-                controller.showInfoMessage(withTitle: "Error", message)
-        }
-     }
+    associatedtype ViewModel : OriginalViewModel
+    
+    var viewModel: ViewModel { get set }
 }
 
