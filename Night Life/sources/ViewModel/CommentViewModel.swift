@@ -34,6 +34,8 @@ struct CommentViewModel {
 
     func createComment(body : String) -> [Comment] {
         
+        
+        
         InMemoryStorageArray.saveCommentByMessage(message, body : body)
         return (InMemoryStorageArray.storage[message.id]!.value)
     }

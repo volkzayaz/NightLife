@@ -18,7 +18,7 @@ import RxDataSources
 class MessagesListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = MessageListViewModel()
+    private let viewModel = MessageListViewModel()
 
     private let dataSource = RxTableViewSectionedAnimatedDataSource<MessageSection>()
     

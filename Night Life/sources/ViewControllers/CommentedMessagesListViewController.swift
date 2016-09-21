@@ -19,7 +19,7 @@ class CommentedMessagesListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = CommentedMessagesListViewModel()
+    private let viewModel = CommentedMessagesListViewModel()
     
     private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentedMessageSection>()
     
@@ -59,6 +59,8 @@ class CommentedMessagesListViewController: UIViewController {
                 self.viewModel.selectedMessage(atIndexPath: ip)
             }
             .addDisposableTo(bag)
+        
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

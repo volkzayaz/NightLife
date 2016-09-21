@@ -14,7 +14,7 @@ import RxAlamofire
 struct MessageViewModel {
     
     var message : Message
-   // private let comments : [Comment]
+
     let commentViewModel : CommentViewModel
     
     
@@ -22,7 +22,6 @@ struct MessageViewModel {
    
     init(message: Message) {
         self.message = message
-       
         self.commentViewModel = CommentViewModel(message: self.message)
         
         if !message.isRead {

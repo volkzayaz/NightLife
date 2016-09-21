@@ -8,10 +8,12 @@
 import Foundation
 import RxSwift
 import RxCocoa
-
+import CoreLocation
 
 struct InMemoryStorageArray {
 
+    static let bag = DisposeBag()
+    
     static var storage: [Int : Variable<[Comment]>] = [ : ]
  
     static func recieveCommentsByMessage (message : Message) -> Variable<[Comment]> {
@@ -21,13 +23,20 @@ struct InMemoryStorageArray {
     }
     
 
-    static func saveCommentByMessage(message : Message, body : String) {
+    static func saveCommentByMessage(message : Message, body : String) {        
         
-        if self.storage[message.id] == nil {
-           self.storage[message.id] = Variable([])
-        }
         guard body.characters.count > 1  else { return }
-        self.storage[message.id]!.value.append(Comment(body : body, createdDate : NSDate()))
+        
+        _ = LocationManager.instance.lastRecordedLocationObservable
+            .take(1)
+            .subscribe(
+                onNext : { location in
+                   self.storage[message.id]!.value.append(Comment(body : body, createdDate : NSDate(), location : location))
+                }
+                
+            ).addDisposableTo(bag)
+
+        
        
     }
     

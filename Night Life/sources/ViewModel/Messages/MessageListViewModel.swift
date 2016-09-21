@@ -23,7 +23,6 @@ class MessageListViewModel {
     
     let displayData: Driver<[MessageSection]>
     let detailMessageViewModel: Variable<MessageViewModel?> = Variable(nil)
-   
     
     private let bag = DisposeBag()
     
@@ -42,12 +41,8 @@ extension MessageListViewModel {
     
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         
-        let message = MessagesContext.messages.value[ip.row]
-        
-        if InMemoryStorageArray.storage[message.id] == nil {
-           InMemoryStorageArray.storage[message.id] = Variable([])
-        }
-        
+        let message = MessagesContext.messages.value[ip.row]        
+       
         detailMessageViewModel.value = MessageViewModel(message: message)
     }
     
