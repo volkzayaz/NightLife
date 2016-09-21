@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		454FCDF2CAFDDA056C28D514 /* Pods_GlobBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */; };
+		5CF66D071D92A457006D29D4 /* CommentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF66D061D92A457006D29D4 /* CommentStorage.swift */; };
 		7305E0281CAADFAB00ED4F11 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */; };
 		73069CCC1CB7BBAC0040D599 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73069CCB1CB7BBAC0040D599 /* AddMediaViewController.swift */; };
 		73069CCF1CB7BBD30040D599 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73069CCE1CB7BBD30040D599 /* MediaItem.swift */; };
@@ -335,6 +336,7 @@
 
 /* Begin PBXFileReference section */
 		4A9D0D5FF6C3D36E784029CA /* Pods-GlobBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar.debug.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar/Pods-GlobBar.debug.xcconfig"; sourceTree = "<group>"; };
+		5CF66D061D92A457006D29D4 /* CommentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentStorage.swift; sourceTree = "<group>"; };
 		7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		73069CCB1CB7BBAC0040D599 /* AddMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
 		73069CCE1CB7BBD30040D599 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
@@ -1155,6 +1157,7 @@
 			children = (
 				73FD52981D885594008CB4BE /* raleway_family_v3 */,
 				73FD52AD1D885594008CB4BE /* roboto */,
+				5CF66D061D92A457006D29D4 /* CommentStorage.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1729,6 +1732,7 @@
 				733790F71C64D9EB00ACB443 /* MainRouter.swift in Sources */,
 				8492A9F21CB6CE1500D8C70A /* MessageTableCell.swift in Sources */,
 				73B6AE8B1CA1660A00411EB1 /* UserListCell.swift in Sources */,
+				5CF66D071D92A457006D29D4 /* CommentStorage.swift in Sources */,
 				73EF22291C9C5A72005A6D6D /* CityFeedDataProvider.swift in Sources */,
 				73B6AE881CA160DB00411EB1 /* UserViewModel.swift in Sources */,
 				7332FE101C7F4D9E001FE7D5 /* Report.swift in Sources */,
