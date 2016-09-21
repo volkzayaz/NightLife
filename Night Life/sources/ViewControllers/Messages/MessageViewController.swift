@@ -17,6 +17,11 @@ class MessageViewController: UIViewController {
     private let bag = DisposeBag()
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentTextField: UITextField!
+    
+    @IBAction func saveCommentButton(sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

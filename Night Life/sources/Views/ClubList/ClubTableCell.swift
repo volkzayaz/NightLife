@@ -160,7 +160,7 @@ class ClubTableCell : UITableViewCell {
 #if ADHOC || DEBUG
         travelButton.hidden = false
 #else
-        travelButton.hidden = true
+        travelButton.hidden = false
 #endif
         
         ///location label
