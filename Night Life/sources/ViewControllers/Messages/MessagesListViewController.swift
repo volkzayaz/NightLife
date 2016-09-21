@@ -58,8 +58,7 @@ class MessagesListViewController: UIViewController {
               self.viewModel.selectedMessage(atIndexPath: ip)
         }
         .addDisposableTo(bag)
-        self.xo = viewModel
-        print(self.xo!.errorMessage.value)
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

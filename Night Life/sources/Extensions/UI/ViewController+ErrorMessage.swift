@@ -8,13 +8,14 @@
 
 import UIKit
 import ObjectiveC
+import RxSwift
 
 typealias MessageCallback = () -> Void
 var AssociatedObjectHandle: UInt8 = 0
 
 extension UIViewController {
     
-    var xo: OriginalViewModel? {
+    var viewModelTwo: OriginalViewModel? {
         get {
             return objc_getAssociatedObject(self, &AssociatedObjectHandle) as? OriginalViewModel
         }
@@ -23,14 +24,6 @@ extension UIViewController {
         }
     }
     
-    var viewModelTwo : OriginalViewModel {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedObjectHandle) as! OriginalViewModel
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedObjectHandle, newValue, objc_AssociationPolicy(rawValue: 1)!)
-        }
-    }
     
     public override class func initialize() {
         struct Static {
@@ -61,6 +54,17 @@ extension UIViewController {
     
     func nsh_viewDidLoad() {
         self.nsh_viewDidLoad()
+        
+        if let new = viewModelTwo {
+            
+            new.errorMessage.asDriver()
+                .filter { $0 != nil }.map { $0! }
+                .driveNext { [unowned self] message in
+                    self.showInfoMessage(withTitle: "Error", message)
+            }
+            
+        }
+
     }
 
     
