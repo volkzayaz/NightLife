@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		454FCDF2CAFDDA056C28D514 /* Pods_GlobBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */; };
 		5CF66D071D92A457006D29D4 /* CommentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF66D061D92A457006D29D4 /* CommentStorage.swift */; };
+		5CF66D0B1D92BA98006D29D4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF66D0A1D92BA98006D29D4 /* Comment.swift */; };
 		7305E0281CAADFAB00ED4F11 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */; };
 		73069CCC1CB7BBAC0040D599 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73069CCB1CB7BBAC0040D599 /* AddMediaViewController.swift */; };
 		73069CCF1CB7BBD30040D599 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73069CCE1CB7BBD30040D599 /* MediaItem.swift */; };
@@ -337,6 +338,7 @@
 /* Begin PBXFileReference section */
 		4A9D0D5FF6C3D36E784029CA /* Pods-GlobBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar.debug.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar/Pods-GlobBar.debug.xcconfig"; sourceTree = "<group>"; };
 		5CF66D061D92A457006D29D4 /* CommentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentStorage.swift; sourceTree = "<group>"; };
+		5CF66D0A1D92BA98006D29D4 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		73069CCB1CB7BBAC0040D599 /* AddMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
 		73069CCE1CB7BBD30040D599 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
@@ -535,6 +537,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CF66D081D92AFA9006D29D4 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		5CF66D091D92BA87006D29D4 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				5CF66D0A1D92BA98006D29D4 /* Comment.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		6E88025CAB03AC52AD3DBD68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +888,7 @@
 		73523FEB1C6B844200A5FE23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5CF66D091D92BA87006D29D4 /* Comment */,
 				843907491CB69B9E00C05D8B /* Message */,
 				842D30C81C98252A001B3AE2 /* Points */,
 				733E8CE01C96E62100F24620 /* City */,
@@ -1063,6 +1081,7 @@
 		73EF22041C9C594F005A6D6D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5CF66D081D92AFA9006D29D4 /* Comments */,
 				84E2C5FA1CEB47B2000D38E8 /* SignIn */,
 				842449091CEA31AC0098DBE7 /* SignUp */,
 				73A6A0391CC3B075008594F2 /* Invitation */,
@@ -1730,6 +1749,7 @@
 				843907461CB6966400C05D8B /* MessagesListViewController.swift in Sources */,
 				842D30CA1C98252A001B3AE2 /* Points.swift in Sources */,
 				733790F71C64D9EB00ACB443 /* MainRouter.swift in Sources */,
+				5CF66D0B1D92BA98006D29D4 /* Comment.swift in Sources */,
 				8492A9F21CB6CE1500D8C70A /* MessageTableCell.swift in Sources */,
 				73B6AE8B1CA1660A00411EB1 /* UserListCell.swift in Sources */,
 				5CF66D071D92A457006D29D4 /* CommentStorage.swift in Sources */,

@@ -14,7 +14,7 @@ import RxAlamofire
 struct MessageViewModel {
     
     var message : Message
-    
+
     private let bag = DisposeBag()
     
     init(message: Message) {
@@ -30,4 +30,35 @@ struct MessageViewModel {
                 .addDisposableTo(bag)
         }
     }
+    
+    
+
+    let savedComment : Variable<String> = Variable("")
+    var commentObservable : Observable <String>? {
+  
+        
+        didSet {
+            commentObservable!
+                .flatMap { (comment :String) -> Observable <String> in
+         print("commentObservable")              
+                    print(comment)
+                    return Observable.just("")
+            }
+                .subscribeNext { (comment : String) in
+                self.savedComment.value = comment
+            }
+        }
+        
+    }
+
+    
+    
+    
+    func saveComment(textComment : String) {
+        
+        print ("MessageViewModel = \(self.message.id)" )
+        CommentStorage.saveMessageComments(self.message, textComment: textComment)
+        
+    }
+    
 }
