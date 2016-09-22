@@ -39,7 +39,6 @@ struct CommentsByLocationViewModel {
                         }
                         
                         return commentedMessages
-                        
                 }
         }
         
@@ -51,8 +50,7 @@ struct CommentsByLocationViewModel {
            
         }
         
-    
-        
+            
 //        let sortedComments = commentsLocated.map{ (comments : [Comment]) -> [Comment] in
 //          
 //           return comments.sort{ $0.0.location == $0.1.location }
@@ -94,13 +92,13 @@ extension CommentsByLocationViewModel {
     
     func deleteComment(row: Int) {
         
-//        let comment = displayData.value.first?.items[row].comment
-//        
-//        let index = InMemoryStorageArray.storage[comment!.messageId]?.value.indexOf(comment!)
-//        
-//        print(index)
-//        
-//        InMemoryStorageArray.storage[comment!.messageId]?.value.removeAtIndex(index!)
+        let comment = displayData.value.first?.items[row].comment
+        
+        let index = InMemoryStorageArray.storage[comment!.messageId]?.value.indexOf(comment!)
+        
+        print(index)
+        
+        InMemoryStorageArray.storage[comment!.messageId]?.value.removeAtIndex(index!)
         
     }
 //        message!.removeFromStorage()
