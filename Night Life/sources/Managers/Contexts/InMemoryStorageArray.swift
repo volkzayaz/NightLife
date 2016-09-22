@@ -31,7 +31,7 @@ struct InMemoryStorageArray {
             .take(1)
             .subscribe(
                 onNext : { location in
-                   self.storage[message.id]!.value.append(Comment(body : body, createdDate : NSDate(), location : location))
+                   self.storage[message.id]!.value.append(Comment(body : body,messageId: message.id, createdDate : NSDate(), location : location))
                 }
                 
             ).addDisposableTo(bag)

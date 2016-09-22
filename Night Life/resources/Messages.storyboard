@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -71,7 +72,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-BM-doM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-BM-doM">
                                                     <rect key="frame" x="139" y="28" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="OfI-jH-lIo"/>
@@ -256,13 +257,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="50" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-oN-Qev">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" patternImage="7C35F9BB-57C9-402D-AF31-2EEBD7860F42" colorSpace="pattern"/>
+                                <color key="separatorColor" patternImage="6B8C9703-37F4-4F46-ACBC-284B5E21677A" colorSpace="pattern"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="comment cell" rowHeight="50" id="vMV-ox-QsN" customClass="CommentTableCell" customModule="GlobBar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vMV-ox-QsN" id="TD4-rm-GES">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E51-Pm-A47">
@@ -281,7 +282,8 @@
                                                             <exclude reference="i4S-XH-zOt"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular">
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="133" y="0.0" width="107" height="21"/>
                                                         <mask key="constraints">
                                                             <exclude reference="BkW-MJ-Xzd"/>
                                                             <include reference="fpT-qK-mDN"/>
@@ -313,6 +315,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="133" y="18" width="107" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yw-an-xjI">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -327,7 +332,8 @@
                                                             <exclude reference="YmG-dW-ddw"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular">
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="133" y="39" width="107" height="13"/>
                                                         <mask key="constraints">
                                                             <include reference="YmG-dW-ddw"/>
                                                         </mask>
@@ -338,6 +344,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="133" y="29" width="107" height="13"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -367,20 +376,20 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="Wv4-Gr-WEc"/>
+                                                    <exclude reference="S3T-RK-ogI"/>
+                                                    <exclude reference="UKB-F4-kmn"/>
+                                                    <exclude reference="D83-ct-Y4M"/>
+                                                    <exclude reference="KCh-PF-tPe"/>
+                                                    <exclude reference="RV5-Nh-w1P"/>
+                                                    <exclude reference="xYH-yC-fM3"/>
+                                                    <exclude reference="060-CX-RUO"/>
+                                                    <exclude reference="210-HB-1l4"/>
+                                                    <exclude reference="JTG-Mn-TkT"/>
                                                     <exclude reference="amy-qS-hiT"/>
                                                     <exclude reference="oIp-ei-D7h"/>
                                                     <exclude reference="uKC-G4-CKA"/>
                                                     <exclude reference="vEp-1r-czm"/>
                                                     <exclude reference="ycz-al-Lgt"/>
-                                                    <exclude reference="060-CX-RUO"/>
-                                                    <exclude reference="210-HB-1l4"/>
-                                                    <exclude reference="JTG-Mn-TkT"/>
-                                                    <exclude reference="D83-ct-Y4M"/>
-                                                    <exclude reference="KCh-PF-tPe"/>
-                                                    <exclude reference="RV5-Nh-w1P"/>
-                                                    <exclude reference="xYH-yC-fM3"/>
-                                                    <exclude reference="S3T-RK-ogI"/>
-                                                    <exclude reference="UKB-F4-kmn"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular">
@@ -393,20 +402,20 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="Wv4-Gr-WEc"/>
+                                                    <include reference="S3T-RK-ogI"/>
+                                                    <include reference="UKB-F4-kmn"/>
+                                                    <include reference="D83-ct-Y4M"/>
+                                                    <include reference="KCh-PF-tPe"/>
+                                                    <include reference="RV5-Nh-w1P"/>
+                                                    <include reference="xYH-yC-fM3"/>
+                                                    <include reference="060-CX-RUO"/>
+                                                    <include reference="210-HB-1l4"/>
+                                                    <include reference="JTG-Mn-TkT"/>
                                                     <include reference="amy-qS-hiT"/>
                                                     <include reference="oIp-ei-D7h"/>
                                                     <include reference="uKC-G4-CKA"/>
                                                     <include reference="vEp-1r-czm"/>
                                                     <exclude reference="ycz-al-Lgt"/>
-                                                    <include reference="060-CX-RUO"/>
-                                                    <include reference="210-HB-1l4"/>
-                                                    <include reference="JTG-Mn-TkT"/>
-                                                    <include reference="D83-ct-Y4M"/>
-                                                    <include reference="KCh-PF-tPe"/>
-                                                    <include reference="RV5-Nh-w1P"/>
-                                                    <include reference="xYH-yC-fM3"/>
-                                                    <include reference="S3T-RK-ogI"/>
-                                                    <include reference="UKB-F4-kmn"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -501,7 +510,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7C35F9BB-57C9-402D-AF31-2EEBD7860F42" width="320" height="460">
+        <image name="6B8C9703-37F4-4F46-ACBC-284B5E21677A" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

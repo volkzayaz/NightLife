@@ -17,13 +17,14 @@ struct Comment  {
     let body : String
     let createdDate : NSDate
     let location : CLLocation?
-   
-    init(body : String, createdDate : NSDate, location : CLLocation? = nil)  {
+    let messageId : Int
+    init(body : String, messageId : Int, createdDate : NSDate, location : CLLocation? = nil)  {
        
         self.body = body
         self.id = Int(arc4random_uniform(200)) //TODO Int.max
         self.createdDate = createdDate
         self.location = location
+        self.messageId = messageId
 
     }
   

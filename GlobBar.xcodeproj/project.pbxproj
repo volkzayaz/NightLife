@@ -331,6 +331,11 @@
 		84E2C5FE1CEB4854000D38E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */; };
 		84EDEFCF1CCA25FA00AC4BDE /* TodayDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */; };
 		946483791265AD06B33CA6A6 /* Pods_GlobBar_AdHoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */; };
+		C52E96671D93D665002D9F15 /* CommentsByLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52E96661D93D665002D9F15 /* CommentsByLocation.storyboard */; };
+		C52E96691D93D922002D9F15 /* CommentsByLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E96681D93D922002D9F15 /* CommentsByLocationViewModel.swift */; };
+		C52E966B1D93E83B002D9F15 /* ViewModelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E966A1D93E83B002D9F15 /* ViewModelCommentCell.swift */; };
+		C52E966D1D93E8C9002D9F15 /* CommentsByLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E966C1D93E8C9002D9F15 /* CommentsByLocationViewController.swift */; };
+		C52E966F1D93EB2C002D9F15 /* LocatedCommentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E966E1D93EB2C002D9F15 /* LocatedCommentTableCell.swift */; };
 		C537BBC41D8A85360051EDBF /* ViewModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537BBC31D8A85360051EDBF /* ViewModelCell.swift */; };
 		C537BBC61D8AB3520051EDBF /* CommentedMessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */; };
 		C539C8D21D89518C00862E0D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539C8D11D89518C00862E0D /* Comment.swift */; };
@@ -512,6 +517,11 @@
 		84E2C5FD1CEB4854000D38E8 /* SignInRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		84EDEFCE1CCA25FA00AC4BDE /* TodayDayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDayManager.swift; sourceTree = "<group>"; };
 		A1251E0C988A18BFB10572D9 /* Pods-GlobBar_AdHoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar_AdHoc.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar_AdHoc/Pods-GlobBar_AdHoc.release.xcconfig"; sourceTree = "<group>"; };
+		C52E96661D93D665002D9F15 /* CommentsByLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommentsByLocation.storyboard; sourceTree = "<group>"; };
+		C52E96681D93D922002D9F15 /* CommentsByLocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsByLocationViewModel.swift; sourceTree = "<group>"; };
+		C52E966A1D93E83B002D9F15 /* ViewModelCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelCommentCell.swift; sourceTree = "<group>"; };
+		C52E966C1D93E8C9002D9F15 /* CommentsByLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsByLocationViewController.swift; sourceTree = "<group>"; };
+		C52E966E1D93EB2C002D9F15 /* LocatedCommentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocatedCommentTableCell.swift; sourceTree = "<group>"; };
 		C537BBC31D8A85360051EDBF /* ViewModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelCell.swift; sourceTree = "<group>"; };
 		C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommentedMessages.storyboard; sourceTree = "<group>"; };
 		C539C8D11D89518C00862E0D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -728,6 +738,7 @@
 				842D30BC1C982450001B3AE2 /* MyPoints.storyboard */,
 				73F9E2C01CAD4227005758D1 /* Reusable.storyboard */,
 				843907471CB6979700C05D8B /* Messages.storyboard */,
+				C52E96661D93D665002D9F15 /* CommentsByLocation.storyboard */,
 				C537BBC51D8AB3520051EDBF /* CommentedMessages.storyboard */,
 			);
 			path = resources;
@@ -1343,6 +1354,8 @@
 				C539C8D61D896DC100862E0D /* CommentViewModel.swift */,
 				C539C8D81D89810400862E0D /* CommentListViewModel.swift */,
 				C537BBC31D8A85360051EDBF /* ViewModelCell.swift */,
+				C52E96681D93D922002D9F15 /* CommentsByLocationViewModel.swift */,
+				C52E966A1D93E83B002D9F15 /* ViewModelCommentCell.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1351,6 +1364,7 @@
 			isa = PBXGroup;
 			children = (
 				C558A82D1D8BED780013C5CE /* CommentTableCell.swift */,
+				C52E966E1D93EB2C002D9F15 /* LocatedCommentTableCell.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1359,6 +1373,7 @@
 			isa = PBXGroup;
 			children = (
 				C5F3CD2F1D89B3A60037EBF4 /* CommentedMessagesListViewController.swift */,
+				C52E966C1D93E8C9002D9F15 /* CommentsByLocationViewController.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1471,6 +1486,7 @@
 				843907481CB6979700C05D8B /* Messages.storyboard in Resources */,
 				73FD52D51D885594008CB4BE /* Raleway-Light.ttf in Resources */,
 				73FD52D71D885594008CB4BE /* Raleway-Medium-Italic.ttf in Resources */,
+				C52E96671D93D665002D9F15 /* CommentsByLocation.storyboard in Resources */,
 				7325A3C51C63AC49009FF07E /* Assets.xcassets in Resources */,
 				73FD52D11D885594008CB4BE /* Raleway-ExtraLight.ttf in Resources */,
 				73FD52F91D885594008CB4BE /* Roboto-Italic.ttf in Resources */,
@@ -1735,10 +1751,12 @@
 				7332FE681C80860E001FE7D5 /* SideViewController.swift in Sources */,
 				733FA1161C7B70B600DBA588 /* LocationManager.swift in Sources */,
 				7323E4851C88522700F397BC /* ReportDetailsViewController.swift in Sources */,
+				C52E966F1D93EB2C002D9F15 /* LocatedCommentTableCell.swift in Sources */,
 				7323E4811C8851F000F397BC /* CreateReport.swift in Sources */,
 				73EF221B1C9C594F005A6D6D /* AddMediaViewModel.swift in Sources */,
 				73EF21FF1C9C4A06005A6D6D /* ClubsManager.swift in Sources */,
 				7332FE731C80D24B001FE7D5 /* FeedDisplayableRouter.swift in Sources */,
+				C52E966D1D93E8C9002D9F15 /* CommentsByLocationViewController.swift in Sources */,
 				73069CCF1CB7BBD30040D599 /* MediaItem.swift in Sources */,
 				738AA0211C73346B00379C75 /* Authenticator.swift in Sources */,
 				73E676C31CB56E98004B22D2 /* AccessToken.swift in Sources */,
@@ -1756,6 +1774,7 @@
 				7325A3C91C63AC49009FF07E /* AppDelegate.swift in Sources */,
 				73C04D931CA009090072C00A /* UserProfileViewController.swift in Sources */,
 				7329BC671C7745AA00D7512F /* ReviewReportCollectionCell.swift in Sources */,
+				C52E966B1D93E83B002D9F15 /* ViewModelCommentCell.swift in Sources */,
 				734942341CAA8CCC00CAD19A /* NotificationManager.swift in Sources */,
 				738F8AA61C9847BE0062E916 /* ClubListRouter.swift in Sources */,
 				73EF22251C9C594F005A6D6D /* MyPointsViewModel.swift in Sources */,
@@ -1794,6 +1813,7 @@
 				73B6AE8B1CA1660A00411EB1 /* UserListCell.swift in Sources */,
 				73EF22291C9C5A72005A6D6D /* CityFeedDataProvider.swift in Sources */,
 				73B6AE881CA160DB00411EB1 /* UserViewModel.swift in Sources */,
+				C52E96691D93D922002D9F15 /* CommentsByLocationViewModel.swift in Sources */,
 				7332FE101C7F4D9E001FE7D5 /* Report.swift in Sources */,
 				73B3368D1C9AFCD80009A146 /* LikedClubsListViewController.swift in Sources */,
 				73EF22241C9C594F005A6D6D /* LikedClubsListViewModel.swift in Sources */,

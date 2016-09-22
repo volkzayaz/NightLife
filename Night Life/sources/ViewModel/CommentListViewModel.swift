@@ -42,10 +42,11 @@ struct CommentedMessagesListViewModel {
 
                         }
             }
-
         
         commentedMessages.map { (messages : [Message]) -> [ViewModelCell] in
-
+            
+            
+            
                     let viewModelCell : [ViewModelCell] = messages.map { (message : Message) -> ViewModelCell in
                         return ViewModelCell(message: message)
                     }

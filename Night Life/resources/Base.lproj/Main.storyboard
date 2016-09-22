@@ -22,6 +22,7 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
@@ -92,7 +93,7 @@
                 <viewControllerPlaceholder storyboardName="CommentedMessages" id="zVx-5S-r2u" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWp-4G-xtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862.5" y="932"/>
+            <point key="canvasLocation" x="857" y="914"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="0NJ-s4-g3Z">
@@ -710,6 +711,35 @@
                                             <segue destination="zVx-5S-r2u" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="lQb-ZY-rTw"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="34" id="aYS-XB-ZDT">
+                                        <rect key="frame" x="0.0" y="459" width="320" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aYS-XB-ZDT" id="eVk-Wx-nCY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="envelopes" translatesAutoresizingMaskIntoConstraints="NO" id="HVa-Nl-laF">
+                                                    <rect key="frame" x="18" y="10" width="17" height="15"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comments by Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lw-YJ-W24">
+                                                    <rect key="frame" x="48" y="10" width="144" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HVa-Nl-laF" firstAttribute="centerY" secondItem="eVk-Wx-nCY" secondAttribute="centerY" id="4cB-1a-6Uk"/>
+                                                <constraint firstItem="8Lw-YJ-W24" firstAttribute="leading" secondItem="eVk-Wx-nCY" secondAttribute="leadingMargin" constant="40" id="BFj-Bk-DTf"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="HVa-Nl-laF" secondAttribute="leading" constant="-10" id="UCl-NC-E5R"/>
+                                                <constraint firstItem="8Lw-YJ-W24" firstAttribute="centerY" secondItem="HVa-Nl-laF" secondAttribute="centerY" id="b2M-dU-nVr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="ARc-8L-S7O" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="vSL-sG-oqv"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -771,6 +801,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUt-Rl-DGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815" y="472"/>
+        </scene>
+        <!--CommentsByLocation-->
+        <scene sceneID="Dkx-I8-oAx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CommentsByLocation" id="ARc-8L-S7O" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmR-UC-55l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="967"/>
         </scene>
     </scenes>
     <resources>
