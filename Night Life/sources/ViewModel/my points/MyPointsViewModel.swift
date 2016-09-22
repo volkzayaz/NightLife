@@ -11,11 +11,12 @@ import RxSwift
 import Alamofire
 import ObjectMapper
 
-class MyPointsViewModel: OriginalViewModel{
+class MyPointsViewModel: GHMViewModel{
     
     private let bag = DisposeBag()
-
+    var errorMessage = Variable<String?>(nil)
     let amountOfPointsToSubstract = Variable<Int>(100)
+    
     var generalAmountOfPoints = Variable<Points?>(nil)
 
   
