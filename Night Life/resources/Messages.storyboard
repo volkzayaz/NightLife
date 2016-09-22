@@ -32,7 +32,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81L-yx-UrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-933" y="68"/>
+            <point key="canvasLocation" x="-851" y="10"/>
         </scene>
         <!--Messages List-->
         <scene sceneID="iBv-La-h90">
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njC-B6-tYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-535" y="68"/>
+            <point key="canvasLocation" x="-453" y="10"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="qni-kF-ZzD">
@@ -188,6 +188,9 @@
                                     <action selector="saveCommentButton:" destination="fwD-SC-Ytk" eventType="touchUpInside" id="jel-b6-xDm"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="accept" translatesAutoresizingMaskIntoConstraints="NO" id="eGs-S5-T2R">
+                                <rect key="frame" x="266" y="514" width="34" height="34"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,10 +209,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teE-tG-Prj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="68"/>
+            <point key="canvasLocation" x="26" y="10"/>
         </scene>
     </scenes>
     <resources>
+        <image name="accept" width="34" height="34"/>
         <image name="background" width="414" height="736"/>
     </resources>
 </document>
