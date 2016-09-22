@@ -69,7 +69,7 @@ class MessageViewController: UIViewController, UITableViewDelegate {
     }
     
     
-    func loadDataSource () {
+    private func loadDataSource () {
 
         viewModel.commentViewModel.displayData!
             .drive(tableView.rx_itemsWithDataSource(dataSource))

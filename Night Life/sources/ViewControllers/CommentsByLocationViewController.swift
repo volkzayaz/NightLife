@@ -19,7 +19,7 @@ class CommentsByLocationViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let viewModel = CommentsByLocationViewModel()
+    private var viewModel = CommentsByLocationViewModel()
     
     private let dataSource = RxTableViewSectionedAnimatedDataSource<CommentsSection>()
     
@@ -28,6 +28,18 @@ class CommentsByLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadDataSource()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = dataSource.sectionAtIndex(section).header
+        return label
+    }
+    
+    private func loadDataSource() {
+    
         viewModel.displayData
             .asObservable().bindTo(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(bag)
@@ -41,23 +53,31 @@ class CommentsByLocationViewController: UIViewController {
         
         dataSource.canEditRowAtIndexPath = { _ in true }
         
-        tableView.rx_itemDeleted
-            .subscribeNext{[unowned self] value in
-                self.viewModel.deleteComment(value.row)
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+            
+        self.tableView.rx_itemDeleted
+            .map { indexPath in
+                return (indexPath, self.dataSource.itemAtIndexPath(indexPath))
             }
-            .addDisposableTo(bag)
+            .subscribeNext{[unowned self] value in
+                
+                self.viewModel.deleteComment(value.0.row, value: value.1)
+                //var a = value.1.comment
+                self.tableView.reloadData()
+            }
+            .addDisposableTo(self.bag)
         
-        tableView.rx_itemSelected
+        self.tableView.rx_itemSelected
             .subscribeNext{[unowned self] ip in
                 self.viewModel.selectedComment(atIndexPath: ip)
             }
-            .addDisposableTo(bag)
-        
-        
+            .addDisposableTo(self.bag)
+    
     }
     
 }
-
+}
 
 struct CommentsSection {
     
@@ -70,11 +90,11 @@ struct CommentsSection {
 extension CommentsSection : AnimatableSectionModelType  {
     
     typealias Item = ViewModelCommentCell
-    typealias Identity = Int
+    typealias Identity = String
     
     
-    var identity : Int {
-        return 0
+    var identity : String {
+        return header
     }
     
     init(original: CommentsSection, items: [Item]) {

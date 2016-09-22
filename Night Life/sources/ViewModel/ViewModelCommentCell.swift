@@ -32,8 +32,8 @@ extension ViewModelCommentCell : Hashable, IdentifiableType, Equatable  {
         }
     }
     
-    var identity: Int {
-        return comment.id
+    var identity: String {
+        return comment.body
     }
     
 }
