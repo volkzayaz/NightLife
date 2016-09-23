@@ -36,9 +36,35 @@ class CommentStorage {
     
     static func getCommentedMessages () -> Observable<[Message]> {
 
-        var commentedMessages : [Message] = []
+//        var commentedMessages : [Message] = []
         print ("CommentStorage")
         print(Array(commentStorage.keys))
+        
+        
+        let commentedMessages = MessagesContext.messages
+            .asObservable()
+            .flatMapLatest { messages -> Observable<[Message]> in
+                messages
+                    .flatMap {
+                        $0.observableEntity()?.asObservable()
+                    }
+                    .combineLatest { commentedMessages in
+                        
+                        let commentedMessages : [Message] = commentedMessages.filter {
+                            
+                            InMemoryStorageArray.storage[$0.id]?.value.count > 0
+                            
+                        }
+                        
+                        return commentedMessages
+                        
+                }
+        }
+        
+        
+        
+
+        
         
         for anMessageId in (Array(commentStorage.keys)) {
 
@@ -46,13 +72,14 @@ class CommentStorage {
             print (commentStorage[anMessageId]?.value[1].textComment)
             
             Message.storage.indexForKey(anMessageId)
-            
         }
     
+        return Observable.just(commentedMessages)
         
+        
+        
+
 //       return Array(commentStorage.keys)
- 
-        
         
 //        return self.getAllAlbums()
 //            .map{ (allAlbums : [Album]) -> [Album] in
@@ -60,9 +87,6 @@ class CommentStorage {
 //                    return likedAlbumList.contains(album.albumId!)
 //                }
 
-
-       return Observable.just(commentedMessages)
-        
     }
     
 
