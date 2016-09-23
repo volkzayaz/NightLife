@@ -40,8 +40,8 @@ struct MessageViewModel {
         didSet {
             commentObservable!
                 .flatMap { (comment :String) -> Observable <String> in
-         print("commentObservable")              
-                    print(comment)
+//         print("commentObservable")              
+//                    print(comment)
                     return Observable.just("")
             }
                 .subscribeNext { (comment : String) in

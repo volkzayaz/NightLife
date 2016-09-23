@@ -38,7 +38,13 @@ class CommentedMessagesListViewController : UIViewController {
         self.tableView.dataSource = nil
         
 
-//        tableView.rx_setDelegate(self)
+//        tableView.rx_itemSelected
+//            .subscribeNext{[unowned self] indexPath in
+//                self.commentedMessagesListVM.selectedCommentedMessage(atIndexPath: indexPath)
+//            }
+//            .addDisposableTo(bag)
+//
+////        tableView.rx_setDelegate(self)
         
         
         let dataSource = RxTableViewSectionedAnimatedDataSource<CommentedMessageSection>()

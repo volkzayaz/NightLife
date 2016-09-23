@@ -20,18 +20,28 @@ class CommentedMessageListViewModel {
     init () {
         
         CommentStorage.getCommentedMessages()
-            
-//            .asObservable()
-//            .map { (messagesIds : [Int]) -> Observable<[Message]> in
-//                
-//                
-//                return messagesIds.map { (map : Int) -> Message in
-//                    return Message (map : map)
-//                }
-        
-//        }
-        
-                   
+            .map { (messages : [Message]) -> [CellViewModel] in
+                return messages.map{ (message : Message) -> CellViewModel in
+                    return CellViewModel(message : message)
+            }
+        }
+            .map { (cells: [CellViewModel]) -> [CommentedMessageSection] in
+                return [CommentedMessageSection(header : "Commented Messagess", items: cells)]
+            }
+            .subscribeNext { (sections : [CommentedMessageSection]) in
+            self.sections.value = sections
+        }
+        .addDisposableTo(bag)
     }
+    
+
+    
+    func selectedCommentedMessage(atIndexPath indexPath: NSIndexPath) {
+//        let commentedMessage = CommentStorage.commentStorage.values[indexPath.row]
+        
+//        detailMessageViewModel.value = MessageViewModel(message: message)
+    }
+
+    
     
 }

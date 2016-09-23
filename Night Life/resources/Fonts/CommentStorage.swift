@@ -22,35 +22,62 @@ class CommentStorage {
         }
         commentStorage[message.id]?.value.append(Comment(textComment : textComment))
         
-        
-        
+
         print("IN STORAGE")
         print(message.id)
         print(commentStorage[message.id]?.value.count)
-        
         let a = commentStorage[message.id]?.value.count
         for var i = 0; i < a; i++ {
         print((commentStorage[message.id]?.value[i])!.textComment)
         }
     }
     
-    static func getCommentedMessages () -> Observable <[Int]> {
+
+    
+    static func getCommentedMessages () -> Observable<[Message]> {
+
+        var commentedMessages : [Message] = []
+        print ("CommentStorage")
+        print(Array(commentStorage.keys))
         
-        var commentedMessages : [Int] = []
-        
-        print("COMMENTSTORAGE = \(commentStorage.count)")
-        
-        for anMessageId in commentStorage as! [Dictionary <Int, Variable<[Comment]>>] {
-           
-         print ("CommentStorage = \(anMessageId)")
+        for anMessageId in (Array(commentStorage.keys)) {
+
+            print(anMessageId)
+            print (commentStorage[anMessageId]?.value[1].textComment)
             
-//            print (self.commentStorage[anMessageId])
-            
-//            if self.commentStorage[anMessageId]?
+            Message.storage.indexForKey(anMessageId)
             
         }
+    
+        
+//       return Array(commentStorage.keys)
+ 
+        
+        
+//        return self.getAllAlbums()
+//            .map{ (allAlbums : [Album]) -> [Album] in
+//                return allAlbums.filter { (album) -> Bool in
+//                    return likedAlbumList.contains(album.albumId!)
+//                }
+
+
+       return Observable.just(commentedMessages)
         
     }
+    
+
+    
+    
+    
+//    static func getCommentedMessages () -> Observable <[Int]> {
+//        var commentedMessages : [Int] = []
+//        print("COMMENTSTORAGE = \(commentStorage.count)")
+//        for anMessageId in commentStorage as! [Dictionary <Int, Variable<[Comment]>>] {
+//         print ("CommentStorage = \(anMessageId)")
+////            print (self.commentStorage[anMessageId])
+////            if self.commentStorage[anMessageId]?
+//        }
+//    }
     
    
     
