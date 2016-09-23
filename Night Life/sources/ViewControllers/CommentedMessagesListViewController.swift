@@ -12,15 +12,20 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-import AHKActionSheet
-import SWRevealViewController
-import Alamofire
-import ObjectMapper
+//import AHKActionSheet
+//import SWRevealViewController
+//import Alamofire
+//import ObjectMapper
 
 
 
 class CommentedMessagesListViewController : UIViewController {
     
+    private let commentedMessagesListVM = CommentedMessageListViewModel()
+    private let bag = DisposeBag()
+    
+    var dataSource: RxTableViewSectionedAnimatedDataSource<CommentedMessageSection>?
+
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +33,35 @@ class CommentedMessagesListViewController : UIViewController {
         super.viewDidLoad()
         
         print("CONTROLLER")
+        
+        self.tableView.delegate = nil
+        self.tableView.dataSource = nil
+        
+
+//        tableView.rx_setDelegate(self)
+        
+        
+        let dataSource = RxTableViewSectionedAnimatedDataSource<CommentedMessageSection>()
+        
+        commentedMessagesListVM.sections.asObservable()
+        .bindTo(tableView.rx_itemsWithDataSource(dataSource))
+        .addDisposableTo(bag)
+
+      
+        dataSource.configureCell = { (dataSource, tableView, indexPath, cellViewModel) in
+            let cell = tableView.dequeueReusableCellWithIdentifier("message cell", forIndexPath: indexPath)
+            as! MessageTableCell
+            
+//            cell.setCommentedMessage(cellViewModel.message)
+            print("cellViewModel.message =\(cellViewModel.message)")
+            cell.setMessage(cellViewModel.message)
+            
+            return cell
+        }
+        
+        
+        
+        
     }
     
 }

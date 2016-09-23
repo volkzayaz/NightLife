@@ -14,4 +14,24 @@ import RxDataSources
 
 class CommentedMessageListViewModel {
     
+    private let bag = DisposeBag()
+    var sections : Variable<[CommentedMessageSection]> = Variable([])
+    
+    init () {
+        
+        CommentStorage.getCommentedMessages()
+            
+//            .asObservable()
+//            .map { (messagesIds : [Int]) -> Observable<[Message]> in
+//                
+//                
+//                return messagesIds.map { (map : Int) -> Message in
+//                    return Message (map : map)
+//                }
+        
+//        }
+        
+                   
+    }
+    
 }

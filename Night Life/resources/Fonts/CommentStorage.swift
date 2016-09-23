@@ -18,9 +18,9 @@ class CommentStorage {
     static func saveMessageComments (message : Message, textComment : String) {
 
         if commentStorage[message.id] == nil {
-            self.commentStorage[message.id] = Variable([])
+            commentStorage[message.id] = Variable([])
         }
-        self.commentStorage[message.id]?.value.append(Comment(textComment : textComment))
+        commentStorage[message.id]?.value.append(Comment(textComment : textComment))
         
         
         
@@ -33,5 +33,25 @@ class CommentStorage {
         print((commentStorage[message.id]?.value[i])!.textComment)
         }
     }
+    
+    static func getCommentedMessages () -> Observable <[Int]> {
+        
+        var commentedMessages : [Int] = []
+        
+        print("COMMENTSTORAGE = \(commentStorage.count)")
+        
+        for anMessageId in commentStorage as! [Dictionary <Int, Variable<[Comment]>>] {
+           
+         print ("CommentStorage = \(anMessageId)")
+            
+//            print (self.commentStorage[anMessageId])
+            
+//            if self.commentStorage[anMessageId]?
+            
+        }
+        
+    }
+    
+   
     
 }

@@ -48,5 +48,18 @@ class MessageTableCell : UITableViewCell {
         
     }
     
+    func setCommentedMessage (cellViewModel : CellViewModel) {
+        
+//        guard let cellViewModelObservable = cellViewModel
+        
+//        ..observableEntity()?.asObservable() else {
+//            fatalError("Can't populate cell without message observable")
+//        }
+
+        
+        
+    }
+    
+    
 }
 

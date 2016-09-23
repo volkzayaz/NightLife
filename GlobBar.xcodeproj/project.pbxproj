@@ -337,6 +337,9 @@
 		C31ADDE71D93F86200525670 /* CommentedMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31ADDE61D93F86200525670 /* CommentedMessageViewModel.swift */; };
 		C31ADDEA1D93FD0C00525670 /* CommentedMessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31ADDE91D93FD0C00525670 /* CommentedMessages.storyboard */; };
 		C31ADDEC1D9404BB00525670 /* CommentedMessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31ADDEB1D9404BB00525670 /* CommentedMessagesListViewController.swift */; };
+		C31ADDF31D9441F600525670 /* CommentedMessageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31ADDF21D9441F600525670 /* CommentedMessageSection.swift */; };
+		C31ADDF51D9443CC00525670 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31ADDF41D9443CC00525670 /* CellViewModel.swift */; };
+		C31ADDFA1D944E1000525670 /* CommentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31ADDF91D944E1000525670 /* CommentTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -515,6 +518,9 @@
 		C31ADDE61D93F86200525670 /* CommentedMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessageViewModel.swift; sourceTree = "<group>"; };
 		C31ADDE91D93FD0C00525670 /* CommentedMessages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CommentedMessages.storyboard; path = Fonts/CommentedMessages.storyboard; sourceTree = "<group>"; };
 		C31ADDEB1D9404BB00525670 /* CommentedMessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessagesListViewController.swift; sourceTree = "<group>"; };
+		C31ADDF21D9441F600525670 /* CommentedMessageSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessageSection.swift; sourceTree = "<group>"; };
+		C31ADDF41D9443CC00525670 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		C31ADDF91D944E1000525670 /* CommentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableCell.swift; sourceTree = "<group>"; };
 		DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC61876540C1A917C18B4605 /* Pods_GlobBar_AdHoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobBar_AdHoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7F314B533FD4411C86AC22 /* Pods-GlobBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar/Pods-GlobBar.release.xcconfig"; sourceTree = "<group>"; };
@@ -550,6 +556,8 @@
 			children = (
 				C31ADDE61D93F86200525670 /* CommentedMessageViewModel.swift */,
 				C31ADDE41D93F80300525670 /* CommentedMessageListViewModel.swift */,
+				C31ADDF21D9441F600525670 /* CommentedMessageSection.swift */,
+				C31ADDF41D9443CC00525670 /* CellViewModel.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -840,6 +848,7 @@
 		733E367D1C74880E0099BA9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C31ADDF61D944DDE00525670 /* Comments */,
 				8492A9F01CB6CDF600D8C70A /* Message */,
 				73B6AE891CA1660000411EB1 /* User */,
 				736E30161C919CE400F51896 /* GeoWarning */,
@@ -1346,6 +1355,14 @@
 			name = Comments;
 			sourceTree = "<group>";
 		};
+		C31ADDF61D944DDE00525670 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				C31ADDF91D944E1000525670 /* CommentTableCell.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1713,6 +1730,7 @@
 			files = (
 				733E8CE21C96E7A300F24620 /* City.swift in Sources */,
 				73069CCC1CB7BBAC0040D599 /* AddMediaViewController.swift in Sources */,
+				C31ADDF31D9441F600525670 /* CommentedMessageSection.swift in Sources */,
 				73ED78A81C9C2698002EBAA2 /* FeedFilter.swift in Sources */,
 				7305E0281CAADFAB00ED4F11 /* AppNavigationController.swift in Sources */,
 				7332FE681C80860E001FE7D5 /* SideViewController.swift in Sources */,
@@ -1782,10 +1800,12 @@
 				73EF22241C9C594F005A6D6D /* LikedClubsListViewModel.swift in Sources */,
 				73EF22261C9C594F005A6D6D /* PaginatingViewModel.swift in Sources */,
 				8439074F1CB69FE000C05D8B /* Message.swift in Sources */,
+				C31ADDFA1D944E1000525670 /* CommentTableCell.swift in Sources */,
 				738AA0231C73346B00379C75 /* InstagramAuthenticator.swift in Sources */,
 				73EF22211C9C594F005A6D6D /* FeedViewModel.swift in Sources */,
 				734FEF711C9840D7000B894A /* ClubsListViewController.swift in Sources */,
 				73633E631CD3A6DC009673B2 /* TermsAndConditionsController.swift in Sources */,
+				C31ADDF51D9443CC00525670 /* CellViewModel.swift in Sources */,
 				735240421C7226BA00A5FE23 /* Club.swift in Sources */,
 				7323E4681C873F3800F397BC /* ClubFeedDataProvider.swift in Sources */,
 				C31ADDE51D93F80300525670 /* CommentedMessageListViewModel.swift in Sources */,
