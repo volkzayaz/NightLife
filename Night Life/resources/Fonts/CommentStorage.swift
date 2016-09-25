@@ -52,7 +52,7 @@ class CommentStorage {
                         
                         let commentedMessages : [Message] = commentedMessages.filter {
                             
-                            InMemoryStorageArray.storage[$0.id]?.value.count > 0
+                            CommentStorage.commentStorage[$0.id]?.value.count > 0
                             
                         }
                         
@@ -62,19 +62,19 @@ class CommentStorage {
         }
         
         
-        
+        return commentedMessages
 
         
         
-        for anMessageId in (Array(commentStorage.keys)) {
-
-            print(anMessageId)
-            print (commentStorage[anMessageId]?.value[1].textComment)
-            
-            Message.storage.indexForKey(anMessageId)
-        }
-    
-        return Observable.just(commentedMessages)
+//        for anMessageId in (Array(commentStorage.keys)) {
+//
+//            print(anMessageId)
+//            print (commentStorage[anMessageId]?.value[1].textComment)
+//            
+//            Message.storage.indexForKey(anMessageId)
+//        }
+//    
+//        return Observable.just(commentedMessages)
         
         
         

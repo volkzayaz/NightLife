@@ -12,10 +12,10 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-//import AHKActionSheet
-//import SWRevealViewController
-//import Alamofire
-//import ObjectMapper
+import AHKActionSheet
+import SWRevealViewController
+import Alamofire
+import ObjectMapper
 
 
 
@@ -55,7 +55,7 @@ class CommentedMessagesListViewController : UIViewController {
 
       
         dataSource.configureCell = { (dataSource, tableView, indexPath, cellViewModel) in
-            let cell = tableView.dequeueReusableCellWithIdentifier("message cell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("message cell2", forIndexPath: indexPath)
             as! MessageTableCell
             
 //            cell.setCommentedMessage(cellViewModel.message)
