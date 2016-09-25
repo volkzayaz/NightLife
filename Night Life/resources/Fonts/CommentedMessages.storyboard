@@ -8,11 +8,14 @@
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Light.ttf">
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
@@ -53,8 +56,74 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="message cell2" id="PQr-br-BSJ" customClass="CommentTableCell" customModule="GlobBar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="message cell" id="dGg-UN-K7s" customClass="MessageTableCell" customModule="GlobBar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dGg-UN-K7s" id="4VG-Ha-1o1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dul-32-L9W">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something very long and meaningful" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMu-zI-zT6" userLabel="title">
+                                                    <rect key="frame" x="8" y="21" width="248" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something very long and meaningfulSomething very long and meaningful" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thI-qw-zHQ" userLabel="body">
+                                                    <rect key="frame" x="8" y="45" width="248" height="13"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="17 days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqH-2N-DNe" userLabel="created">
+                                                    <rect key="frame" x="264" y="33" width="48" height="11"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="9"/>
+                                                    <color key="textColor" red="0.95294117649999999" green="0.43921568630000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-cd-dHX">
+                                                    <rect key="frame" x="0.0" y="76" width="320" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Bes-wx-f88"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="thI-qw-zHQ" firstAttribute="top" secondItem="EMu-zI-zT6" secondAttribute="bottom" constant="8" id="HMV-fw-Bxd"/>
+                                                <constraint firstItem="dul-32-L9W" firstAttribute="leading" secondItem="4VG-Ha-1o1" secondAttribute="leading" id="JDx-Ef-5sc"/>
+                                                <constraint firstItem="qqH-2N-DNe" firstAttribute="centerY" secondItem="dul-32-L9W" secondAttribute="centerY" id="KdW-dz-40N"/>
+                                                <constraint firstAttribute="trailing" secondItem="D2d-cd-dHX" secondAttribute="trailing" id="MFw-kk-hc9"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="EMu-zI-zT6" secondAttribute="leading" id="Non-ur-bxL"/>
+                                                <constraint firstItem="dul-32-L9W" firstAttribute="top" secondItem="4VG-Ha-1o1" secondAttribute="top" id="TDi-bY-GyK"/>
+                                                <constraint firstAttribute="bottom" secondItem="dul-32-L9W" secondAttribute="bottom" id="aIa-Es-Ycu"/>
+                                                <constraint firstItem="qqH-2N-DNe" firstAttribute="leading" secondItem="EMu-zI-zT6" secondAttribute="trailing" constant="8" id="bhX-EY-4D3"/>
+                                                <constraint firstItem="qqH-2N-DNe" firstAttribute="leading" secondItem="thI-qw-zHQ" secondAttribute="trailing" constant="8" id="i04-aQ-wg4"/>
+                                                <constraint firstItem="D2d-cd-dHX" firstAttribute="leading" secondItem="4VG-Ha-1o1" secondAttribute="leading" id="mAN-4C-Y53"/>
+                                                <constraint firstAttribute="bottom" secondItem="D2d-cd-dHX" secondAttribute="bottom" id="mja-f7-QfR"/>
+                                                <constraint firstItem="thI-qw-zHQ" firstAttribute="leading" secondItem="EMu-zI-zT6" secondAttribute="leading" id="rhk-24-loY"/>
+                                                <constraint firstAttribute="trailing" secondItem="dul-32-L9W" secondAttribute="trailing" id="rtR-9U-eSm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qqH-2N-DNe" secondAttribute="trailing" id="z1R-P1-xVJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="EMu-zI-zT6" firstAttribute="centerY" secondItem="dGg-UN-K7s" secondAttribute="centerY" constant="-10" id="z9v-wc-bfG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="bodyLabel" destination="thI-qw-zHQ" id="Wl2-kU-Be8"/>
+                                            <outlet property="createdLabel" destination="qqH-2N-DNe" id="BtL-gb-IyN"/>
+                                            <outlet property="titleLabel" destination="EMu-zI-zT6" id="AIC-yM-ecD"/>
+                                            <outlet property="unreadOverlayView" destination="dul-32-L9W" id="D3R-aw-Vjt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="message cell2" id="PQr-br-BSJ" customClass="CommentTableCell" customModule="GlobBar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="105" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQr-br-BSJ" id="uQQ-aG-PUV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
@@ -115,7 +184,6 @@
                                         <connections>
                                             <outlet property="bodyLabel" destination="YYA-qi-5H5" id="Vgz-64-g6Y"/>
                                             <outlet property="createdLabel" destination="zDV-QD-Hnk" id="sGv-7G-HwU"/>
-                                            <outlet property="titleLable" destination="YYA-qi-5H5" id="CjD-x4-doO"/>
                                             <outlet property="unreadOverLayView" destination="w16-j7-CO0" id="ePl-Qf-3QH"/>
                                         </connections>
                                     </tableViewCell>

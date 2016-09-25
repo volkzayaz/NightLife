@@ -55,7 +55,7 @@ class CommentedMessagesListViewController : UIViewController {
 
       
         dataSource.configureCell = { (dataSource, tableView, indexPath, cellViewModel) in
-            let cell = tableView.dequeueReusableCellWithIdentifier("message cell2", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("message cell", forIndexPath: indexPath)
             as! MessageTableCell
             
 //            cell.setCommentedMessage(cellViewModel.message)
