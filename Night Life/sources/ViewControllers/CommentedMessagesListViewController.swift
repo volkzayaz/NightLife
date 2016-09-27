@@ -38,11 +38,29 @@ class CommentedMessagesListViewController : UIViewController {
         self.tableView.dataSource = nil
         
 
-//        tableView.rx_itemSelected
-//            .subscribeNext{[unowned self] indexPath in
-//                self.commentedMessagesListVM.selectedCommentedMessage(atIndexPath: indexPath)
+        tableView.rx_itemSelected
+            .subscribeNext{[unowned self] indexPath in
+                self.commentedMessagesListVM.selectedCommentedMessage(atIndexPath: indexPath)
+            }
+            .addDisposableTo(bag)
+        
+        commentedMessagesListVM.detailsCommentedMessage.asDriver()
+        .filter { ($0 != nil) }.map { $0! }
+        .driveNext { [unowned self] in
+            self.performSegueWithIdentifier("CommentedMessageDetails", sender: nil)
+        }
+        .addDisposableTo(bag)
+        
+        
+        
+//        viewModel.detailMessageViewModel.asDriver()
+//            .filter { $0 != nil }.map { $0! }
+//            .driveNext {[unowned self] in
+//                self.performSegueWithIdentifier("MessageDetailsScreen", sender: nil)
 //            }
 //            .addDisposableTo(bag)
+
+        
 //
 ////        tableView.rx_setDelegate(self)
         
@@ -59,15 +77,23 @@ class CommentedMessagesListViewController : UIViewController {
             as! MessageTableCell
             
 //            cell.setCommentedMessage(cellViewModel.message)
-            print("cellViewModel.message =\(cellViewModel.message)")
+            print("cellViewModel.message = \(cellViewModel.message)")
             cell.setMessage(cellViewModel.message)
             
             return cell
         }
-        
-        
-        
-        
+  
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CommentedMessageDetails" {
+            let controller = segue.destinationViewController as! CommentedMessageViewController
+            
+            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
+//            controller.viewModel = viewModel.detailMessageViewModel.value
+        }
+    }
+
+    
     
 }

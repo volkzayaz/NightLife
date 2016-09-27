@@ -13,4 +13,7 @@ import RxDataSources
 
 class  CommentedMessageViewModel {
     
+    var messageComments : Variable <[Comment]> = Variable([])
+    
+    
 }

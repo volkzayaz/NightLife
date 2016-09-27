@@ -41,7 +41,7 @@ extension MessageListViewModel {
     
     func selectedMessage(atIndexPath ip: NSIndexPath) {
         let message = MessagesContext.messages.value[ip.row]
-        
+
         detailMessageViewModel.value = MessageViewModel(message: message)
     }
     

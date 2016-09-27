@@ -16,6 +16,8 @@ class CommentedMessageListViewModel {
     
     private let bag = DisposeBag()
     var sections : Variable<[CommentedMessageSection]> = Variable([])
+    let detailsCommentedMessage : Variable<MessageViewModel?> = Variable(nil)
+    
     
     init () {
         
@@ -37,9 +39,14 @@ class CommentedMessageListViewModel {
 
     
     func selectedCommentedMessage(atIndexPath indexPath: NSIndexPath) {
-//        let commentedMessage = CommentStorage.commentStorage.values[indexPath.row]
+  
+        print ("CommentedMessageListViewModel = \(indexPath.row)")
+//        self.sections.asObservable().
+//        let commentedMessage = sections.value.
+
         
-//        detailMessageViewModel.value = MessageViewModel(message: message)
+        let message = MessagesContext.messages.value[indexPath.row]
+        detailsCommentedMessage.value = MessageViewModel(message: message)
     }
 
     

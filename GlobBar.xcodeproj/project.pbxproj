@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		454FCDF2CAFDDA056C28D514 /* Pods_GlobBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE981FE7A8283B577F42448 /* Pods_GlobBar.framework */; };
+		5C6CDF121D9A6D4F00BB656D /* CommentedMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CDF111D9A6D4F00BB656D /* CommentedMessageViewController.swift */; };
 		5CF66D071D92A457006D29D4 /* CommentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF66D061D92A457006D29D4 /* CommentStorage.swift */; };
 		5CF66D0B1D92BA98006D29D4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF66D0A1D92BA98006D29D4 /* Comment.swift */; };
 		7305E0281CAADFAB00ED4F11 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */; };
@@ -344,6 +345,7 @@
 
 /* Begin PBXFileReference section */
 		4A9D0D5FF6C3D36E784029CA /* Pods-GlobBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobBar.debug.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-GlobBar/Pods-GlobBar.debug.xcconfig"; sourceTree = "<group>"; };
+		5C6CDF111D9A6D4F00BB656D /* CommentedMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentedMessageViewController.swift; sourceTree = "<group>"; };
 		5CF66D061D92A457006D29D4 /* CommentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentStorage.swift; path = Fonts/CommentStorage.swift; sourceTree = "<group>"; };
 		5CF66D0A1D92BA98006D29D4 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		7305E0271CAADFAB00ED4F11 /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -1351,6 +1353,7 @@
 			isa = PBXGroup;
 			children = (
 				C31ADDEB1D9404BB00525670 /* CommentedMessagesListViewController.swift */,
+				5C6CDF111D9A6D4F00BB656D /* CommentedMessageViewController.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1744,6 +1747,7 @@
 				738AA0211C73346B00379C75 /* Authenticator.swift in Sources */,
 				73E676C31CB56E98004B22D2 /* AccessToken.swift in Sources */,
 				733FA1181C7C5DED00DBA588 /* PlacesRouter.swift in Sources */,
+				5C6CDF121D9A6D4F00BB656D /* CommentedMessageViewController.swift in Sources */,
 				733E36801C7488220099BA9A /* RadioButtonGroup.swift in Sources */,
 				7323E4821C8851F000F397BC /* ClubFeedViewController.swift in Sources */,
 				733397B11CEDFA340096D14A /* AuthorizationManager.swift in Sources */,
