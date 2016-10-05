@@ -46,6 +46,7 @@ class CommentedMessageListViewModel {
 
         
         let message = MessagesContext.messages.value[indexPath.row]
+        print(message)
         detailsCommentedMessage.value = MessageViewModel(message: message)
     }
 

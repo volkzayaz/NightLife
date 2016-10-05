@@ -15,5 +15,11 @@ class  CommentedMessageViewModel {
     
     var messageComments : Variable <[Comment]> = Variable([])
     
+    init() {
+        
+        CommentStorage.commentStorage.values
+        
+//        self.messageComments.value = ...
+    }
     
 }

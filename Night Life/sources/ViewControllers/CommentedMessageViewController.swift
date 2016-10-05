@@ -15,6 +15,7 @@ class CommentedMessageViewController : UIViewController {
     
     var messageVM: MessageViewModel!
     var commentedMessageVM: CommentedMessageViewModel!
+    var bag = DisposeBag()
     
     @IBOutlet weak var textView: UITextView!
     
@@ -26,6 +27,18 @@ class CommentedMessageViewController : UIViewController {
         print( "~~~~~~~~~~~~~~~" )
         
         print (messageVM.message.id)
+        
+//        textView.text = messageVM.message.body
+        
+//        commentedMessageVM.messageComments.asObservable()
+        
+        
+//        textView.text = commentedMessageVM.messageComments.asObservable().subscribeNext{ (comments : [Comment]) in
+//           
+//                print(comments)
+//            }
+//        }
+//        .addDisposableTo(bag)
         
 //        textView.text = String(messageVM.message.id)
 //        textView.text = CommentStorage.commentStorage.

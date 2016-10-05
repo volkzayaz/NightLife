@@ -89,7 +89,10 @@ class CommentedMessagesListViewController : UIViewController {
         if segue.identifier == "CommentedMessageDetails" {
             let controller = segue.destinationViewController as! CommentedMessageViewController
             
-            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
+            controller.messageVM = commentedMessagesListVM.detailsCommentedMessage.value
+            
+//            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
+//            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
 //            controller.viewModel = viewModel.detailMessageViewModel.value
         }
     }
