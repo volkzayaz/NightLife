@@ -27,6 +27,47 @@ class CommentedMessageViewController : UIViewController {
         print( "~~~~~~~~~~~~~~~" )
         
         print (messageVM.message.id)
+
+        textView.text = messageVM.message.body
+        print(CommentStorage.commentStorage[messageVM.message.id]?.value[0].textComment)
+        
+        
+        commentedMessageVM.messageComment.asObservable()
+            .subscribeNext { (comment : Comment?) in
+            self.textView.text = comment?.textComment
+        }
+        
+        
+          
+//        CommentStorage.commentStorage[messageVM.message.id]?.asObservable()
+//            .map { (comments : [Comment]) -> Comment in
+//               return comments.
+//        }
+        
+                
+                
+                
+//                return (comments.filter{ (comment : Comment) -> Bool in
+//                    print("**** = \(comment)")
+//                    return true
+//                }).cs_arrayValue()
+//                
+////                return (comments.filter{ (comment : Comment) -> String in
+////                return comment.textComment
+////            })
+//        }
+            
+            
+//            .subscribeNext{ (comments : [Comment]) in
+//
+////                comments.map({ (comment : Comment) -> String in
+////                print(comment)
+////            })
+//        }
+        
+        
+//        textView.text = CommentStorage.commentStorage[messageVM.message.id]
+        
         
 //        textView.text = messageVM.message.body
         

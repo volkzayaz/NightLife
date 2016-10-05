@@ -13,13 +13,34 @@ import RxDataSources
 
 class  CommentedMessageViewModel {
     
-    var messageComments : Variable <[Comment]> = Variable([])
+    var messageVM: MessageViewModel!
+//    var messageComments : Variable <[Comment]> = Variable([])
+    var messageComment : Variable <Comment?> = Variable(nil)
     
     init() {
         
-        CommentStorage.commentStorage.values
+                
+        CommentStorage.commentStorage[messageVM.message.id]?.asObservable()
+            .map { (comments : [Comment]) -> Comment in
+
+//                return comments.forEach({ (comment : Comment) in
+//                    self.messageComment.value = comment
+//                })
+//        }
         
+                
+                return comments.filter({ (comment : Comment) -> Bool in
+                self.messageComment.value = comment
+                    return true
+            })
+                .first!
+        }
+
+        
+      
 //        self.messageComments.value = ...
+        
+        
     }
     
 }

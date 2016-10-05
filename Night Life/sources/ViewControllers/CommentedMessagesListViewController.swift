@@ -91,6 +91,8 @@ class CommentedMessagesListViewController : UIViewController {
             
             controller.messageVM = commentedMessagesListVM.detailsCommentedMessage.value
             
+            print("***************")
+            print(commentedMessagesListVM.detailsCommentedMessage.value)
 //            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
 //            controller.commentedMessageVM = commentedMessagesListVM.detailsCommentedMessage.value
 //            controller.viewModel = viewModel.detailMessageViewModel.value
