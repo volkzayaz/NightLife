@@ -18,8 +18,7 @@ struct CellViewModel {
     
     var commentedMessages : Observable<Bool> {
         
-        
-        
+
         return self.commentedMessages as! Observable
     
     }

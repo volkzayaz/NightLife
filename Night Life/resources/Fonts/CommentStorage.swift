@@ -40,7 +40,6 @@ class CommentStorage {
         print ("CommentStorage")
         print(Array(commentStorage.keys))
         
-        
         let commentedMessages = MessagesContext.messages
             .asObservable()
             .flatMapLatest { messages -> Observable<[Message]> in
@@ -49,19 +48,12 @@ class CommentStorage {
                         $0.observableEntity()?.asObservable()
                     }
                     .combineLatest { commentedMessages in
-                        
                         let commentedMessages : [Message] = commentedMessages.filter {
-                            
                             CommentStorage.commentStorage[$0.id]?.value.count > 0
-                            
                         }
-                        
                         return commentedMessages
-                        
                 }
         }
-        
-        
         return commentedMessages
 
         

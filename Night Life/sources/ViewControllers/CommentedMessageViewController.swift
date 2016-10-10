@@ -30,12 +30,66 @@ class CommentedMessageViewController : UIViewController {
 
         textView.text = messageVM.message.body
         print(CommentStorage.commentStorage[messageVM.message.id]?.value[0].textComment)
+
+//        CommentStorage.commentStorage[messageVM.message.id]?.asObservable()
+//            .subscribeNext{ (comments : [Comment]) in
+//                return comments.filter { (comment : Comment) -> Bool in
+//                print(comment.textComment)
+//                    self.textView.text = comment.textComment
+//                    return true
+//            }
+//        }
+     
+//        commentedMessageVM.messageComment.asObservable()
+//            .subscribeNext { (comment : Comment?) in
+//                print(comment!.textComment)
+//            }
         
-        
-        commentedMessageVM.messageComment.asObservable()
+        commentedMessageVM.msgCmnt!.asObservable()
             .subscribeNext { (comment : Comment?) in
-            self.textView.text = comment?.textComment
+                print(comment!.textComment)
         }
+
+        
+        
+        
+        
+        
+//        commentedMessageVM.messageCommentsList.asObservable()
+//            .subscribeNext { (comments : [Comment]) in
+//                self.textView.text = comments[0].textComment
+//            }
+//                .addDisposableTo(bag)
+        
+        
+//        CommentedMessageViewModel()
+//        commentedMessageVM.messageComment.asObservable()
+//            .subscribeNext { (comment : Comment?) in
+//            self.textView.text = comment?.textComment
+//        }
+//        .addDisposableTo(bag)
+
+
+        
+        
+        
+        
+//        commentedMessageVM.messageCommentsList.asObservable()
+//            .subscribeNext { (comments : [Comment]) in
+//            
+//        }
+//        .addDisposableTo(bag)
+        
+        
+        
+//        CommentedMessageViewModel()
+        
+        
+ 
+        
+        
+        
+        
         
         
           

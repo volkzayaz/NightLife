@@ -82,6 +82,18 @@ class CommentedMessagesListViewController : UIViewController {
             
             return cell
         }
+        
+        
+        
+//        allAlbumsView.rx_itemSelected.subscribeNext { (indexPath) in
+//            self.albumViewModel.initPhotoModelByRowIndex(indexPath.row)
+//            self.performSegueWithIdentifier("showAlbumPhotos", sender: indexPath)
+//            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//            }
+//            .addDisposableTo(bag)
+//        self.dataSource = dataSource
+
+
   
     }
     

@@ -25,8 +25,8 @@ class MessageViewController: UIViewController {
     @IBAction func saveCommentButton(sender: UIButton) {
         
         print ("MessageViewController")
-        viewModel.commentObservable = commentTextField.rx_text.asObservable()
-        viewModel.savedComment.asObservable().bindTo(savedComment.rx_text).addDisposableTo(bag)
+//        viewModel.commentObservable = commentTextField.rx_text.asObservable()
+//        viewModel.savedComment.asObservable().bindTo(savedComment.rx_text).addDisposableTo(bag)
         viewModel.saveComment(commentTextField.text!)
         
     }
